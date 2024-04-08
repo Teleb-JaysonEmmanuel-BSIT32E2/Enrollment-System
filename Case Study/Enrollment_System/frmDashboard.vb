@@ -1,6 +1,7 @@
 ﻿Public Class frmDashboard
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'the monitor dashboard will load in the main dashboard
+        Call connection()
         frmMonitorDashboard.TopLevel = False
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()

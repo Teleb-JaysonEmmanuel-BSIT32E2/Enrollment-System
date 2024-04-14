@@ -432,7 +432,7 @@ Partial Class frmManageUsers
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(29, 84)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(886, 130)
+        Me.ListView1.Size = New System.Drawing.Size(827, 130)
         Me.ListView1.TabIndex = 23
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -440,45 +440,47 @@ Partial Class frmManageUsers
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "EmployeeNo"
-        Me.ColumnHeader1.Width = 130
+        Me.ColumnHeader1.Width = 100
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Firstname"
         Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 150
+        Me.ColumnHeader2.Width = 100
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Lastname"
         Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 150
+        Me.ColumnHeader3.Width = 100
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "Username"
         Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader4.Width = 150
+        Me.ColumnHeader4.Width = 100
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Password"
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader5.Width = 150
+        Me.ColumnHeader5.Width = 100
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "AccessLevel"
         Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 150
+        Me.ColumnHeader6.Width = 100
         '
         'ColumnHeader7
         '
-        Me.ColumnHeader7.Text = "Role"
+        Me.ColumnHeader7.Text = "Position"
+        Me.ColumnHeader7.Width = 100
         '
         'ColumnHeader8
         '
         Me.ColumnHeader8.Text = "Account Status"
+        Me.ColumnHeader8.Width = 120
         '
         'Guna2TextBox6
         '

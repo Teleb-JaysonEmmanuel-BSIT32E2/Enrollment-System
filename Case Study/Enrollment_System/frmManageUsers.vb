@@ -1,5 +1,6 @@
 ﻿Imports Guna.UI2.Native.WinApi
 Imports System.Data.OleDb
+Imports System.Drawing.Text
 Imports System.Reflection
 
 Public Class frmManageUsers
@@ -12,12 +13,19 @@ Public Class frmManageUsers
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        If txtP.Text.Length > 8 Then
-            MsgBox("Password should be greater than 8 characters!", MsgBoxStyle.Critical)
-        ElseIf txtP.Text <> txtCp.Text Then
+
+        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboPos.Text = "" Or cboUl.Text = "" Then
+            MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
+        Else
+            Call save()
+        End If
+    End Sub
+
+    Private Sub save()
+
+        If txtP.Text <> txtCp.Text Then
             MsgBox("Passwords do not match!", MsgBoxStyle.Critical)
         Else
-
             sql = "Insert into tblUsers (EmployeeID, Username, [Password], AccessLevel, LastName, FirstName,[Position], AccStatus) Values (@EmployeeID, @Username, [@Password], @AccessLevel, @LastName, @FirstName, [@Position], @AccStatus)"
             cmd = New OleDbCommand(sql, cn)
 
@@ -31,10 +39,14 @@ Public Class frmManageUsers
                 .Parameters.AddWithValue("[@Position]", cboPos.Text)
                 .Parameters.AddWithValue("@AccStatus", cboAS.Text)
                 cmd.ExecuteNonQuery()
+
             End With
+
             MsgBox("Successfully Saved", MsgBoxStyle.Information)
+
         End If
         Call loadAccount()
+
     End Sub
 
     Private Sub frmManageUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -69,8 +81,6 @@ Public Class frmManageUsers
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         If txtP.Text <> txtCp.Text Then
             MsgBox("Password Doesn't Match", MsgBoxStyle.Critical)
-        ElseIf txtP.TextLength < 8 Or txtCp.Text < 8 Then
-            MsgBox("Password must be atleast 6 characters above", MsgBoxStyle.Exclamation)
         Else
             Call UpdateData()
         End If
@@ -113,9 +123,35 @@ Public Class frmManageUsers
         txtFn.Text = ""
         txtP.Text = ""
         txtCp.Text = ""
+        cboUl.Text = ""
         cboAS.Text = ""
         cboPos.Text = ""
-        cboPos.Text = ""
+    End Sub
+
+
+    Private Sub checkAcc()
+        sql = "Select EmployeeID from tblUsers where EmployeeID='" & txtEmpNo.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            MsgBox("Account is already Exist", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
+
+    Private Sub txtEmpNo_TextChanged(sender As Object, e As EventArgs) Handles txtEmpNo.TextChanged
+        sql = "Select EmployeeID, FirstName, LastName, Username, [Password], AccessLevel,[Position],AccStatus from qryUsers where EmployeeID='" & txtEmpNo.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            txtEmpNo.Text = dr("EmployeeID").ToString
+            txtFn.Text = dr("FirstName").ToString
+            txtLn.Text = dr("LastName").ToString
+            txtUn.Text = dr("Username").ToString
+            txtP.Text = dr("Password").ToString
+            cboUl.Text = dr("AccessLevel").ToString
+            cboPos.Text = dr("Position").ToString
+            cboAS.Text = dr("AccStatus").ToString
+        End If
     End Sub
 
 End Class

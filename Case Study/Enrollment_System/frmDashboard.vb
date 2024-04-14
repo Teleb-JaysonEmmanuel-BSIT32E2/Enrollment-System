@@ -5,6 +5,7 @@
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
+        Call connection()
 
     End Sub
 
@@ -63,4 +64,7 @@
         frmManageStudents.Show()
     End Sub
 
+    Private Sub panelMainDashboard_Paint(sender As Object, e As PaintEventArgs) Handles panelMainDashboard.Paint
+
+    End Sub
 End Class

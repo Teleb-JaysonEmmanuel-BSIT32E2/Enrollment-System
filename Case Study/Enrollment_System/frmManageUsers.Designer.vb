@@ -87,7 +87,7 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(7, 6)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(950, 269)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(931, 269)
         Me.Guna2GroupBox1.TabIndex = 0
         Me.Guna2GroupBox1.Text = "USER INFORMATION"
         '
@@ -399,7 +399,7 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(7, 290)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(950, 226)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(931, 226)
         Me.Guna2GroupBox2.TabIndex = 22
         Me.Guna2GroupBox2.Text = "LIST OF USERS"
         '
@@ -432,7 +432,7 @@ Partial Class frmManageUsers
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(29, 84)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(827, 130)
+        Me.ListView1.Size = New System.Drawing.Size(864, 130)
         Me.ListView1.TabIndex = 23
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -440,7 +440,7 @@ Partial Class frmManageUsers
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "EmployeeNo"
-        Me.ColumnHeader1.Width = 100
+        Me.ColumnHeader1.Width = 125
         '
         'ColumnHeader2
         '
@@ -470,7 +470,7 @@ Partial Class frmManageUsers
         '
         Me.ColumnHeader6.Text = "AccessLevel"
         Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 100
+        Me.ColumnHeader6.Width = 120
         '
         'ColumnHeader7
         '
@@ -601,7 +601,7 @@ Partial Class frmManageUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 588)
+        Me.ClientSize = New System.Drawing.Size(956, 588)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2Button2)

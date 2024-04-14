@@ -83,8 +83,10 @@ Public Class frmManageUsers
             MsgBox("Password Doesn't Match", MsgBoxStyle.Critical)
         Else
             Call UpdateData()
-        End If
 
+        End If
+        Call loadAccount()
+        Call reset()
     End Sub
     Private Sub UpdateData()
         'Update Specific records from database'
@@ -112,20 +114,16 @@ Public Class frmManageUsers
         End If
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        Dim empId As Integer = 1001
-        empId += 1
-        txtEmpNo.Text = "EMP-" & empId.ToString()
-    End Sub
+
     Private Sub reset()
-        txtEmpNo.Text = ""
-        txtLn.Text = ""
-        txtFn.Text = ""
-        txtP.Text = ""
-        txtCp.Text = ""
-        cboUl.Text = ""
-        cboAS.Text = ""
-        cboPos.Text = ""
+        txtEmpNo.Clear()
+        txtLn.Clear()
+        txtFn.Clear()
+        txtP.Clear()
+        txtCp.Clear()
+        cboUl.SelectedIndex = -1
+        cboAS.SelectedIndex = -1
+        cboPos.SelectedIndex = -1
     End Sub
 
 
@@ -154,4 +152,7 @@ Public Class frmManageUsers
         End If
     End Sub
 
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        frmRegister.ShowDialog()
+    End Sub
 End Class

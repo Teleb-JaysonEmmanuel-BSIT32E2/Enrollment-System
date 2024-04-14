@@ -54,19 +54,45 @@ Public Class frmRegister
         Next
 
         If filled Then
-            sql = "Insert into tblEmployeeUser(FirstName, LastName, Username, [Password], Birthdate, Role, Status) Values(@FirstName, @LastName, @Username, [@Password], @Birthdate, @Role, @Status)"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@FirstName", txtFirstname.Text)
-                .Parameters.AddWithValue("@LastName", txtLastname.Text)
-                .Parameters.AddWithValue("@Username", txtUsername.Text)
-                .Parameters.AddWithValue("@Password", txtPassword.Text)
-                .Parameters.AddWithValue("@Birthdate", datePicker.Text)
-                .Parameters.AddWithValue("@Role", cboRole.Text)
-                .Parameters.AddWithValue("@Status", "Active")
-                .ExecuteNonQuery()
-            End With
-            MsgBox("Account successfully created!", MsgBoxStyle.Information)
+            Dim nextEmployeeID As String = GetNextEmployeeID()
+            If nextEmployeeID IsNot Nothing Then
+                sql = "INSERT INTO tblUsers(EmployeeID, FirstName, LastName, Username, [Password], AccessLevel, Birthdate, [Position], AccStatus) VALUES(@EmployeeID, @FirstName, @LastName, @Username, [@Password], @AccessLevel, @Birthdate, [@Position], @AccStatus)"
+                cmd = New OleDbCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@EmployeeID", nextEmployeeID)
+                    .Parameters.AddWithValue("@FirstName", txtFirstname.Text)
+                    .Parameters.AddWithValue("@LastName", txtLastname.Text)
+                    .Parameters.AddWithValue("@Username", txtUsername.Text)
+                    .Parameters.AddWithValue("[@Password]", txtPassword.Text)
+                    .Parameters.AddWithValue("@AccessLevel", cboRole.Text)
+                    .Parameters.AddWithValue("@Birthdate", datePicker.Text)
+                    .Parameters.AddWithValue("[@Position]", "IT")
+                    .Parameters.AddWithValue("@AccStatus", "Active")
+                    .ExecuteNonQuery()
+                End With
+
+                MsgBox("Account successfully created!", MsgBoxStyle.Information)
+            Else
+                MsgBox("Failed to generate EmployeeID. Please try again.", MsgBoxStyle.Exclamation)
+            End If
         End If
     End Sub
+
+    Private Function GetNextEmployeeID() As String
+        Dim nextID As String = Nothing
+        sql = "SELECT TOP 1 EmployeeID FROM tblUsers ORDER BY EmployeeID DESC"
+        cmd = New OleDbCommand(sql, cn)
+        Dim result As Object = cmd.ExecuteScalar()
+        If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+            Dim lastEmployeeID As String = result.ToString()
+            Dim lastNumber As Integer
+            If Integer.TryParse(lastEmployeeID.Substring(4), lastNumber) Then
+                nextID = "EMP-" & (lastNumber + 1).ToString("D4")
+            End If
+        Else
+            nextID = "EMP-1001"
+        End If
+        Return nextID
+    End Function
+
 End Class

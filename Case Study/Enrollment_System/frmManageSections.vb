@@ -15,11 +15,11 @@ Public Class frmManageSections
         ListView1.Items.Clear()
         Do While dr.Read = True
             x = New ListViewItem(dr("SectionName").ToString)
-            x.SubItems.Add(dr("GradeLevel").ToString)
-            x.SubItems.Add(dr("SY").ToString)
+            x.SubItems.Add(dr("YearLevel").ToString)
+            x.SubItems.Add(dr("SchoolYear").ToString)
             x.SubItems.Add(dr("Semester").ToString)
-            x.SubItems.Add(dr("Track").ToString)
-            x.SubItems.Add(dr("Strand").ToString)
+            x.SubItems.Add(dr("Department").ToString)
+            x.SubItems.Add(dr("Course").ToString)
             x.SubItems.Add(dr("FirstName").ToString & " " & dr("LastName").ToString)
             ListView1.Items.Add(x)
         Loop
@@ -32,30 +32,30 @@ Public Class frmManageSections
     End Sub
 
     Private Sub txtSection_TextChanged(sender As Object, e As EventArgs) Handles txtSection.TextChanged
-        sql = "Select GradeLevel,SY,Semester,Track,Strand,FirstName,LastName from qrySections where SectionName='" & txtSection.Text & "'"
+        sql = "Select YearLevel,SchoolYear,Semester,Department,Course,FirstName,LastName from qrySections where SectionName='" & txtSection.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         If dr.Read = True Then
-            cboGradeLevel.Text = dr("GradeLevel").ToString
-            cboSchoolYear.Text = dr("SY").ToString
+            cboYearLevel.Text = dr("YearLevel").ToString
+            cboSchoolYear.Text = dr("SchoolYear").ToString
             cboSemester.Text = dr("Semester").ToString
-            cboTrack.Text = dr("Track").ToString
-            cboStrand.Text = dr("Strand").ToString
+            cboDepartment.Text = dr("Department").ToString
+            cboCourse.Text = dr("Course").ToString
             txtFirstName.Text = dr("FirstName").ToString
             txtLastName.Text = dr("LastName").ToString
         End If
     End Sub
 
     Private Sub updateData()
-        sql = "Update qrySections set SectionName=@SectionName,GradeLevel=@GradeLevel,SY=@SY,Semester=@Semester,Track=@Track,Strand=@Strand,FirstName=@FirstName,LastName=@LastName where SectionName=@SectionName"
+        sql = "Update qrySections set SectionName=@SectionName,YearLevel=@YearLevel,SchoolYear=@SchoolYear,Semester=@Semester,Department=@Department,Course=@Course,FirstName=@FirstName,LastName=@LastName where SectionName=@SectionName"
         cmd = New OleDbCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@SectionName", txtSection.Text)
-            .Parameters.AddWithValue("@GradeLevel", cboGradeLevel.Text)
-            .Parameters.AddWithValue("@SY", cboSchoolYear.Text)
+            .Parameters.AddWithValue("@YearLevel", cboYearLevel.Text)
+            .Parameters.AddWithValue("@SchoolYear", cboSchoolYear.Text)
             .Parameters.AddWithValue("@Semester", cboSemester.Text)
-            .Parameters.AddWithValue("@Track", cboTrack.Text)
-            .Parameters.AddWithValue("@Strand", cboStrand.Text)
+            .Parameters.AddWithValue("@Course", cboDepartment.Text)
+            .Parameters.AddWithValue("@Department", cboCourse.Text)
             .Parameters.AddWithValue("@FirstName", txtFirstName.Text)
             .Parameters.AddWithValue("@LastName", txtLastName.Text)
             .ExecuteNonQuery()
@@ -68,8 +68,5 @@ Public Class frmManageSections
         Call updateData()
     End Sub
 
-    Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        'NewSection.ShowDialog()
-    End Sub
 
 End Class

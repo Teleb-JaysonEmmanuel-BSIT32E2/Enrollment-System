@@ -23,15 +23,15 @@ Partial Class frmManageSubjects
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cboSubjectStatus = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.cboRole = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.cboSubjectType = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txtUnits = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Guna2TextBox5 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtSubjectDescription = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtSubjectCode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
@@ -53,15 +53,15 @@ Partial Class frmManageSubjects
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2ComboBox1)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboSubjectStatus)
         Me.Guna2GroupBox1.Controls.Add(Me.Label8)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboRole)
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2TextBox1)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboSubjectType)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtUnits)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
         Me.Guna2GroupBox1.Controls.Add(Me.Label2)
-        Me.Guna2GroupBox1.Controls.Add(Me.Guna2TextBox5)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSubjectDescription)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtFirstname)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtSubjectCode)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
@@ -72,21 +72,21 @@ Partial Class frmManageSubjects
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "SUBJECT INFORMATION"
         '
-        'Guna2ComboBox1
+        'cboSubjectStatus
         '
-        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2ComboBox1.ItemHeight = 30
-        Me.Guna2ComboBox1.Items.AddRange(New Object() {"Administrator", "Staff"})
-        Me.Guna2ComboBox1.Location = New System.Drawing.Point(727, 75)
-        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
-        Me.Guna2ComboBox1.Size = New System.Drawing.Size(195, 36)
-        Me.Guna2ComboBox1.TabIndex = 18
+        Me.cboSubjectStatus.BackColor = System.Drawing.Color.Transparent
+        Me.cboSubjectStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboSubjectStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSubjectStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboSubjectStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboSubjectStatus.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.cboSubjectStatus.ForeColor = System.Drawing.Color.Black
+        Me.cboSubjectStatus.ItemHeight = 30
+        Me.cboSubjectStatus.Items.AddRange(New Object() {"Active", "Inactive"})
+        Me.cboSubjectStatus.Location = New System.Drawing.Point(727, 75)
+        Me.cboSubjectStatus.Name = "cboSubjectStatus"
+        Me.cboSubjectStatus.Size = New System.Drawing.Size(195, 36)
+        Me.cboSubjectStatus.TabIndex = 18
         '
         'Label8
         '
@@ -101,43 +101,43 @@ Partial Class frmManageSubjects
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Status"
         '
-        'cboRole
+        'cboSubjectType
         '
-        Me.cboRole.BackColor = System.Drawing.Color.Transparent
-        Me.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboRole.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboRole.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboRole.ForeColor = System.Drawing.Color.Black
-        Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Administrator", "Staff"})
-        Me.cboRole.Location = New System.Drawing.Point(15, 135)
-        Me.cboRole.Name = "cboRole"
-        Me.cboRole.Size = New System.Drawing.Size(248, 36)
-        Me.cboRole.TabIndex = 6
+        Me.cboSubjectType.BackColor = System.Drawing.Color.Transparent
+        Me.cboSubjectType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboSubjectType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSubjectType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboSubjectType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboSubjectType.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.cboSubjectType.ForeColor = System.Drawing.Color.Black
+        Me.cboSubjectType.ItemHeight = 30
+        Me.cboSubjectType.Items.AddRange(New Object() {"Major", "Minor"})
+        Me.cboSubjectType.Location = New System.Drawing.Point(15, 135)
+        Me.cboSubjectType.Name = "cboSubjectType"
+        Me.cboSubjectType.Size = New System.Drawing.Size(248, 36)
+        Me.cboSubjectType.TabIndex = 6
         '
-        'Guna2TextBox1
+        'txtUnits
         '
-        Me.Guna2TextBox1.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.Guna2TextBox1.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(727, 139)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox1.PlaceholderText = ""
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(73, 30)
-        Me.Guna2TextBox1.TabIndex = 8
+        Me.txtUnits.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtUnits.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtUnits.DefaultText = ""
+        Me.txtUnits.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtUnits.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtUnits.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnits.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnits.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUnits.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtUnits.ForeColor = System.Drawing.Color.Black
+        Me.txtUnits.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtUnits.Location = New System.Drawing.Point(727, 139)
+        Me.txtUnits.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUnits.Name = "txtUnits"
+        Me.txtUnits.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtUnits.PlaceholderText = ""
+        Me.txtUnits.SelectedText = ""
+        Me.txtUnits.Size = New System.Drawing.Size(73, 30)
+        Me.txtUnits.TabIndex = 8
         '
         'Label7
         '
@@ -165,27 +165,27 @@ Partial Class frmManageSubjects
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Units"
         '
-        'Guna2TextBox5
+        'txtSubjectDescription
         '
-        Me.Guna2TextBox5.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox5.DefaultText = ""
-        Me.Guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.Guna2TextBox5.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox5.Location = New System.Drawing.Point(305, 77)
-        Me.Guna2TextBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Guna2TextBox5.Name = "Guna2TextBox5"
-        Me.Guna2TextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox5.PlaceholderText = ""
-        Me.Guna2TextBox5.SelectedText = ""
-        Me.Guna2TextBox5.Size = New System.Drawing.Size(378, 92)
-        Me.Guna2TextBox5.TabIndex = 16
+        Me.txtSubjectDescription.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtSubjectDescription.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubjectDescription.DefaultText = ""
+        Me.txtSubjectDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubjectDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubjectDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjectDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjectDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjectDescription.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtSubjectDescription.ForeColor = System.Drawing.Color.Black
+        Me.txtSubjectDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjectDescription.Location = New System.Drawing.Point(305, 77)
+        Me.txtSubjectDescription.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSubjectDescription.Name = "txtSubjectDescription"
+        Me.txtSubjectDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubjectDescription.PlaceholderText = ""
+        Me.txtSubjectDescription.SelectedText = ""
+        Me.txtSubjectDescription.Size = New System.Drawing.Size(378, 92)
+        Me.txtSubjectDescription.TabIndex = 16
         '
         'Label6
         '
@@ -200,27 +200,27 @@ Partial Class frmManageSubjects
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Subject Desciption"
         '
-        'txtFirstname
+        'txtSubjectCode
         '
-        Me.txtFirstname.BorderColor = System.Drawing.Color.DarkGray
-        Me.txtFirstname.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtFirstname.DefaultText = ""
-        Me.txtFirstname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtFirstname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtFirstname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFirstname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtFirstname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFirstname.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.txtFirstname.ForeColor = System.Drawing.Color.Black
-        Me.txtFirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFirstname.Location = New System.Drawing.Point(15, 77)
-        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtFirstname.Name = "txtFirstname"
-        Me.txtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtFirstname.PlaceholderText = ""
-        Me.txtFirstname.SelectedText = ""
-        Me.txtFirstname.Size = New System.Drawing.Size(248, 30)
-        Me.txtFirstname.TabIndex = 6
+        Me.txtSubjectCode.BorderColor = System.Drawing.Color.DarkGray
+        Me.txtSubjectCode.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubjectCode.DefaultText = ""
+        Me.txtSubjectCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubjectCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubjectCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjectCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjectCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjectCode.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtSubjectCode.ForeColor = System.Drawing.Color.Black
+        Me.txtSubjectCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubjectCode.Location = New System.Drawing.Point(15, 77)
+        Me.txtSubjectCode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSubjectCode.Name = "txtSubjectCode"
+        Me.txtSubjectCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubjectCode.PlaceholderText = ""
+        Me.txtSubjectCode.SelectedText = ""
+        Me.txtSubjectCode.Size = New System.Drawing.Size(248, 30)
+        Me.txtSubjectCode.TabIndex = 6
         '
         'Label1
         '
@@ -452,15 +452,15 @@ Partial Class frmManageSubjects
     End Sub
 
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cboSubjectStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents cboRole As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cboSubjectType As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Guna2TextBox5 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtSubjectDescription As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtUnits As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtFirstname As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtSubjectCode As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents ListView1 As ListView

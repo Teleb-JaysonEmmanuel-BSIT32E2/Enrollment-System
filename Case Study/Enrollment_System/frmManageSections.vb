@@ -64,9 +64,7 @@ Public Class frmManageSections
         Call loadAccount()
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Call updateData()
     End Sub
-
-
 End Class

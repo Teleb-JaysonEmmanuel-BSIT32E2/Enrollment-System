@@ -1,15 +1,6 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmLogin
-    Private Sub frmLoginConnect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If txtPassword.Text = "" And txtUsername.Text = "" Then
-            txtUsername.Text = "Enter your username"
-            txtPassword.Text = "Enter your password"
-            txtUsername.ForeColor = Color.DarkGray
-            txtPassword.ForeColor = Color.DarkGray
-        End If
-        Call connection()
-    End Sub
 
     Private Sub txtUsername_LostFocus(sender As Object, e As EventArgs) Handles txtUsername.LostFocus
         If txtUsername.Text = "" Then
@@ -94,7 +85,7 @@ Public Class frmLogin
         Next
 
         If filled Then
-            sql = "Select Username, Password from tblEmployeeUser where Username = '" & txtUsername.Text & "' and Password = '" & txtPassword.Text & "'"
+            sql = "Select Username, Password from tblUsers where Username = '" & txtUsername.Text & "' and Password = '" & txtPassword.Text & "'"
             cmd = New OleDbCommand(sql, cn)
             dr = cmd.ExecuteReader
 

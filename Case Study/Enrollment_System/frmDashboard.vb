@@ -6,6 +6,8 @@
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
+        Call connection()
+
     End Sub
 
     Private Sub btnUsers_Click(sender As Object, e As EventArgs) Handles btnUsers.Click
@@ -22,6 +24,8 @@
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
+        frmMainLogin.Show()
+        frmLogin.Show()
     End Sub
 
     Private Sub btnSubjects_Click(sender As Object, e As EventArgs) Handles btnSubjects.Click
@@ -59,5 +63,9 @@
         panelMainDashboard.Controls.Add(frmManageStudents)
         frmManageStudents.BringToFront()
         frmManageStudents.Show()
+    End Sub
+
+    Private Sub panelMainDashboard_Paint(sender As Object, e As PaintEventArgs) Handles panelMainDashboard.Paint
+
     End Sub
 End Class

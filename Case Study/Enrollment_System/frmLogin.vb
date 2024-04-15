@@ -1,12 +1,6 @@
-﻿Public Class frmLogin
-    Private Sub frmLoginConnect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If txtPassword.Text = "" And txtUsername.Text = "" Then
-            txtUsername.Text = "Enter your username"
-            txtPassword.Text = "Enter your password"
-            txtUsername.ForeColor = Color.DarkGray
-            txtPassword.ForeColor = Color.DarkGray
-        End If
-    End Sub
+﻿Imports System.Data.OleDb
+
+Public Class frmLogin
 
     Private Sub txtUsername_LostFocus(sender As Object, e As EventArgs) Handles txtUsername.LostFocus
         If txtUsername.Text = "" Then
@@ -63,5 +57,47 @@
         frmMainLogin.Panel1.Controls.Add(frmRegister)
         frmRegister.BringToFront()
         frmRegister.Show()
+    End Sub
+
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Dim filled As Boolean = True
+
+
+        Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtUsername", txtUsername},
+            {"txtPassword", txtPassword}
+        }
+
+        For Each fieldName_controlPair In requiredFields
+            Dim control As Control = fieldName_controlPair.Value
+
+            If control.Text.Trim = "" Then
+                ErrorProvider1.SetError(control, "This field is required.")
+                filled = False
+                Exit For
+            ElseIf control.Text.Trim = "Enter your username" Or control.Text.Trim = "Enter your password" Then
+                ErrorProvider1.SetError(control, "Please enter a valid username or password.")
+                filled = False
+                Exit For
+            Else
+                ErrorProvider1.SetError(control, "")
+            End If
+        Next
+
+        If filled Then
+            sql = "Select Username, Password from tblUsers where Username = '" & txtUsername.Text & "' and Password = '" & txtPassword.Text & "'"
+            cmd = New OleDbCommand(sql, cn)
+            dr = cmd.ExecuteReader
+
+            If dr.Read = True Then
+                MsgBox("Account successfully logged in!", MsgBoxStyle.Information)
+
+                frmDashboard.lblUsername.Text = txtUsername.Text
+                frmDashboard.Show()
+                Me.Hide()
+            Else
+                MsgBox("Account does not exist!", MsgBoxStyle.Critical)
+            End If
+        End If
     End Sub
 End Class

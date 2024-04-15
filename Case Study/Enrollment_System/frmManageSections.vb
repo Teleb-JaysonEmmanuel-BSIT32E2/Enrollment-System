@@ -10,8 +10,6 @@ Public Class frmManageSections
         Call getSchoolYear()
         Call getSemester()
         Call getCourse()
-
-
     End Sub
 
     Private Sub loadAccount()

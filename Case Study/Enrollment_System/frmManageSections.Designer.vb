@@ -345,6 +345,8 @@ Partial Class frmManageSections
         Me.cboYearLevel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.cboYearLevel.ForeColor = System.Drawing.Color.Black
         Me.cboYearLevel.ItemHeight = 30
+    
+    
         Me.cboYearLevel.Location = New System.Drawing.Point(255, 73)
         Me.cboYearLevel.Name = "cboYearLevel"
         Me.cboYearLevel.Size = New System.Drawing.Size(208, 36)

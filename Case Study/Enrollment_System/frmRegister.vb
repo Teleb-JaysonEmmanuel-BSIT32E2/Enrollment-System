@@ -94,5 +94,4 @@ Public Class frmRegister
         End If
         Return nextID
     End Function
-
 End Class

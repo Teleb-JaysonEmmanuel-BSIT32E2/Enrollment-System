@@ -14,7 +14,7 @@ Public Class frmManageUsers
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
 
-        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboPos.Text = "" Or cboUl.Text = "" Then
+        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboPos.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         Else
             Call save()
@@ -75,7 +75,7 @@ Public Class frmManageUsers
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboPos.Text = "" Or cboUl.Text = "" Then
+        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboPos.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         ElseIf txtP.Text <> txtCp.Text Then
             MsgBox("Password Doesn't Match", MsgBoxStyle.Critical)
@@ -117,7 +117,6 @@ Public Class frmManageUsers
         txtFn.Clear()
         txtP.Clear()
         txtCp.Clear()
-        cboUl.SelectedIndex = -1
         cboAS.SelectedIndex = -1
         cboPos.SelectedIndex = -1
     End Sub

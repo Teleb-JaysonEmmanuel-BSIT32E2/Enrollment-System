@@ -32,26 +32,27 @@ Partial Class frmManageSections
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.cboSection = New System.Windows.Forms.ComboBox()
+        Me.cboCourse = New System.Windows.Forms.ComboBox()
+        Me.cboDepartment = New System.Windows.Forms.ComboBox()
+        Me.cboSemester = New System.Windows.Forms.ComboBox()
+        Me.cboSchoolYear = New System.Windows.Forms.ComboBox()
+        Me.cboYearLevel = New System.Windows.Forms.ComboBox()
         Me.txtLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cboCourse = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cboDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cboSemester = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cboSchoolYear = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cboYearLevel = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtSection = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
         Me.btnNew = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -124,21 +125,21 @@ Partial Class frmManageSections
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.cboSection)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboCourse)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboDepartment)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboSemester)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboSchoolYear)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboYearLevel)
         Me.Guna2GroupBox1.Controls.Add(Me.txtLastName)
         Me.Guna2GroupBox1.Controls.Add(Me.Label8)
         Me.Guna2GroupBox1.Controls.Add(Me.txtFirstName)
         Me.Guna2GroupBox1.Controls.Add(Me.Label6)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboCourse)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboDepartment)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboSemester)
         Me.Guna2GroupBox1.Controls.Add(Me.Label3)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboSchoolYear)
         Me.Guna2GroupBox1.Controls.Add(Me.Label2)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboYearLevel)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtSection)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
@@ -148,6 +149,60 @@ Partial Class frmManageSections
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(951, 207)
         Me.Guna2GroupBox1.TabIndex = 24
         Me.Guna2GroupBox1.Text = "SECTION INFORMATION"
+        '
+        'cboSection
+        '
+        Me.cboSection.Enabled = False
+        Me.cboSection.FormattingEnabled = True
+        Me.cboSection.Location = New System.Drawing.Point(13, 73)
+        Me.cboSection.Name = "cboSection"
+        Me.cboSection.Size = New System.Drawing.Size(229, 29)
+        Me.cboSection.TabIndex = 52
+        '
+        'cboCourse
+        '
+        Me.cboCourse.Enabled = False
+        Me.cboCourse.FormattingEnabled = True
+        Me.cboCourse.Location = New System.Drawing.Point(475, 140)
+        Me.cboCourse.Name = "cboCourse"
+        Me.cboCourse.Size = New System.Drawing.Size(230, 29)
+        Me.cboCourse.TabIndex = 51
+        '
+        'cboDepartment
+        '
+        Me.cboDepartment.Enabled = False
+        Me.cboDepartment.FormattingEnabled = True
+        Me.cboDepartment.Location = New System.Drawing.Point(255, 140)
+        Me.cboDepartment.Name = "cboDepartment"
+        Me.cboDepartment.Size = New System.Drawing.Size(208, 29)
+        Me.cboDepartment.TabIndex = 50
+        '
+        'cboSemester
+        '
+        Me.cboSemester.Enabled = False
+        Me.cboSemester.FormattingEnabled = True
+        Me.cboSemester.Location = New System.Drawing.Point(13, 140)
+        Me.cboSemester.Name = "cboSemester"
+        Me.cboSemester.Size = New System.Drawing.Size(230, 29)
+        Me.cboSemester.TabIndex = 49
+        '
+        'cboSchoolYear
+        '
+        Me.cboSchoolYear.Enabled = False
+        Me.cboSchoolYear.FormattingEnabled = True
+        Me.cboSchoolYear.Location = New System.Drawing.Point(475, 74)
+        Me.cboSchoolYear.Name = "cboSchoolYear"
+        Me.cboSchoolYear.Size = New System.Drawing.Size(230, 29)
+        Me.cboSchoolYear.TabIndex = 48
+        '
+        'cboYearLevel
+        '
+        Me.cboYearLevel.Enabled = False
+        Me.cboYearLevel.FormattingEnabled = True
+        Me.cboYearLevel.Location = New System.Drawing.Point(255, 73)
+        Me.cboYearLevel.Name = "cboYearLevel"
+        Me.cboYearLevel.Size = New System.Drawing.Size(208, 29)
+        Me.cboYearLevel.TabIndex = 47
         '
         'txtLastName
         '
@@ -219,22 +274,6 @@ Partial Class frmManageSections
         Me.Label6.TabIndex = 43
         Me.Label6.Text = "First Name"
         '
-        'cboCourse
-        '
-        Me.cboCourse.BackColor = System.Drawing.Color.Transparent
-        Me.cboCourse.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboCourse.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboCourse.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboCourse.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboCourse.ForeColor = System.Drawing.Color.Black
-        Me.cboCourse.ItemHeight = 30
-        Me.cboCourse.Items.AddRange(New Object() {"Real Estate Management", "Tourism Management", "Hospitality Management", "Accountancy", "Custom Administration", "Business Administration", "Criminology", "Computer Science", "Information Technology", "Industrial Engineering", "Computer Engineering", "Psychology", "Elementary Education", "Secondary Education", "Technical Vocational for Teacher Education"})
-        Me.cboCourse.Location = New System.Drawing.Point(475, 140)
-        Me.cboCourse.Name = "cboCourse"
-        Me.cboCourse.Size = New System.Drawing.Size(230, 36)
-        Me.cboCourse.TabIndex = 41
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -247,22 +286,6 @@ Partial Class frmManageSections
         Me.Label5.Size = New System.Drawing.Size(59, 21)
         Me.Label5.TabIndex = 42
         Me.Label5.Text = "Course"
-        '
-        'cboDepartment
-        '
-        Me.cboDepartment.BackColor = System.Drawing.Color.Transparent
-        Me.cboDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboDepartment.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboDepartment.ForeColor = System.Drawing.Color.Black
-        Me.cboDepartment.ItemHeight = 30
-        Me.cboDepartment.Items.AddRange(New Object() {"Bachelor of Arts", "Bachelor of Science"})
-        Me.cboDepartment.Location = New System.Drawing.Point(255, 140)
-        Me.cboDepartment.Name = "cboDepartment"
-        Me.cboDepartment.Size = New System.Drawing.Size(208, 36)
-        Me.cboDepartment.TabIndex = 39
         '
         'Label4
         '
@@ -277,22 +300,6 @@ Partial Class frmManageSections
         Me.Label4.TabIndex = 40
         Me.Label4.Text = "Department"
         '
-        'cboSemester
-        '
-        Me.cboSemester.BackColor = System.Drawing.Color.Transparent
-        Me.cboSemester.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSemester.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSemester.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSemester.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboSemester.ForeColor = System.Drawing.Color.Black
-        Me.cboSemester.ItemHeight = 30
-        Me.cboSemester.Items.AddRange(New Object() {"First Semester", "Second Semester"})
-        Me.cboSemester.Location = New System.Drawing.Point(13, 140)
-        Me.cboSemester.Name = "cboSemester"
-        Me.cboSemester.Size = New System.Drawing.Size(230, 36)
-        Me.cboSemester.TabIndex = 37
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -305,22 +312,6 @@ Partial Class frmManageSections
         Me.Label3.Size = New System.Drawing.Size(75, 21)
         Me.Label3.TabIndex = 38
         Me.Label3.Text = "Semester"
-        '
-        'cboSchoolYear
-        '
-        Me.cboSchoolYear.BackColor = System.Drawing.Color.Transparent
-        Me.cboSchoolYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSchoolYear.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSchoolYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSchoolYear.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboSchoolYear.ForeColor = System.Drawing.Color.Black
-        Me.cboSchoolYear.ItemHeight = 30
-        Me.cboSchoolYear.Items.AddRange(New Object() {"2023-2024", "2024-2025", "2025-2026"})
-        Me.cboSchoolYear.Location = New System.Drawing.Point(475, 73)
-        Me.cboSchoolYear.Name = "cboSchoolYear"
-        Me.cboSchoolYear.Size = New System.Drawing.Size(230, 36)
-        Me.cboSchoolYear.TabIndex = 35
         '
         'Label2
         '
@@ -335,23 +326,6 @@ Partial Class frmManageSections
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "School Year"
         '
-        'cboYearLevel
-        '
-        Me.cboYearLevel.BackColor = System.Drawing.Color.Transparent
-        Me.cboYearLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboYearLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboYearLevel.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboYearLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboYearLevel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboYearLevel.ForeColor = System.Drawing.Color.Black
-        Me.cboYearLevel.ItemHeight = 30
-    
-    
-        Me.cboYearLevel.Location = New System.Drawing.Point(255, 73)
-        Me.cboYearLevel.Name = "cboYearLevel"
-        Me.cboYearLevel.Size = New System.Drawing.Size(208, 36)
-        Me.cboYearLevel.TabIndex = 32
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -364,28 +338,6 @@ Partial Class frmManageSections
         Me.Label7.Size = New System.Drawing.Size(81, 21)
         Me.Label7.TabIndex = 34
         Me.Label7.Text = "Year Level"
-        '
-        'txtSection
-        '
-        Me.txtSection.BorderColor = System.Drawing.Color.DarkGray
-        Me.txtSection.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSection.DefaultText = ""
-        Me.txtSection.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSection.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSection.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSection.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.txtSection.ForeColor = System.Drawing.Color.Black
-        Me.txtSection.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSection.Location = New System.Drawing.Point(13, 74)
-        Me.txtSection.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtSection.Name = "txtSection"
-        Me.txtSection.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSection.PlaceholderText = ""
-        Me.txtSection.SelectedText = ""
-        Me.txtSection.Size = New System.Drawing.Size(230, 36)
-        Me.txtSection.TabIndex = 33
         '
         'Label1
         '
@@ -400,25 +352,25 @@ Partial Class frmManageSections
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "Class Section"
         '
-        'Guna2Button4
+        'btnCancel
         '
-        Me.Guna2Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button4.Location = New System.Drawing.Point(842, 528)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.Guna2Button4.PressedDepth = 40
-        Me.Guna2Button4.Size = New System.Drawing.Size(104, 40)
-        Me.Guna2Button4.TabIndex = 31
-        Me.Guna2Button4.Text = "Back"
+        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.Maroon
+        Me.btnCancel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(842, 528)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnCancel.PressedDepth = 40
+        Me.btnCancel.Size = New System.Drawing.Size(104, 40)
+        Me.btnCancel.TabIndex = 31
+        Me.btnCancel.Text = "Cancel"
         '
         'btnEdit
         '
@@ -428,6 +380,7 @@ Partial Class frmManageSections
         Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit.Enabled = False
         Me.btnEdit.FillColor = System.Drawing.Color.Maroon
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
@@ -468,6 +421,7 @@ Partial Class frmManageSections
         Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSave.Enabled = False
         Me.btnSave.FillColor = System.Drawing.Color.Maroon
         Me.btnSave.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
@@ -480,12 +434,34 @@ Partial Class frmManageSections
         Me.btnSave.TabIndex = 28
         Me.btnSave.Text = "Save"
         '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.Enabled = False
+        Me.btnDelete.FillColor = System.Drawing.Color.Maroon
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnDelete.Location = New System.Drawing.Point(597, 528)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnDelete.PressedDepth = 40
+        Me.btnDelete.Size = New System.Drawing.Size(104, 40)
+        Me.btnDelete.TabIndex = 32
+        Me.btnDelete.Text = "Delete"
+        '
         'frmManageSections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(964, 588)
-        Me.Controls.Add(Me.Guna2Button4)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.btnSave)
@@ -511,7 +487,7 @@ Partial Class frmManageSections
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader8 As ColumnHeader
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnNew As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
@@ -519,16 +495,17 @@ Partial Class frmManageSections
     Friend WithEvents Label8 As Label
     Friend WithEvents txtFirstName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents cboCourse As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents cboDepartment As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents cboSemester As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents cboSchoolYear As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents cboYearLevel As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtSection As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents cboYearLevel As ComboBox
+    Friend WithEvents cboSchoolYear As ComboBox
+    Friend WithEvents cboCourse As ComboBox
+    Friend WithEvents cboDepartment As ComboBox
+    Friend WithEvents cboSemester As ComboBox
+    Friend WithEvents cboSection As ComboBox
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
 End Class

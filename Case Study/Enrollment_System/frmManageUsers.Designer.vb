@@ -27,8 +27,6 @@ Partial Class frmManageUsers
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cboPos = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.cboUl = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtCp = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtP = New Guna.UI2.WinForms.Guna2TextBox()
@@ -49,7 +47,6 @@ Partial Class frmManageUsers
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Guna2TextBox6 = New Guna.UI2.WinForms.Guna2TextBox()
@@ -68,8 +65,6 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox1.Controls.Add(Me.Label9)
         Me.Guna2GroupBox1.Controls.Add(Me.cboPos)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboUl)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label8)
         Me.Guna2GroupBox1.Controls.Add(Me.txtCp)
         Me.Guna2GroupBox1.Controls.Add(Me.Label5)
         Me.Guna2GroupBox1.Controls.Add(Me.txtP)
@@ -85,9 +80,10 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(7, 6)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(9, 7)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(931, 269)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1241, 331)
         Me.Guna2GroupBox1.TabIndex = 0
         Me.Guna2GroupBox1.Text = "USER INFORMATION"
         '
@@ -102,9 +98,10 @@ Partial Class frmManageUsers
         Me.cboAS.ForeColor = System.Drawing.Color.Black
         Me.cboAS.ItemHeight = 30
         Me.cboAS.Items.AddRange(New Object() {"Administrator", "Staff"})
-        Me.cboAS.Location = New System.Drawing.Point(685, 215)
+        Me.cboAS.Location = New System.Drawing.Point(913, 265)
+        Me.cboAS.Margin = New System.Windows.Forms.Padding(4)
         Me.cboAS.Name = "cboAS"
-        Me.cboAS.Size = New System.Drawing.Size(230, 36)
+        Me.cboAS.Size = New System.Drawing.Size(305, 36)
         Me.cboAS.TabIndex = 39
         '
         'Label9
@@ -114,9 +111,10 @@ Partial Class frmManageUsers
         Me.Label9.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label9.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label9.Location = New System.Drawing.Point(681, 191)
+        Me.Label9.Location = New System.Drawing.Point(908, 235)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(113, 21)
+        Me.Label9.Size = New System.Drawing.Size(143, 26)
         Me.Label9.TabIndex = 40
         Me.Label9.Text = "Account Status"
         '
@@ -131,9 +129,10 @@ Partial Class frmManageUsers
         Me.cboPos.ForeColor = System.Drawing.Color.Black
         Me.cboPos.ItemHeight = 30
         Me.cboPos.Items.AddRange(New Object() {"Administrator", "Staff"})
-        Me.cboPos.Location = New System.Drawing.Point(685, 143)
+        Me.cboPos.Location = New System.Drawing.Point(913, 176)
+        Me.cboPos.Margin = New System.Windows.Forms.Padding(4)
         Me.cboPos.Name = "cboPos"
-        Me.cboPos.Size = New System.Drawing.Size(230, 36)
+        Me.cboPos.Size = New System.Drawing.Size(305, 36)
         Me.cboPos.TabIndex = 37
         '
         'Label7
@@ -143,40 +142,12 @@ Partial Class frmManageUsers
         Me.Label7.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label7.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label7.Location = New System.Drawing.Point(681, 119)
+        Me.Label7.Location = New System.Drawing.Point(908, 146)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 21)
+        Me.Label7.Size = New System.Drawing.Size(51, 26)
         Me.Label7.TabIndex = 38
-        Me.Label7.Text = "Position"
-        '
-        'cboUl
-        '
-        Me.cboUl.BackColor = System.Drawing.Color.Transparent
-        Me.cboUl.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboUl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboUl.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboUl.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboUl.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboUl.ForeColor = System.Drawing.Color.Black
-        Me.cboUl.ItemHeight = 30
-        Me.cboUl.Items.AddRange(New Object() {"Administrator", "Staff"})
-        Me.cboUl.Location = New System.Drawing.Point(685, 75)
-        Me.cboUl.Name = "cboUl"
-        Me.cboUl.Size = New System.Drawing.Size(230, 36)
-        Me.cboUl.TabIndex = 35
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Label8.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label8.Location = New System.Drawing.Point(681, 51)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(82, 21)
-        Me.Label8.TabIndex = 36
-        Me.Label8.Text = "User Level"
+        Me.Label7.Text = "Role"
         '
         'txtCp
         '
@@ -191,13 +162,13 @@ Partial Class frmManageUsers
         Me.txtCp.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtCp.ForeColor = System.Drawing.Color.Black
         Me.txtCp.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtCp.Location = New System.Drawing.Point(360, 217)
-        Me.txtCp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCp.Location = New System.Drawing.Point(480, 267)
+        Me.txtCp.Margin = New System.Windows.Forms.Padding(5)
         Me.txtCp.Name = "txtCp"
         Me.txtCp.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCp.PlaceholderText = ""
         Me.txtCp.SelectedText = ""
-        Me.txtCp.Size = New System.Drawing.Size(270, 30)
+        Me.txtCp.Size = New System.Drawing.Size(360, 37)
         Me.txtCp.TabIndex = 34
         '
         'Label5
@@ -207,9 +178,10 @@ Partial Class frmManageUsers
         Me.Label5.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label5.Location = New System.Drawing.Point(356, 192)
+        Me.Label5.Location = New System.Drawing.Point(475, 236)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(138, 21)
+        Me.Label5.Size = New System.Drawing.Size(169, 26)
         Me.Label5.TabIndex = 33
         Me.Label5.Text = "Confirm Password"
         '
@@ -226,13 +198,13 @@ Partial Class frmManageUsers
         Me.txtP.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtP.ForeColor = System.Drawing.Color.Black
         Me.txtP.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtP.Location = New System.Drawing.Point(360, 145)
-        Me.txtP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtP.Location = New System.Drawing.Point(480, 178)
+        Me.txtP.Margin = New System.Windows.Forms.Padding(5)
         Me.txtP.Name = "txtP"
         Me.txtP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtP.PlaceholderText = ""
         Me.txtP.SelectedText = ""
-        Me.txtP.Size = New System.Drawing.Size(270, 30)
+        Me.txtP.Size = New System.Drawing.Size(360, 37)
         Me.txtP.TabIndex = 32
         '
         'Label6
@@ -242,9 +214,10 @@ Partial Class frmManageUsers
         Me.Label6.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label6.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label6.Location = New System.Drawing.Point(356, 120)
+        Me.Label6.Location = New System.Drawing.Point(475, 148)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(77, 21)
+        Me.Label6.Size = New System.Drawing.Size(94, 26)
         Me.Label6.TabIndex = 31
         Me.Label6.Text = "Password"
         '
@@ -261,13 +234,13 @@ Partial Class frmManageUsers
         Me.txtUn.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtUn.ForeColor = System.Drawing.Color.Black
         Me.txtUn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUn.Location = New System.Drawing.Point(360, 77)
-        Me.txtUn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUn.Location = New System.Drawing.Point(480, 95)
+        Me.txtUn.Margin = New System.Windows.Forms.Padding(5)
         Me.txtUn.Name = "txtUn"
         Me.txtUn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUn.PlaceholderText = ""
         Me.txtUn.SelectedText = ""
-        Me.txtUn.Size = New System.Drawing.Size(270, 30)
+        Me.txtUn.Size = New System.Drawing.Size(360, 37)
         Me.txtUn.TabIndex = 30
         '
         'Label4
@@ -277,9 +250,10 @@ Partial Class frmManageUsers
         Me.Label4.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label4.Location = New System.Drawing.Point(356, 52)
+        Me.Label4.Location = New System.Drawing.Point(475, 64)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 21)
+        Me.Label4.Size = New System.Drawing.Size(99, 26)
         Me.Label4.TabIndex = 29
         Me.Label4.Text = "Username"
         '
@@ -296,13 +270,13 @@ Partial Class frmManageUsers
         Me.txtLn.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtLn.ForeColor = System.Drawing.Color.Black
         Me.txtLn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLn.Location = New System.Drawing.Point(26, 217)
-        Me.txtLn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLn.Location = New System.Drawing.Point(35, 267)
+        Me.txtLn.Margin = New System.Windows.Forms.Padding(5)
         Me.txtLn.Name = "txtLn"
         Me.txtLn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLn.PlaceholderText = ""
         Me.txtLn.SelectedText = ""
-        Me.txtLn.Size = New System.Drawing.Size(270, 30)
+        Me.txtLn.Size = New System.Drawing.Size(360, 37)
         Me.txtLn.TabIndex = 28
         '
         'Label2
@@ -312,9 +286,10 @@ Partial Class frmManageUsers
         Me.Label2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label2.Location = New System.Drawing.Point(22, 192)
+        Me.Label2.Location = New System.Drawing.Point(29, 236)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 21)
+        Me.Label2.Size = New System.Drawing.Size(103, 26)
         Me.Label2.TabIndex = 27
         Me.Label2.Text = "Last Name"
         '
@@ -331,13 +306,13 @@ Partial Class frmManageUsers
         Me.txtFn.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtFn.ForeColor = System.Drawing.Color.Black
         Me.txtFn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFn.Location = New System.Drawing.Point(26, 145)
-        Me.txtFn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFn.Location = New System.Drawing.Point(35, 178)
+        Me.txtFn.Margin = New System.Windows.Forms.Padding(5)
         Me.txtFn.Name = "txtFn"
         Me.txtFn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFn.PlaceholderText = ""
         Me.txtFn.SelectedText = ""
-        Me.txtFn.Size = New System.Drawing.Size(270, 30)
+        Me.txtFn.Size = New System.Drawing.Size(360, 37)
         Me.txtFn.TabIndex = 26
         '
         'Label3
@@ -347,9 +322,10 @@ Partial Class frmManageUsers
         Me.Label3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label3.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label3.Location = New System.Drawing.Point(22, 120)
+        Me.Label3.Location = New System.Drawing.Point(29, 148)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 21)
+        Me.Label3.Size = New System.Drawing.Size(106, 26)
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "First Name"
         '
@@ -366,13 +342,13 @@ Partial Class frmManageUsers
         Me.txtEmpNo.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtEmpNo.ForeColor = System.Drawing.Color.Black
         Me.txtEmpNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtEmpNo.Location = New System.Drawing.Point(26, 77)
-        Me.txtEmpNo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEmpNo.Location = New System.Drawing.Point(35, 95)
+        Me.txtEmpNo.Margin = New System.Windows.Forms.Padding(5)
         Me.txtEmpNo.Name = "txtEmpNo"
         Me.txtEmpNo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtEmpNo.PlaceholderText = ""
         Me.txtEmpNo.SelectedText = ""
-        Me.txtEmpNo.Size = New System.Drawing.Size(270, 30)
+        Me.txtEmpNo.Size = New System.Drawing.Size(360, 37)
         Me.txtEmpNo.TabIndex = 6
         '
         'Label1
@@ -382,9 +358,10 @@ Partial Class frmManageUsers
         Me.Label1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label1.Location = New System.Drawing.Point(22, 52)
+        Me.Label1.Location = New System.Drawing.Point(29, 64)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 21)
+        Me.Label1.Size = New System.Drawing.Size(130, 26)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Employee No"
         '
@@ -397,9 +374,10 @@ Partial Class frmManageUsers
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(7, 290)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(9, 357)
+        Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(931, 226)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1241, 278)
         Me.Guna2GroupBox2.TabIndex = 22
         Me.Guna2GroupBox2.Text = "LIST OF USERS"
         '
@@ -416,23 +394,25 @@ Partial Class frmManageUsers
         Me.btnRegister.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnRegister.ForeColor = System.Drawing.Color.White
         Me.btnRegister.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnRegister.Location = New System.Drawing.Point(544, 43)
+        Me.btnRegister.Location = New System.Drawing.Point(725, 53)
+        Me.btnRegister.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnRegister.PressedDepth = 40
-        Me.btnRegister.Size = New System.Drawing.Size(104, 35)
+        Me.btnRegister.Size = New System.Drawing.Size(139, 43)
         Me.btnRegister.TabIndex = 23
         Me.btnRegister.Text = "search"
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader7, Me.ColumnHeader8})
         Me.ListView1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(29, 84)
+        Me.ListView1.Location = New System.Drawing.Point(39, 103)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(864, 130)
+        Me.ListView1.Size = New System.Drawing.Size(1151, 159)
         Me.ListView1.TabIndex = 23
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -466,15 +446,9 @@ Partial Class frmManageUsers
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 100
         '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "AccessLevel"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 120
-        '
         'ColumnHeader7
         '
-        Me.ColumnHeader7.Text = "Position"
+        Me.ColumnHeader7.Text = "Role"
         Me.ColumnHeader7.Width = 100
         '
         'ColumnHeader8
@@ -495,13 +469,13 @@ Partial Class frmManageUsers
         Me.Guna2TextBox6.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.Guna2TextBox6.ForeColor = System.Drawing.Color.Black
         Me.Guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox6.Location = New System.Drawing.Point(181, 47)
-        Me.Guna2TextBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2TextBox6.Location = New System.Drawing.Point(241, 58)
+        Me.Guna2TextBox6.Margin = New System.Windows.Forms.Padding(5)
         Me.Guna2TextBox6.Name = "Guna2TextBox6"
         Me.Guna2TextBox6.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.Guna2TextBox6.PlaceholderText = ""
         Me.Guna2TextBox6.SelectedText = ""
-        Me.Guna2TextBox6.Size = New System.Drawing.Size(356, 30)
+        Me.Guna2TextBox6.Size = New System.Drawing.Size(475, 37)
         Me.Guna2TextBox6.TabIndex = 22
         '
         'Label10
@@ -511,9 +485,10 @@ Partial Class frmManageUsers
         Me.Label10.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label10.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label10.Location = New System.Drawing.Point(29, 53)
+        Me.Label10.Location = New System.Drawing.Point(39, 65)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(152, 21)
+        Me.Label10.Size = New System.Drawing.Size(188, 26)
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "Search by Lastname:"
         '
@@ -529,11 +504,12 @@ Partial Class frmManageUsers
         Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button1.Location = New System.Drawing.Point(17, 531)
+        Me.Guna2Button1.Location = New System.Drawing.Point(23, 654)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button1.PressedDepth = 40
-        Me.Guna2Button1.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button1.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button1.TabIndex = 24
         Me.Guna2Button1.Text = "Save"
         '
@@ -549,11 +525,12 @@ Partial Class frmManageUsers
         Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
         Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(140, 531)
+        Me.Guna2Button2.Location = New System.Drawing.Point(187, 654)
+        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button2.PressedDepth = 40
-        Me.Guna2Button2.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button2.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button2.TabIndex = 25
         Me.Guna2Button2.Text = "New"
         '
@@ -569,11 +546,12 @@ Partial Class frmManageUsers
         Me.Guna2Button3.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
         Me.Guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button3.Location = New System.Drawing.Point(713, 531)
+        Me.Guna2Button3.Location = New System.Drawing.Point(951, 654)
+        Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button3.PressedDepth = 40
-        Me.Guna2Button3.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button3.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button3.TabIndex = 26
         Me.Guna2Button3.Text = "Edit"
         '
@@ -589,19 +567,20 @@ Partial Class frmManageUsers
         Me.Guna2Button4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
         Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button4.Location = New System.Drawing.Point(834, 531)
+        Me.Guna2Button4.Location = New System.Drawing.Point(1112, 654)
+        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button4.PressedDepth = 40
-        Me.Guna2Button4.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button4.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button4.TabIndex = 27
         Me.Guna2Button4.Text = "Back"
         '
         'frmManageUsers
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(956, 588)
+        Me.ClientSize = New System.Drawing.Size(1275, 724)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2Button2)
@@ -609,6 +588,7 @@ Partial Class frmManageUsers
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox1.ResumeLayout(False)
@@ -632,7 +612,6 @@ Partial Class frmManageUsers
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
@@ -649,8 +628,6 @@ Partial Class frmManageUsers
     Friend WithEvents Label6 As Label
     Friend WithEvents cboPos As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents cboUl As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents cboAS As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents ColumnHeader7 As ColumnHeader

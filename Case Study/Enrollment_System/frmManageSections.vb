@@ -386,6 +386,4 @@ Public Class frmManageSections
             cboDepartment.Items.Remove(selectedItem)
         End If
     End Sub
-
-
 End Class

@@ -63,9 +63,10 @@ Partial Class frmManageSections
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(6, 219)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(8, 270)
+        Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(951, 288)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1268, 354)
         Me.Guna2GroupBox2.TabIndex = 23
         Me.Guna2GroupBox2.Text = "CLASS SECTIONS"
         '
@@ -75,9 +76,10 @@ Partial Class frmManageSections
         Me.ListView1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(10, 48)
+        Me.ListView1.Location = New System.Drawing.Point(13, 59)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(930, 230)
+        Me.ListView1.Size = New System.Drawing.Size(1239, 282)
         Me.ListView1.TabIndex = 23
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -144,9 +146,10 @@ Partial Class frmManageSections
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(6, 5)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(8, 6)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(951, 207)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1268, 255)
         Me.Guna2GroupBox1.TabIndex = 24
         Me.Guna2GroupBox1.Text = "SECTION INFORMATION"
         '
@@ -217,13 +220,13 @@ Partial Class frmManageSections
         Me.txtLastName.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtLastName.Location = New System.Drawing.Point(718, 140)
-        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLastName.Location = New System.Drawing.Point(957, 172)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastName.PlaceholderText = ""
         Me.txtLastName.SelectedText = ""
-        Me.txtLastName.Size = New System.Drawing.Size(223, 36)
+        Me.txtLastName.Size = New System.Drawing.Size(297, 44)
         Me.txtLastName.TabIndex = 46
         '
         'Label8
@@ -233,9 +236,10 @@ Partial Class frmManageSections
         Me.Label8.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label8.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label8.Location = New System.Drawing.Point(714, 116)
+        Me.Label8.Location = New System.Drawing.Point(952, 143)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 21)
+        Me.Label8.Size = New System.Drawing.Size(103, 26)
         Me.Label8.TabIndex = 45
         Me.Label8.Text = "Last Name"
         '
@@ -252,13 +256,13 @@ Partial Class frmManageSections
         Me.txtFirstName.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
         Me.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtFirstName.Location = New System.Drawing.Point(718, 73)
-        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFirstName.Location = New System.Drawing.Point(957, 90)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstName.PlaceholderText = ""
         Me.txtFirstName.SelectedText = ""
-        Me.txtFirstName.Size = New System.Drawing.Size(223, 36)
+        Me.txtFirstName.Size = New System.Drawing.Size(297, 44)
         Me.txtFirstName.TabIndex = 44
         '
         'Label6
@@ -268,12 +272,13 @@ Partial Class frmManageSections
         Me.Label6.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label6.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label6.Location = New System.Drawing.Point(714, 49)
+        Me.Label6.Location = New System.Drawing.Point(952, 60)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(86, 21)
+        Me.Label6.Size = New System.Drawing.Size(106, 26)
         Me.Label6.TabIndex = 43
         Me.Label6.Text = "First Name"
-        '
+        
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -281,12 +286,13 @@ Partial Class frmManageSections
         Me.Label5.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label5.Location = New System.Drawing.Point(471, 116)
+        Me.Label5.Location = New System.Drawing.Point(628, 143)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(59, 21)
+        Me.Label5.Size = New System.Drawing.Size(72, 26)
         Me.Label5.TabIndex = 42
         Me.Label5.Text = "Course"
-        '
+        
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -294,9 +300,10 @@ Partial Class frmManageSections
         Me.Label4.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label4.Location = New System.Drawing.Point(251, 116)
+        Me.Label4.Location = New System.Drawing.Point(335, 143)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(93, 21)
+        Me.Label4.Size = New System.Drawing.Size(117, 26)
         Me.Label4.TabIndex = 40
         Me.Label4.Text = "Department"
         '
@@ -307,9 +314,10 @@ Partial Class frmManageSections
         Me.Label3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label3.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label3.Location = New System.Drawing.Point(9, 116)
+        Me.Label3.Location = New System.Drawing.Point(12, 143)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(75, 21)
+        Me.Label3.Size = New System.Drawing.Size(92, 26)
         Me.Label3.TabIndex = 38
         Me.Label3.Text = "Semester"
         '
@@ -320,9 +328,10 @@ Partial Class frmManageSections
         Me.Label2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label2.Location = New System.Drawing.Point(471, 49)
+        Me.Label2.Location = New System.Drawing.Point(628, 60)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 21)
+        Me.Label2.Size = New System.Drawing.Size(115, 26)
         Me.Label2.TabIndex = 36
         Me.Label2.Text = "School Year"
         '
@@ -333,12 +342,13 @@ Partial Class frmManageSections
         Me.Label7.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label7.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label7.Location = New System.Drawing.Point(251, 49)
+        Me.Label7.Location = New System.Drawing.Point(335, 60)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 21)
+        Me.Label7.Size = New System.Drawing.Size(99, 26)
         Me.Label7.TabIndex = 34
         Me.Label7.Text = "Year Level"
-        '
+        
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -346,9 +356,10 @@ Partial Class frmManageSections
         Me.Label1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label1.Location = New System.Drawing.Point(12, 49)
+        Me.Label1.Location = New System.Drawing.Point(16, 60)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 21)
+        Me.Label1.Size = New System.Drawing.Size(125, 26)
         Me.Label1.TabIndex = 31
         Me.Label1.Text = "Class Section"
         '
@@ -385,11 +396,12 @@ Partial Class frmManageSections
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(721, 528)
+        Me.btnEdit.Location = New System.Drawing.Point(961, 650)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnEdit.PressedDepth = 40
-        Me.btnEdit.Size = New System.Drawing.Size(104, 40)
+        Me.btnEdit.Size = New System.Drawing.Size(139, 49)
         Me.btnEdit.TabIndex = 30
         Me.btnEdit.Text = "Edit"
         '
@@ -405,11 +417,12 @@ Partial Class frmManageSections
         Me.btnNew.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnNew.ForeColor = System.Drawing.Color.White
         Me.btnNew.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnNew.Location = New System.Drawing.Point(144, 528)
+        Me.btnNew.Location = New System.Drawing.Point(192, 650)
+        Me.btnNew.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnNew.PressedDepth = 40
-        Me.btnNew.Size = New System.Drawing.Size(104, 40)
+        Me.btnNew.Size = New System.Drawing.Size(139, 49)
         Me.btnNew.TabIndex = 29
         Me.btnNew.Text = "New"
         '
@@ -426,11 +439,12 @@ Partial Class frmManageSections
         Me.btnSave.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnSave.Location = New System.Drawing.Point(21, 528)
+        Me.btnSave.Location = New System.Drawing.Point(28, 650)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnSave.PressedDepth = 40
-        Me.btnSave.Size = New System.Drawing.Size(104, 40)
+        Me.btnSave.Size = New System.Drawing.Size(139, 49)
         Me.btnSave.TabIndex = 28
         Me.btnSave.Text = "Save"
         '
@@ -457,7 +471,7 @@ Partial Class frmManageSections
         '
         'frmManageSections
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(964, 588)
         Me.Controls.Add(Me.btnDelete)
@@ -468,6 +482,7 @@ Partial Class frmManageSections
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmManageSections"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox2.ResumeLayout(False)

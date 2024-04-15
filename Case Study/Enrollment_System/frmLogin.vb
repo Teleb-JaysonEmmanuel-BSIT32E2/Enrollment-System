@@ -1,7 +1,6 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmLogin
-
     Private Sub txtUsername_LostFocus(sender As Object, e As EventArgs) Handles txtUsername.LostFocus
         If txtUsername.Text = "" Then
             txtUsername.Text = "Enter your username"
@@ -42,14 +41,6 @@ Public Class frmLogin
         Else
             txtPassword.PasswordChar = "•"
         End If
-    End Sub
-
-    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
-
-    End Sub
-
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblCreateAccount.LinkClicked

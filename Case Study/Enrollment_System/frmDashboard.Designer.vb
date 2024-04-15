@@ -25,6 +25,7 @@ Partial Class frmDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnDashboard = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnEnrollment = New System.Windows.Forms.Button()
         Me.btnSchedule = New System.Windows.Forms.Button()
@@ -65,6 +66,7 @@ Partial Class frmDashboard
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.btnDashboard)
         Me.Panel2.Controls.Add(Me.btnLogout)
         Me.Panel2.Controls.Add(Me.btnEnrollment)
         Me.Panel2.Controls.Add(Me.btnSchedule)
@@ -79,6 +81,25 @@ Partial Class frmDashboard
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(236, 710)
         Me.Panel2.TabIndex = 1
+        '
+        'btnDashboard
+        '
+        Me.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDashboard.FlatAppearance.BorderSize = 0
+        Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDashboard.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboard.Image = CType(resources.GetObject("btnDashboard.Image"), System.Drawing.Image)
+        Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 175)
+        Me.btnDashboard.Name = "btnDashboard"
+        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
+        Me.btnDashboard.Size = New System.Drawing.Size(236, 52)
+        Me.btnDashboard.TabIndex = 9
+        Me.btnDashboard.Text = "     Dashboard"
+        Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDashboard.UseVisualStyleBackColor = True
         '
         'btnLogout
         '
@@ -104,13 +125,16 @@ Partial Class frmDashboard
         'btnEnrollment
         '
         Me.btnEnrollment.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnrollment.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnEnrollment.FlatAppearance.BorderSize = 0
         Me.btnEnrollment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEnrollment.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnrollment.Image = CType(resources.GetObject("btnEnrollment.Image"), System.Drawing.Image)
         Me.btnEnrollment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnEnrollment.Location = New System.Drawing.Point(0, 487)
+=======
+        Me.btnEnrollment.Location = New System.Drawing.Point(0, 534)
+>>>>>>> Stashed changes
         Me.btnEnrollment.Name = "btnEnrollment"
         Me.btnEnrollment.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnEnrollment.Size = New System.Drawing.Size(236, 52)
@@ -123,13 +147,16 @@ Partial Class frmDashboard
         'btnSchedule
         '
         Me.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSchedule.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSchedule.FlatAppearance.BorderSize = 0
         Me.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSchedule.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSchedule.Image = CType(resources.GetObject("btnSchedule.Image"), System.Drawing.Image)
         Me.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnSchedule.Location = New System.Drawing.Point(0, 435)
+=======
+        Me.btnSchedule.Location = New System.Drawing.Point(0, 482)
+>>>>>>> Stashed changes
         Me.btnSchedule.Name = "btnSchedule"
         Me.btnSchedule.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnSchedule.Size = New System.Drawing.Size(236, 52)
@@ -142,13 +169,16 @@ Partial Class frmDashboard
         'btnSection
         '
         Me.btnSection.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSection.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSection.FlatAppearance.BorderSize = 0
         Me.btnSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSection.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSection.Image = CType(resources.GetObject("btnSection.Image"), System.Drawing.Image)
         Me.btnSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnSection.Location = New System.Drawing.Point(0, 383)
+=======
+        Me.btnSection.Location = New System.Drawing.Point(0, 430)
+>>>>>>> Stashed changes
         Me.btnSection.Name = "btnSection"
         Me.btnSection.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnSection.Size = New System.Drawing.Size(236, 52)
@@ -161,13 +191,16 @@ Partial Class frmDashboard
         'btnTeachers
         '
         Me.btnTeachers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTeachers.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnTeachers.FlatAppearance.BorderSize = 0
         Me.btnTeachers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTeachers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTeachers.Image = CType(resources.GetObject("btnTeachers.Image"), System.Drawing.Image)
         Me.btnTeachers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnTeachers.Location = New System.Drawing.Point(0, 331)
+=======
+        Me.btnTeachers.Location = New System.Drawing.Point(0, 378)
+>>>>>>> Stashed changes
         Me.btnTeachers.Name = "btnTeachers"
         Me.btnTeachers.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnTeachers.Size = New System.Drawing.Size(236, 52)
@@ -180,13 +213,16 @@ Partial Class frmDashboard
         'btnStudents
         '
         Me.btnStudents.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnStudents.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStudents.FlatAppearance.BorderSize = 0
         Me.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStudents.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudents.Image = CType(resources.GetObject("btnStudents.Image"), System.Drawing.Image)
         Me.btnStudents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnStudents.Location = New System.Drawing.Point(0, 279)
+=======
+        Me.btnStudents.Location = New System.Drawing.Point(0, 326)
+>>>>>>> Stashed changes
         Me.btnStudents.Name = "btnStudents"
         Me.btnStudents.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnStudents.Size = New System.Drawing.Size(236, 52)
@@ -199,13 +235,16 @@ Partial Class frmDashboard
         'btnSubjects
         '
         Me.btnSubjects.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSubjects.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSubjects.FlatAppearance.BorderSize = 0
         Me.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubjects.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubjects.Image = CType(resources.GetObject("btnSubjects.Image"), System.Drawing.Image)
         Me.btnSubjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnSubjects.Location = New System.Drawing.Point(0, 227)
+=======
+        Me.btnSubjects.Location = New System.Drawing.Point(0, 274)
+>>>>>>> Stashed changes
         Me.btnSubjects.Name = "btnSubjects"
         Me.btnSubjects.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnSubjects.Size = New System.Drawing.Size(236, 52)
@@ -218,13 +257,16 @@ Partial Class frmDashboard
         'btnUsers
         '
         Me.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUsers.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnUsers.FlatAppearance.BorderSize = 0
         Me.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsers.Image = CType(resources.GetObject("btnUsers.Image"), System.Drawing.Image)
         Me.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+<<<<<<< Updated upstream
         Me.btnUsers.Location = New System.Drawing.Point(0, 175)
+=======
+        Me.btnUsers.Location = New System.Drawing.Point(0, 222)
+>>>>>>> Stashed changes
         Me.btnUsers.Name = "btnUsers"
         Me.btnUsers.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnUsers.Size = New System.Drawing.Size(236, 52)
@@ -323,8 +365,13 @@ Partial Class frmDashboard
         '
         Me.ToolStripStatusLabel3.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
+<<<<<<< Updated upstream
         Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(58, 17)
         Me.ToolStripStatusLabel3.Text = "Position: "
+=======
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(39, 17)
+        Me.ToolStripStatusLabel3.Text = "Role: "
+>>>>>>> Stashed changes
         '
         'ToolStripStatusLabel4
         '
@@ -362,7 +409,11 @@ Partial Class frmDashboard
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.lblUsername)
+<<<<<<< Updated upstream
         Me.Panel6.Location = New System.Drawing.Point(514, 32)
+=======
+        Me.Panel6.Location = New System.Drawing.Point(515, 35)
+>>>>>>> Stashed changes
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(345, 31)
         Me.Panel6.TabIndex = 9
@@ -470,4 +521,5 @@ Partial Class frmDashboard
     Friend WithEvents Panel6 As Panel
     Friend WithEvents panelMainDashboard As Panel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnDashboard As Button
 End Class

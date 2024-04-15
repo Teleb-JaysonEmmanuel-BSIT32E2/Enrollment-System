@@ -204,7 +204,7 @@ Partial Class frmMonitorDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(764, 578)
+        Me.ClientSize = New System.Drawing.Size(964, 588)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)

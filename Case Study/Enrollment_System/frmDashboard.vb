@@ -7,7 +7,10 @@
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
         Call connection()
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     End Sub
 
     Private Sub btnUsers_Click(sender As Object, e As EventArgs) Handles btnUsers.Click
@@ -65,7 +68,15 @@
         frmManageStudents.Show()
     End Sub
 
+<<<<<<< Updated upstream
     Private Sub panelMainDashboard_Paint(sender As Object, e As PaintEventArgs) Handles panelMainDashboard.Paint
 
+=======
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        frmMonitorDashboard.TopLevel = False
+        panelMainDashboard.Controls.Add(frmMonitorDashboard)
+        frmMonitorDashboard.BringToFront()
+        frmMonitorDashboard.Show()
+>>>>>>> Stashed changes
     End Sub
 End Class

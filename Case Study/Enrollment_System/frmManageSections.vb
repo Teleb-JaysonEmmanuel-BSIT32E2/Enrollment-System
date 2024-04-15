@@ -67,4 +67,8 @@ Public Class frmManageSections
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Call updateData()
     End Sub
+
+    Private Sub frmManageSections_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

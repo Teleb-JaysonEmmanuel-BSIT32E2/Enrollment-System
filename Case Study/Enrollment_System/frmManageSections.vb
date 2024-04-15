@@ -5,6 +5,11 @@ Public Class frmManageSections
     Private Sub frmManageSections_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadAccount()
+        Call getDepartment()
+        Call getYearLevel()
+        Call getSchoolYear()
+        Call getSemester()
+        Call getCourse()
     End Sub
 
     Private Sub loadAccount()
@@ -64,11 +69,62 @@ Public Class frmManageSections
         Call loadAccount()
     End Sub
 
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Call updateData()
     End Sub
 
-    Private Sub frmManageSections_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub getYearLevel()
+        sql = "SELECT YearLevel FROM tblSections"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboYearLevel.Items.Clear()
+        While dr.Read = True
+            cboYearLevel.Items.Add(dr("YearLevel").ToString())
+        End While
+        dr.Close()
+    End Sub
 
+    Private Sub getSchoolYear()
+        sql = "SELECT DISTINCT SchoolYear FROM tblSY"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboSchoolYear.Items.Clear()
+        While dr.Read = True
+            cboSchoolYear.Items.Add(dr("SchoolYear").ToString())
+        End While
+        dr.Close()
+    End Sub
+
+    Private Sub getSemester()
+        sql = "SELECT DISTINCT Semester FROM tblSY"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboSemester.Items.Clear()
+        While dr.Read = True
+            cboSemester.Items.Add(dr("Semester").ToString())
+        End While
+        dr.Close()
+    End Sub
+
+    Private Sub getDepartment()
+        sql = "SELECT Department FROM tblDept"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboDepartment.Items.Clear()
+        While dr.Read = True
+            cboDepartment.Items.Add(dr("Department").ToString())
+        End While
+        dr.Close()
+    End Sub
+
+    Private Sub getCourse()
+        sql = "SELECT Course FROM tblCourse"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboCourse.Items.Clear()
+        While dr.Read = True
+            cboCourse.Items.Add(dr("Course").ToString())
+        End While
+        dr.Close()
     End Sub
 End Class

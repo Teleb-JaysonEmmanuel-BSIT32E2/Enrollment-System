@@ -149,6 +149,12 @@
     <Compile Include="frmManageSubjects.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmManageTeachers.Designer.vb">
+      <DependentUpon>frmManageTeachers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageTeachers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmManageUsers.Designer.vb">
       <DependentUpon>frmManageUsers.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,12 @@
       <DependentUpon>frmRegister.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentInfo_TrackCourses.Designer.vb">
+      <DependentUpon>frmStudentInfo_TrackCourses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentInfo_TrackCourses.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="test-only.Designer.vb">
@@ -234,6 +246,9 @@
     <EmbeddedResource Include="frmManageSubjects.resx">
       <DependentUpon>frmManageSubjects.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageTeachers.resx">
+      <DependentUpon>frmManageTeachers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageUsers.resx">
       <DependentUpon>frmManageUsers.vb</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentInfo_TrackCourses.resx">
+      <DependentUpon>frmStudentInfo_TrackCourses.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="test-only.resx">
       <DependentUpon>test-only.vb</DependentUpon>

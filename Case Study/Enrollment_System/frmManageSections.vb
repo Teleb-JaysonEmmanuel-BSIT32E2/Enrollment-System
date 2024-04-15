@@ -74,7 +74,7 @@ Public Class frmManageSections
     End Sub
 
     Private Sub getYearLevel()
-        sql = "SELECT YearLevel FROM tblSections"
+        sql = "SELECT DISTINCT YearLevel FROM tblSections"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         cboYearLevel.Items.Clear()
@@ -107,7 +107,7 @@ Public Class frmManageSections
     End Sub
 
     Private Sub getDepartment()
-        sql = "SELECT Department FROM tblDept"
+        sql = "SELECT DISTINCT Department FROM tblDept"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         cboDepartment.Items.Clear()
@@ -118,7 +118,7 @@ Public Class frmManageSections
     End Sub
 
     Private Sub getCourse()
-        sql = "SELECT Course FROM tblCourse"
+        sql = "SELECT DISTINCT Course FROM tblCourse"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         cboCourse.Items.Clear()
@@ -127,4 +127,5 @@ Public Class frmManageSections
         End While
         dr.Close()
     End Sub
+
 End Class

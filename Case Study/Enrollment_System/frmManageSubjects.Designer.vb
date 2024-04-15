@@ -66,9 +66,10 @@ Partial Class frmManageSubjects
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(7, 323)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(9, 398)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(947, 195)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1263, 240)
         Me.Guna2GroupBox1.TabIndex = 1
         Me.Guna2GroupBox1.Text = "SUBJECT INFORMATION"
         '
@@ -83,9 +84,10 @@ Partial Class frmManageSubjects
         Me.cboSubjectStatus.ForeColor = System.Drawing.Color.Black
         Me.cboSubjectStatus.ItemHeight = 30
         Me.cboSubjectStatus.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.cboSubjectStatus.Location = New System.Drawing.Point(727, 75)
+        Me.cboSubjectStatus.Location = New System.Drawing.Point(969, 92)
+        Me.cboSubjectStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cboSubjectStatus.Name = "cboSubjectStatus"
-        Me.cboSubjectStatus.Size = New System.Drawing.Size(195, 36)
+        Me.cboSubjectStatus.Size = New System.Drawing.Size(259, 36)
         Me.cboSubjectStatus.TabIndex = 18
         '
         'Label8
@@ -95,9 +97,10 @@ Partial Class frmManageSubjects
         Me.Label8.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label8.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label8.Location = New System.Drawing.Point(723, 51)
+        Me.Label8.Location = New System.Drawing.Point(964, 63)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 21)
+        Me.Label8.Size = New System.Drawing.Size(66, 26)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Status"
         '
@@ -112,9 +115,10 @@ Partial Class frmManageSubjects
         Me.cboSubjectType.ForeColor = System.Drawing.Color.Black
         Me.cboSubjectType.ItemHeight = 30
         Me.cboSubjectType.Items.AddRange(New Object() {"Major", "Minor"})
-        Me.cboSubjectType.Location = New System.Drawing.Point(15, 135)
+        Me.cboSubjectType.Location = New System.Drawing.Point(20, 166)
+        Me.cboSubjectType.Margin = New System.Windows.Forms.Padding(4)
         Me.cboSubjectType.Name = "cboSubjectType"
-        Me.cboSubjectType.Size = New System.Drawing.Size(248, 36)
+        Me.cboSubjectType.Size = New System.Drawing.Size(329, 36)
         Me.cboSubjectType.TabIndex = 6
         '
         'txtUnits
@@ -130,13 +134,13 @@ Partial Class frmManageSubjects
         Me.txtUnits.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtUnits.ForeColor = System.Drawing.Color.Black
         Me.txtUnits.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUnits.Location = New System.Drawing.Point(727, 139)
-        Me.txtUnits.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUnits.Location = New System.Drawing.Point(969, 171)
+        Me.txtUnits.Margin = New System.Windows.Forms.Padding(5)
         Me.txtUnits.Name = "txtUnits"
         Me.txtUnits.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUnits.PlaceholderText = ""
         Me.txtUnits.SelectedText = ""
-        Me.txtUnits.Size = New System.Drawing.Size(73, 30)
+        Me.txtUnits.Size = New System.Drawing.Size(97, 37)
         Me.txtUnits.TabIndex = 8
         '
         'Label7
@@ -146,9 +150,10 @@ Partial Class frmManageSubjects
         Me.Label7.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label7.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label7.Location = New System.Drawing.Point(11, 111)
+        Me.Label7.Location = New System.Drawing.Point(15, 137)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(98, 21)
+        Me.Label7.Size = New System.Drawing.Size(124, 26)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Subject Type"
         '
@@ -159,9 +164,10 @@ Partial Class frmManageSubjects
         Me.Label2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label2.Location = New System.Drawing.Point(723, 114)
+        Me.Label2.Location = New System.Drawing.Point(964, 140)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 21)
+        Me.Label2.Size = New System.Drawing.Size(57, 26)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Units"
         '
@@ -178,13 +184,13 @@ Partial Class frmManageSubjects
         Me.txtSubjectDescription.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtSubjectDescription.ForeColor = System.Drawing.Color.Black
         Me.txtSubjectDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjectDescription.Location = New System.Drawing.Point(305, 77)
-        Me.txtSubjectDescription.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSubjectDescription.Location = New System.Drawing.Point(407, 95)
+        Me.txtSubjectDescription.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSubjectDescription.Name = "txtSubjectDescription"
         Me.txtSubjectDescription.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubjectDescription.PlaceholderText = ""
         Me.txtSubjectDescription.SelectedText = ""
-        Me.txtSubjectDescription.Size = New System.Drawing.Size(378, 92)
+        Me.txtSubjectDescription.Size = New System.Drawing.Size(504, 113)
         Me.txtSubjectDescription.TabIndex = 16
         '
         'Label6
@@ -194,9 +200,10 @@ Partial Class frmManageSubjects
         Me.Label6.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label6.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label6.Location = New System.Drawing.Point(301, 52)
+        Me.Label6.Location = New System.Drawing.Point(401, 64)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(138, 21)
+        Me.Label6.Size = New System.Drawing.Size(175, 26)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Subject Desciption"
         '
@@ -213,13 +220,13 @@ Partial Class frmManageSubjects
         Me.txtSubjectCode.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtSubjectCode.ForeColor = System.Drawing.Color.Black
         Me.txtSubjectCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjectCode.Location = New System.Drawing.Point(15, 77)
-        Me.txtSubjectCode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSubjectCode.Location = New System.Drawing.Point(20, 95)
+        Me.txtSubjectCode.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSubjectCode.Name = "txtSubjectCode"
         Me.txtSubjectCode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSubjectCode.PlaceholderText = ""
         Me.txtSubjectCode.SelectedText = ""
-        Me.txtSubjectCode.Size = New System.Drawing.Size(248, 30)
+        Me.txtSubjectCode.Size = New System.Drawing.Size(331, 37)
         Me.txtSubjectCode.TabIndex = 6
         '
         'Label1
@@ -229,9 +236,10 @@ Partial Class frmManageSubjects
         Me.Label1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label1.Location = New System.Drawing.Point(11, 52)
+        Me.Label1.Location = New System.Drawing.Point(15, 64)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 21)
+        Me.Label1.Size = New System.Drawing.Size(128, 26)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Subject Code"
         '
@@ -245,9 +253,10 @@ Partial Class frmManageSubjects
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Maroon
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(9, 9)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(12, 11)
+        Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(945, 306)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1260, 377)
         Me.Guna2GroupBox2.TabIndex = 23
         Me.Guna2GroupBox2.Text = "LIST OF SUBJECTS"
         '
@@ -264,11 +273,12 @@ Partial Class frmManageSubjects
         Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button1.Location = New System.Drawing.Point(482, 47)
+        Me.Guna2Button1.Location = New System.Drawing.Point(643, 58)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button1.PressedDepth = 40
-        Me.Guna2Button1.Size = New System.Drawing.Size(103, 32)
+        Me.Guna2Button1.Size = New System.Drawing.Size(137, 39)
         Me.Guna2Button1.TabIndex = 26
         Me.Guna2Button1.Text = "search"
         '
@@ -285,13 +295,13 @@ Partial Class frmManageSubjects
         Me.txtSearch.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtSearch.ForeColor = System.Drawing.Color.Black
         Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.Location = New System.Drawing.Point(122, 48)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearch.Location = New System.Drawing.Point(163, 59)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearch.PlaceholderText = ""
         Me.txtSearch.SelectedText = ""
-        Me.txtSearch.Size = New System.Drawing.Size(356, 30)
+        Me.txtSearch.Size = New System.Drawing.Size(475, 37)
         Me.txtSearch.TabIndex = 24
         '
         'Label10
@@ -301,9 +311,10 @@ Partial Class frmManageSubjects
         Me.Label10.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label10.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label10.Location = New System.Drawing.Point(9, 52)
+        Me.Label10.Location = New System.Drawing.Point(12, 64)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(115, 21)
+        Me.Label10.Size = New System.Drawing.Size(144, 26)
         Me.Label10.TabIndex = 25
         Me.Label10.Text = "Search Subject:"
         '
@@ -313,9 +324,10 @@ Partial Class frmManageSubjects
         Me.ListView1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(10, 86)
+        Me.ListView1.Location = New System.Drawing.Point(13, 106)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(925, 210)
+        Me.ListView1.Size = New System.Drawing.Size(1232, 258)
         Me.ListView1.TabIndex = 23
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -361,11 +373,12 @@ Partial Class frmManageSubjects
         Me.Guna2Button4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
         Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button4.Location = New System.Drawing.Point(840, 532)
+        Me.Guna2Button4.Location = New System.Drawing.Point(1120, 655)
+        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button4.Name = "Guna2Button4"
         Me.Guna2Button4.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button4.PressedDepth = 40
-        Me.Guna2Button4.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button4.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button4.TabIndex = 31
         Me.Guna2Button4.Text = "Back"
         '
@@ -381,11 +394,12 @@ Partial Class frmManageSubjects
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(719, 532)
+        Me.btnEdit.Location = New System.Drawing.Point(959, 655)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnEdit.PressedDepth = 40
-        Me.btnEdit.Size = New System.Drawing.Size(104, 40)
+        Me.btnEdit.Size = New System.Drawing.Size(139, 49)
         Me.btnEdit.TabIndex = 30
         Me.btnEdit.Text = "Edit"
         '
@@ -401,11 +415,12 @@ Partial Class frmManageSubjects
         Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
         Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(148, 532)
+        Me.Guna2Button2.Location = New System.Drawing.Point(197, 655)
+        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button2.PressedDepth = 40
-        Me.Guna2Button2.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button2.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button2.TabIndex = 29
         Me.Guna2Button2.Text = "New"
         '
@@ -421,19 +436,20 @@ Partial Class frmManageSubjects
         Me.Guna2Button5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button5.ForeColor = System.Drawing.Color.White
         Me.Guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button5.Location = New System.Drawing.Point(25, 532)
+        Me.Guna2Button5.Location = New System.Drawing.Point(33, 655)
+        Me.Guna2Button5.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Button5.Name = "Guna2Button5"
         Me.Guna2Button5.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.Guna2Button5.PressedDepth = 40
-        Me.Guna2Button5.Size = New System.Drawing.Size(104, 40)
+        Me.Guna2Button5.Size = New System.Drawing.Size(139, 49)
         Me.Guna2Button5.TabIndex = 28
         Me.Guna2Button5.Text = "Save"
         '
         'frmManageSubjects
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 588)
+        Me.ClientSize = New System.Drawing.Size(1285, 724)
         Me.Controls.Add(Me.Guna2Button4)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.Guna2Button2)
@@ -441,6 +457,7 @@ Partial Class frmManageSubjects
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageSubjects"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox1.ResumeLayout(False)

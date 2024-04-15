@@ -26,17 +26,15 @@ Public Class frmManageUsers
         If txtP.Text <> txtCp.Text Then
             MsgBox("Passwords do not match!", MsgBoxStyle.Critical)
         Else
-            sql = "Insert into tblUsers (EmployeeID, Username, [Password], AccessLevel, LastName, FirstName,[Position], AccStatus) Values (@EmployeeID, @Username, [@Password], @AccessLevel, @LastName, @FirstName, [@Position], @AccStatus)"
+            sql = "Insert into tblUsers (EmployeeID, Username, [Password], LastName, FirstName, AccStatus) Values (@EmployeeID, @Username, [@Password], @LastName, @FirstName, @AccStatus)"
             cmd = New OleDbCommand(sql, cn)
 
             With cmd
                 .Parameters.AddWithValue("@EmployeeID", txtEmpNo.Text)
                 .Parameters.AddWithValue("@Username", txtUn.Text)
                 .Parameters.AddWithValue("[@Password]", txtP.Text)
-                .Parameters.AddWithValue("@AccessLevel", cboUl.Text)
                 .Parameters.AddWithValue("@LastName", txtLn.Text)
                 .Parameters.AddWithValue("@FirstName", txtFn.Text)
-                .Parameters.AddWithValue("[@Position]", cboPos.Text)
                 .Parameters.AddWithValue("@AccStatus", cboAS.Text)
                 cmd.ExecuteNonQuery()
 
@@ -66,8 +64,6 @@ Public Class frmManageUsers
             x.SubItems.Add(dr("LastName").ToString)
             x.SubItems.Add(dr("Username").ToString)
             x.SubItems.Add(dr("Password").ToString)
-            x.SubItems.Add(dr("AccessLevel").ToString)
-            x.SubItems.Add(dr("Position").ToString)
             x.SubItems.Add(dr("AccStatus").ToString)
 
 
@@ -92,7 +88,7 @@ Public Class frmManageUsers
     End Sub
     Private Sub UpdateData()
         'Update Specific records from database'
-        sql = "UPDATE qryUsers SET EmployeeID=@EmployeeID,LastName=@LastName,FirstName=@FirstName,Username=@Username,[Password]=[@Password],AccessLevel=@AccessLevel, [Position]=[@Position], AccStatus=@AccStatus where EmployeeID=@EmployeeID"
+        sql = "UPDATE qryUsers SET EmployeeID=@EmployeeID,LastName=@LastName,FirstName=@FirstName,Username=@Username,[Password]=[@Password], AccStatus=@AccStatus where EmployeeID=@EmployeeID"
         cmd = New OleDbCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@EmployeeID", txtEmpNo.Text)
@@ -100,8 +96,6 @@ Public Class frmManageUsers
             .Parameters.AddWithValue("@FirstName", txtFn.Text)
             .Parameters.AddWithValue("@Username", txtUn.Text)
             .Parameters.AddWithValue("[@Password]", txtP.Text)
-            .Parameters.AddWithValue("@AccessLevel", cboUl.Text)
-            .Parameters.AddWithValue("[@Position]", cboPos.Text)
             .Parameters.AddWithValue("@AccStatus", cboAS.Text)
             .ExecuteNonQuery()
 
@@ -139,7 +133,7 @@ Public Class frmManageUsers
     End Sub
 
     Private Sub txtEmpNo_TextChanged(sender As Object, e As EventArgs) Handles txtEmpNo.TextChanged
-        sql = "Select EmployeeID, FirstName, LastName, Username, [Password], AccessLevel,[Position],AccStatus from qryUsers where EmployeeID='" & txtEmpNo.Text & "'"
+        sql = "Select EmployeeID, FirstName, LastName, Username, [Password],AccStatus from qryUsers where EmployeeID='" & txtEmpNo.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         If dr.Read = True Then
@@ -148,8 +142,6 @@ Public Class frmManageUsers
             txtLn.Text = dr("LastName").ToString
             txtUn.Text = dr("Username").ToString
             txtP.Text = dr("Password").ToString
-            cboUl.Text = dr("AccessLevel").ToString
-            cboPos.Text = dr("Position").ToString
             cboAS.Text = dr("AccStatus").ToString
         End If
     End Sub

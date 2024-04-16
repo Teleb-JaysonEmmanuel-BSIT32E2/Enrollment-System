@@ -13,7 +13,7 @@ Public Class frmManageUsers
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Or cboR.Text = "" Then
+        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         Else
             sql = "Select EmployeeID from tblUsers where EmployeeID='" & txtEmpNo.Text & "'"
@@ -84,7 +84,7 @@ Public Class frmManageUsers
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Or cboR.Text = "" Then
+        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         ElseIf txtP.Text <> txtCp.Text Then
             MsgBox("Password Doesn't Match", MsgBoxStyle.Critical)
@@ -128,7 +128,6 @@ Public Class frmManageUsers
         txtP.Clear()
         txtCp.Clear()
         cboR.SelectedIndex = -1
-        cboAS.SelectedIndex = -1
 
     End Sub
 

@@ -61,7 +61,7 @@ Partial Class frmManageSections
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(8, 270)
         Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
-        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1268, 354)
+        Me.Guna2GroupBox2.Size = New System.Drawing.Size(1174, 354)
         Me.Guna2GroupBox2.TabIndex = 23
         Me.Guna2GroupBox2.Text = "CLASS SECTIONS"
         '
@@ -74,7 +74,7 @@ Partial Class frmManageSections
         Me.ListView1.Location = New System.Drawing.Point(13, 59)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1239, 282)
+        Me.ListView1.Size = New System.Drawing.Size(1145, 282)
         Me.ListView1.TabIndex = 23
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -134,7 +134,7 @@ Partial Class frmManageSections
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(8, 6)
         Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1268, 255)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1174, 255)
         Me.Guna2GroupBox1.TabIndex = 24
         Me.Guna2GroupBox1.Text = "SECTION INFORMATION"
         '
@@ -144,7 +144,7 @@ Partial Class frmManageSections
         Me.cboSection.FormattingEnabled = True
         Me.cboSection.Location = New System.Drawing.Point(15, 75)
         Me.cboSection.Name = "cboSection"
-        Me.cboSection.Size = New System.Drawing.Size(300, 29)
+        Me.cboSection.Size = New System.Drawing.Size(300, 35)
         Me.cboSection.TabIndex = 52
         '
         'cboCourse
@@ -153,7 +153,7 @@ Partial Class frmManageSections
         Me.cboCourse.FormattingEnabled = True
         Me.cboCourse.Location = New System.Drawing.Point(645, 140)
         Me.cboCourse.Name = "cboCourse"
-        Me.cboCourse.Size = New System.Drawing.Size(300, 29)
+        Me.cboCourse.Size = New System.Drawing.Size(300, 35)
         Me.cboCourse.TabIndex = 51
         '
         'cboDepartment
@@ -162,7 +162,7 @@ Partial Class frmManageSections
         Me.cboDepartment.FormattingEnabled = True
         Me.cboDepartment.Location = New System.Drawing.Point(330, 140)
         Me.cboDepartment.Name = "cboDepartment"
-        Me.cboDepartment.Size = New System.Drawing.Size(300, 29)
+        Me.cboDepartment.Size = New System.Drawing.Size(300, 35)
         Me.cboDepartment.TabIndex = 50
         '
         'cboSemester
@@ -171,7 +171,7 @@ Partial Class frmManageSections
         Me.cboSemester.FormattingEnabled = True
         Me.cboSemester.Location = New System.Drawing.Point(15, 140)
         Me.cboSemester.Name = "cboSemester"
-        Me.cboSemester.Size = New System.Drawing.Size(300, 29)
+        Me.cboSemester.Size = New System.Drawing.Size(300, 35)
         Me.cboSemester.TabIndex = 49
         '
         'cboSchoolYear
@@ -180,7 +180,7 @@ Partial Class frmManageSections
         Me.cboSchoolYear.FormattingEnabled = True
         Me.cboSchoolYear.Location = New System.Drawing.Point(645, 75)
         Me.cboSchoolYear.Name = "cboSchoolYear"
-        Me.cboSchoolYear.Size = New System.Drawing.Size(300, 29)
+        Me.cboSchoolYear.Size = New System.Drawing.Size(300, 35)
         Me.cboSchoolYear.TabIndex = 48
         '
         'cboYearLevel
@@ -189,8 +189,9 @@ Partial Class frmManageSections
         Me.cboYearLevel.FormattingEnabled = True
         Me.cboYearLevel.Location = New System.Drawing.Point(330, 75)
         Me.cboYearLevel.Name = "cboYearLevel"
-        Me.cboYearLevel.Size = New System.Drawing.Size(300, 29)
+        Me.cboYearLevel.Size = New System.Drawing.Size(300, 35)
         Me.cboYearLevel.TabIndex = 47
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -281,7 +282,7 @@ Partial Class frmManageSections
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(1121, 650)
+        Me.btnCancel.Location = New System.Drawing.Point(1043, 650)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnCancel.PressedDepth = 40
@@ -302,7 +303,7 @@ Partial Class frmManageSections
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(961, 650)
+        Me.btnEdit.Location = New System.Drawing.Point(883, 650)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
@@ -367,7 +368,7 @@ Partial Class frmManageSections
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnDelete.Location = New System.Drawing.Point(598, 528)
+        Me.btnDelete.Location = New System.Drawing.Point(717, 650)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnDelete.PressedDepth = 40
@@ -379,7 +380,7 @@ Partial Class frmManageSections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1281, 719)
+        Me.ClientSize = New System.Drawing.Size(1214, 719)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnEdit)

@@ -155,17 +155,19 @@ Public Class frmManageUsers
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        txtEmpNo.Enabled = True
         txtFn.Enabled = True
         txtLn.Enabled = True
         txtP.Enabled = True
         txtCp.Enabled = True
         txtUn.Enabled = True
-        cboAS.Enabled = True
         cboR.Enabled = True
         btnSave.Enabled = True
         btnEdit.Enabled = True
         ListView1.Enabled = True
+
+        Dim employeeId As String = GetNextEmployeeID()
+        txtEmpNo.Text = employeeId
+        cboAS.SelectedIndex = 0
     End Sub
 
     Private Sub Guna2TextBox6_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -192,4 +194,20 @@ Public Class frmManageUsers
             ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
         Next
     End Sub
+    Private Function GetNextEmployeeID() As String
+        Dim nextID As String = Nothing
+        sql = "SELECT TOP 1 EmployeeID FROM tblUsers ORDER BY EmployeeID DESC"
+        cmd = New OleDbCommand(sql, cn)
+        Dim result As Object = cmd.ExecuteScalar()
+        If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+            Dim lastEmployeeID As String = result.ToString()
+            Dim lastNumber As Integer
+            If Integer.TryParse(lastEmployeeID.Substring(4), lastNumber) Then
+                nextID = "EMP-" & (lastNumber + 1).ToString("D4")
+            End If
+        Else
+            nextID = "EMP-1001"
+        End If
+        Return nextID
+    End Function
 End Class

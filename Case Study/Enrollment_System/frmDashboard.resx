@@ -118,6 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnDashaboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHYSURBVEhL7ZY/SwMxGMajkwiCo4W8l0XoByiI4r9BB7+A
+        o4NLB/0CTuraorRXBCkO4kdwcHVTpDqKOLgpigiKk4pKfRLTI83l6l2LLZQ+8OO9/HnzJLk0PdZT96sg
+        xITveRVw0SYq0pPhIQuqbSYby7joeTeIZ4hfdluTxDL+BmX5WnaEGCkS5X2iD6tPUqKNsbrzAuczMNpD
+        WRnXhLoptD/bOQmIMCY6KqdSg9IE5bJEORoqed486uVuBHmYzKJuDrQvxAAm+mD2A07ju1w6PaTzIo2l
+        UH+gcxQweES0T/ElMMeXOI3X9bhKKEcalzgfM/KSEDbGds3pcZVQF2lcZawPq3wN8olOa/0N5K58gsAD
+        hI3x7ib1uEqo2wVPwN5CBYzfEFUuntcQMyZyPESZH3gAx4o5X9aeStucj+o+dcAkj2gOlgSHMdGx9mwo
+        bOuWmZcQ5+GSLOnxnfI5n8UE3+28lrZagZsJW76ywVi/9goE0wW0v4RyfvOaP1x1EF2DHJ5XETexopNQ
+        n+b4w/j/aM4Yv/XbEtG0qy0mDmOie3m/6lfaUDono4tOJbmrJfJ+dV4YmkN8RQwjyoleWW02se/qeLT2
+        n9zBw9WJjz1fiHF9BHrqWjH2A+RcurDUqCHZAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -4791,6 +4805,9 @@
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="Guna2CirclePictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -4845,6 +4862,6 @@
     <value>133, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
+    <value>34</value>
   </metadata>
 </root>

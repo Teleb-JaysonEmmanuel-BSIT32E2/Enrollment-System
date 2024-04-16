@@ -5,8 +5,7 @@ Public Class frmManageSubjects
     Private Sub frmManageSubjects_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadAccount()
-        Call getSubjectStatus()
-        Call getSubjectType()
+        Call callThings()
         txtSubjectDescription.Multiline = True
         txtSubjectDescription.ScrollBars = ScrollBars.Vertical
     End Sub
@@ -108,5 +107,102 @@ Public Class frmManageSubjects
             cboSubjectStatus.Items.Add(dr("Status").ToString())
         End While
         dr.Close()
+    End Sub
+
+    Private Sub callThings()
+        Call getSubjectStatus()
+        Call getSubjectType()
+    End Sub
+
+    Private Sub enableThings()
+        btnSave.Enabled = True
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        txtSubjectCode.Enabled = True
+        cboSubjectType.Enabled = True
+        cboSubjectStatus.Enabled = True
+        txtSubjectDescription.Enabled = True
+        txtUnits.Enabled = True
+    End Sub
+
+    Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        Call enableThings()
+    End Sub
+
+    Private Sub clear()
+        txtSubjectCode.Text = ""
+        cboSubjectType.Text = ""
+        cboSubjectStatus.Text = ""
+        txtSubjectDescription.Text = ""
+        txtUnits.Text = ""
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Call clear()
+    End Sub
+
+    Private Sub insertSubject()
+        Dim lastId As String = ""
+        sql = "SELECT TOP 1 SubjID FROM tblSubjects ORDER BY SubjID DESC"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            lastId = dr("SubjID").ToString()
+        Else
+            lastId = "SUB-1000"
+        End If
+
+        Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
+        idNumber += 1
+
+        Dim newId As String = "SUB-" & idNumber.ToString("D4")
+
+        sql = "Insert into tblSubjects ([SubjID],[SubjCode],[Description],[Units],[SubjType],[Status])values([@SubjID],[@SubjCode],[@Description],[@Units],[@SubjType],[@Status])"
+        cmd = New OleDbCommand(sql, cn)
+        With cmd
+            .Parameters.AddWithValue("SubjID", newId)
+            .Parameters.AddWithValue("SubjCode", txtSubjectCode.Text)
+            .Parameters.AddWithValue("Description", txtSubjectDescription.Text)
+            .Parameters.AddWithValue("Units", txtUnits.Text)
+            .Parameters.AddWithValue("SubjType", cboSubjectType.Text)
+            .Parameters.AddWithValue("Status", cboSubjectStatus.Text)
+            .ExecuteNonQuery()
+        End With
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If txtSubjectCode.Text = "" Or txtUnits.Text = "" Or txtSubjectDescription.Text = "" Or cboSubjectStatus.Text = "" Or cboSubjectType.Text = "" Then
+            MsgBox("Please fill all the fields", MsgBoxStyle.Exclamation)
+        Else
+            Call insertSubject()
+            Call callThings()
+            Call loadAccount()
+            MsgBox("Record Inserted", MsgBoxStyle.Information)
+        End If
+    End Sub
+
+
+    Private Sub deleteThings()
+        Call deleteSubject()
+    End Sub
+
+    Private Sub deleteSubject()
+        If txtSubjectCode.Text IsNot Nothing Then
+            sql = "DELETE FROM tblSubjects WHERE SubjCode = @item"
+            cmd = New OleDbCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@item", txtSubjectCode.Text)
+                .ExecuteNonQuery()
+            End With
+        End If
+    End Sub
+
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Call deleteThings()
+        Call callThings()
+        Call loadAccount()
+        Call clear()
+        MsgBox("Record Deleted", MsgBoxStyle.Information)
     End Sub
 End Class

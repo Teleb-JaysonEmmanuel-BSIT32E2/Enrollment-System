@@ -8,6 +8,7 @@ Public Class frmManageSections
         Call connection()
         Call loadAccount()
         Call callThings()
+
     End Sub
 
     Private Sub loadAccount()
@@ -23,7 +24,6 @@ Public Class frmManageSections
             x.SubItems.Add(dr("Semester").ToString)
             x.SubItems.Add(dr("Department").ToString)
             x.SubItems.Add(dr("Course").ToString)
-            x.SubItems.Add(dr("FirstName").ToString & " " & dr("LastName").ToString)
             ListView1.Items.Add(x)
         Loop
     End Sub
@@ -35,7 +35,7 @@ Public Class frmManageSections
     End Sub
 
     Private Sub txtSection_TextChanged(sender As Object, e As EventArgs) Handles cboSection.TextChanged
-        sql = "Select YearLevel,SchoolYear,Semester,Department,Course,FirstName,LastName from qrySections where SectionName='" & cboSection.Text & "'"
+        sql = "Select YearLevel,SchoolYear,Semester,Department,Course from qrySections where SectionName='" & cboSection.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         If dr.Read = True Then
@@ -44,13 +44,11 @@ Public Class frmManageSections
             cboSemester.Text = dr("Semester").ToString
             cboDepartment.Text = dr("Department").ToString
             cboCourse.Text = dr("Course").ToString
-            txtFirstName.Text = dr("FirstName").ToString
-            txtLastName.Text = dr("LastName").ToString
         End If
     End Sub
 
     Private Sub updateData()
-        sql = "Update qrySections set SectionName=@SectionName,YearLevel=@YearLevel,SchoolYear=@SchoolYear,Semester=@Semester,Department=@Department,Course=@Course,FirstName=@FirstName,LastName=@LastName where SectionName=@SectionName"
+        sql = "Update qrySections set SectionName=@SectionName,YearLevel=@YearLevel,SchoolYear=@SchoolYear,Semester=@Semester,Department=@Department,Course=@Course where SectionName=@SectionName"
         cmd = New OleDbCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@SectionName", cboSection.Text)
@@ -59,8 +57,6 @@ Public Class frmManageSections
             .Parameters.AddWithValue("@Semester", cboSemester.Text)
             .Parameters.AddWithValue("@Course", cboDepartment.Text)
             .Parameters.AddWithValue("@Department", cboCourse.Text)
-            .Parameters.AddWithValue("@FirstName", txtFirstName.Text)
-            .Parameters.AddWithValue("@LastName", txtLastName.Text)
             .ExecuteNonQuery()
         End With
         MsgBox("Section Record Updated", MsgBoxStyle.Information)
@@ -160,6 +156,8 @@ Public Class frmManageSections
         dr = cmd.ExecuteReader()
         If dr.Read() Then
             lastId = dr("SectionID").ToString()
+        Else
+            lastId = "SEC-1000"
         End If
 
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
@@ -184,6 +182,8 @@ Public Class frmManageSections
         dr = cmd.ExecuteReader()
         If dr.Read() Then
             lastId = dr("SYID").ToString()
+        Else
+            lastId = "SY-1000"
         End If
 
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(3))
@@ -207,6 +207,8 @@ Public Class frmManageSections
         dr = cmd.ExecuteReader()
         If dr.Read() Then
             lastId = dr("DeptID").ToString()
+        Else
+            lastId = "DEPT-1000"
         End If
 
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
@@ -228,11 +230,12 @@ Public Class frmManageSections
         Dim lastId As String = ""
         sql = "SELECT TOP 1 CourseID FROM tblCourse ORDER BY CourseID DESC"
         cmd = New OleDbCommand(sql, cn)
-        Using reader As OleDbDataReader = cmd.ExecuteReader()
-            If reader.Read() Then
-                lastId = reader("CourseID").ToString()
-            End If
-        End Using
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            lastId = dr("CourseID").ToString()
+        Else
+            lastId = "CRS-1000"
+        End If
 
         ' Extract the numeric part of the CourseID and increment it
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
@@ -253,9 +256,14 @@ Public Class frmManageSections
 
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Call insertThings()
-        Call callThings()
-        MsgBox("Record Inserted", MsgBoxStyle.Information)
+        If cboSection.Text = "" Or cboYearLevel.Text = "" Or cboSchoolYear.Text = "" Or cboSemester.Text = "" Or cboDepartment.Text = "" Or cboCourse.Text = "" Then
+            MsgBox("Please fill all the fields", MsgBoxStyle.Exclamation)
+        Else
+            Call insertThings()
+            Call callThings()
+            Call loadAccount()
+            MsgBox("Record Inserted", MsgBoxStyle.Information)
+        End If
     End Sub
 
     Private Sub callThings()
@@ -291,101 +299,23 @@ Public Class frmManageSections
         Call deleteThings()
         Call callThings()
         Call clear()
+        Call loadAccount()
         MsgBox("Record Deleted", MsgBoxStyle.Information)
     End Sub
 
     Private Sub deleteThings()
         Call deleteSection()
-        Call deleteDept()
-        Call deleteYL()
-        Call deleteSY()
-        Call deleteCourse()
     End Sub
 
     Private Sub deleteSection()
-        If cboSection.SelectedItem IsNot Nothing Then
-            Dim selectedItem As String = cboSection.SelectedItem.ToString()
-
-            ' Create a new OleDbCommand
+        If cboSection.Text IsNot Nothing Then
             sql = "DELETE FROM tblSections WHERE SectionName = @item"
             cmd = New OleDbCommand(sql, cn)
             With cmd
-                .Parameters.AddWithValue("@item", selectedItem)
+                .Parameters.AddWithValue("@item", cboSection.Text)
                 .ExecuteNonQuery()
             End With
-
-            ' Remove the selected item from the ComboBox
-            cboSection.Items.Remove(selectedItem)
         End If
     End Sub
-
-    Private Sub deleteYL()
-        If cboYearLevel.SelectedItem IsNot Nothing Then
-            Dim selectedItem As String = cboYearLevel.SelectedItem.ToString()
-
-            ' Create a new OleDbCommand
-            sql = "DELETE FROM tblSections WHERE YearLevel = @item"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@item", selectedItem)
-                .ExecuteNonQuery()
-            End With
-
-            ' Remove the selected item from the ComboBox
-            cboSection.Items.Remove(selectedItem)
-        End If
-    End Sub
-
-    Private Sub deleteSY()
-        If cboSchoolYear.SelectedItem IsNot Nothing Then
-            Dim selectedItem As String = cboSchoolYear.SelectedItem.ToString()
-
-            ' Create a new OleDbCommand
-            sql = "DELETE FROM tblSY WHERE SchoolYear = @item"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@item", selectedItem)
-                .ExecuteNonQuery()
-            End With
-
-            ' Remove the selected item from the ComboBox
-            cboSection.Items.Remove(selectedItem)
-        End If
-    End Sub
-
-    Private Sub deleteCourse()
-        If cboCourse.SelectedItem IsNot Nothing Then
-            Dim selectedItem As String = cboCourse.SelectedItem.ToString()
-
-            ' Create a new OleDbCommand
-            sql = "DELETE FROM tblCourse WHERE Course = @item"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@item", selectedItem)
-                .ExecuteNonQuery()
-            End With
-
-            ' Remove the selected item from the ComboBox
-            cboSection.Items.Remove(selectedItem)
-        End If
-    End Sub
-
-    Private Sub deleteDept()
-        If cboDepartment.SelectedItem IsNot Nothing Then
-            Dim selectedItem As String = cboDepartment.SelectedItem.ToString()
-
-            ' Create a new OleDbCommand
-            sql = "DELETE FROM tblDept WHERE Department = @item"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@item", selectedItem)
-                .ExecuteNonQuery()
-            End With
-
-            ' Remove the selected item from the ComboBox
-            cboDepartment.Items.Remove(selectedItem)
-        End If
-    End Sub
-
 
 End Class

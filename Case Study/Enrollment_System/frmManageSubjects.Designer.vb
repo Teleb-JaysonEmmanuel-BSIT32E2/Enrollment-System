@@ -23,9 +23,9 @@ Partial Class frmManageSubjects
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.cboSubjectStatus = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cboSubjectStatus = New System.Windows.Forms.ComboBox()
+        Me.cboSubjectType = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.cboSubjectType = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtUnits = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,10 +43,11 @@ Partial Class frmManageSubjects
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnNew = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -54,8 +55,8 @@ Partial Class frmManageSubjects
         'Guna2GroupBox1
         '
         Me.Guna2GroupBox1.Controls.Add(Me.cboSubjectStatus)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label8)
         Me.Guna2GroupBox1.Controls.Add(Me.cboSubjectType)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label8)
         Me.Guna2GroupBox1.Controls.Add(Me.txtUnits)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
         Me.Guna2GroupBox1.Controls.Add(Me.Label2)
@@ -75,20 +76,23 @@ Partial Class frmManageSubjects
         '
         'cboSubjectStatus
         '
-        Me.cboSubjectStatus.BackColor = System.Drawing.Color.Transparent
-        Me.cboSubjectStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboSubjectStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSubjectStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSubjectStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSubjectStatus.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboSubjectStatus.ForeColor = System.Drawing.Color.Black
-        Me.cboSubjectStatus.ItemHeight = 30
-        Me.cboSubjectStatus.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.cboSubjectStatus.Location = New System.Drawing.Point(969, 92)
-        Me.cboSubjectStatus.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboSubjectStatus.Enabled = False
+        Me.cboSubjectStatus.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSubjectStatus.FormattingEnabled = True
+        Me.cboSubjectStatus.Location = New System.Drawing.Point(727, 75)
         Me.cboSubjectStatus.Name = "cboSubjectStatus"
-        Me.cboSubjectStatus.Size = New System.Drawing.Size(259, 36)
-        Me.cboSubjectStatus.TabIndex = 18
+        Me.cboSubjectStatus.Size = New System.Drawing.Size(195, 29)
+        Me.cboSubjectStatus.TabIndex = 21
+        '
+        'cboSubjectType
+        '
+        Me.cboSubjectType.Enabled = False
+        Me.cboSubjectType.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSubjectType.FormattingEnabled = True
+        Me.cboSubjectType.Location = New System.Drawing.Point(15, 135)
+        Me.cboSubjectType.Name = "cboSubjectType"
+        Me.cboSubjectType.Size = New System.Drawing.Size(248, 29)
+        Me.cboSubjectType.TabIndex = 20
         '
         'Label8
         '
@@ -103,24 +107,7 @@ Partial Class frmManageSubjects
         Me.Label8.Size = New System.Drawing.Size(66, 26)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Status"
-        '
-        'cboSubjectType
-        '
-        Me.cboSubjectType.BackColor = System.Drawing.Color.Transparent
-        Me.cboSubjectType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboSubjectType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSubjectType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSubjectType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboSubjectType.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboSubjectType.ForeColor = System.Drawing.Color.Black
-        Me.cboSubjectType.ItemHeight = 30
-        Me.cboSubjectType.Items.AddRange(New Object() {"Major", "Minor"})
-        Me.cboSubjectType.Location = New System.Drawing.Point(20, 166)
-        Me.cboSubjectType.Margin = New System.Windows.Forms.Padding(4)
-        Me.cboSubjectType.Name = "cboSubjectType"
-        Me.cboSubjectType.Size = New System.Drawing.Size(329, 36)
-        Me.cboSubjectType.TabIndex = 6
-        '
+      
         'txtUnits
         '
         Me.txtUnits.BorderColor = System.Drawing.Color.DarkGray
@@ -130,8 +117,9 @@ Partial Class frmManageSubjects
         Me.txtUnits.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtUnits.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtUnits.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtUnits.Enabled = False
         Me.txtUnits.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUnits.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtUnits.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUnits.ForeColor = System.Drawing.Color.Black
         Me.txtUnits.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUnits.Location = New System.Drawing.Point(969, 171)
@@ -180,8 +168,9 @@ Partial Class frmManageSubjects
         Me.txtSubjectDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSubjectDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSubjectDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjectDescription.Enabled = False
         Me.txtSubjectDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjectDescription.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtSubjectDescription.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubjectDescription.ForeColor = System.Drawing.Color.Black
         Me.txtSubjectDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSubjectDescription.Location = New System.Drawing.Point(407, 95)
@@ -216,8 +205,9 @@ Partial Class frmManageSubjects
         Me.txtSubjectCode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtSubjectCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtSubjectCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubjectCode.Enabled = False
         Me.txtSubjectCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubjectCode.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtSubjectCode.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubjectCode.ForeColor = System.Drawing.Color.Black
         Me.txtSubjectCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSubjectCode.Location = New System.Drawing.Point(20, 95)
@@ -335,52 +325,51 @@ Partial Class frmManageSubjects
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "SubjectCode"
-        Me.ColumnHeader1.Width = 130
+        Me.ColumnHeader1.Width = 185
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "Desciption"
+        Me.ColumnHeader2.Text = "Description"
         Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader2.Width = 200
+        Me.ColumnHeader2.Width = 185
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Units"
         Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader3.Width = 100
+        Me.ColumnHeader3.Width = 185
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "SubjType"
+        Me.ColumnHeader4.Text = "SubjectType"
         Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader4.Width = 150
+        Me.ColumnHeader4.Width = 185
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Status"
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader5.Width = 150
+        Me.ColumnHeader5.Width = 185
         '
-        'Guna2Button4
+        'btnCancel
         '
-        Me.Guna2Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button4.Location = New System.Drawing.Point(1120, 655)
-        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.Guna2Button4.PressedDepth = 40
-        Me.Guna2Button4.Size = New System.Drawing.Size(139, 49)
-        Me.Guna2Button4.TabIndex = 31
-        Me.Guna2Button4.Text = "Back"
+        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.Maroon
+        Me.btnCancel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(840, 532)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnCancel.PressedDepth = 40
+        Me.btnCancel.Size = New System.Drawing.Size(104, 40)
+        Me.btnCancel.TabIndex = 31
+        Me.btnCancel.Text = "Cancel"
         '
         'btnEdit
         '
@@ -390,6 +379,7 @@ Partial Class frmManageSubjects
         Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit.Enabled = False
         Me.btnEdit.FillColor = System.Drawing.Color.Maroon
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
@@ -403,57 +393,78 @@ Partial Class frmManageSubjects
         Me.btnEdit.TabIndex = 30
         Me.btnEdit.Text = "Edit"
         '
-        'Guna2Button2
+        'btnNew
         '
-        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(197, 655)
-        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.Guna2Button2.PressedDepth = 40
-        Me.Guna2Button2.Size = New System.Drawing.Size(139, 49)
-        Me.Guna2Button2.TabIndex = 29
-        Me.Guna2Button2.Text = "New"
+        Me.btnNew.BackColor = System.Drawing.Color.Transparent
+        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNew.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnNew.FillColor = System.Drawing.Color.Maroon
+        Me.btnNew.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnNew.ForeColor = System.Drawing.Color.White
+        Me.btnNew.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnNew.Location = New System.Drawing.Point(148, 532)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnNew.PressedDepth = 40
+        Me.btnNew.Size = New System.Drawing.Size(104, 40)
+        Me.btnNew.TabIndex = 29
+        Me.btnNew.Text = "New"
         '
-        'Guna2Button5
+        'btnSave
         '
-        Me.Guna2Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button5.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button5.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button5.Location = New System.Drawing.Point(33, 655)
-        Me.Guna2Button5.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Button5.Name = "Guna2Button5"
-        Me.Guna2Button5.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.Guna2Button5.PressedDepth = 40
-        Me.Guna2Button5.Size = New System.Drawing.Size(139, 49)
-        Me.Guna2Button5.TabIndex = 28
-        Me.Guna2Button5.Text = "Save"
+        Me.btnSave.BackColor = System.Drawing.Color.Transparent
+        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSave.Enabled = False
+        Me.btnSave.FillColor = System.Drawing.Color.Maroon
+        Me.btnSave.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnSave.Location = New System.Drawing.Point(25, 532)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnSave.PressedDepth = 40
+        Me.btnSave.Size = New System.Drawing.Size(104, 40)
+        Me.btnSave.TabIndex = 28
+        Me.btnSave.Text = "Save"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.Enabled = False
+        Me.btnDelete.FillColor = System.Drawing.Color.Maroon
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnDelete.Location = New System.Drawing.Point(596, 532)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnDelete.PressedDepth = 40
+        Me.btnDelete.Size = New System.Drawing.Size(104, 40)
+        Me.btnDelete.TabIndex = 32
+        Me.btnDelete.Text = "Delete"
         '
         'frmManageSubjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1285, 724)
-        Me.Controls.Add(Me.Guna2Button4)
+        Me.ClientSize = New System.Drawing.Size(964, 588)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.Guna2Button2)
-        Me.Controls.Add(Me.Guna2Button5)
+        Me.Controls.Add(Me.btnNew)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -469,9 +480,7 @@ Partial Class frmManageSubjects
     End Sub
 
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents cboSubjectStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents cboSubjectType As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtSubjectDescription As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
@@ -489,8 +498,11 @@ Partial Class frmManageSubjects
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnNew As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSave As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cboSubjectType As ComboBox
+    Friend WithEvents cboSubjectStatus As ComboBox
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
 End Class

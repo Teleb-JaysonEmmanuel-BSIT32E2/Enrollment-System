@@ -1,7 +1,7 @@
 ﻿Public Class frmDashboard
     Private Sub frmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'the monitor dashboard will load in the main dashboard
-        Call connection()
+
         frmMonitorDashboard.TopLevel = False
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()
@@ -67,8 +67,17 @@
     Private Sub panelMainDashboard_Paint(sender As Object, e As PaintEventArgs) Handles panelMainDashboard.Paint
 
     End Sub
+    Private Sub btnDashaboard_Click(sender As Object, e As EventArgs) Handles btnDashaboard.Click
+        frmMonitorDashboard.TopLevel = False
+        panelMainDashboard.Controls.Add(frmMonitorDashboard)
+        frmMonitorDashboard.BringToFront()
+        frmMonitorDashboard.Show()
+    End Sub
 
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
-
+    Private Sub btnTeachers_Click(sender As Object, e As EventArgs) Handles btnTeachers.Click
+        frmManageTeachers.TopLevel = False
+        panelMainDashboard.Controls.Add(frmManageTeachers)
+        frmManageTeachers.BringToFront()
+        frmManageTeachers.Show()
     End Sub
 End Class

@@ -4,9 +4,6 @@ Imports System.Drawing.Text
 Imports System.Reflection
 
 Public Class frmManageUsers
-    Private Sub Guna2TextBox4_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         Me.Close()
@@ -33,7 +30,7 @@ Public Class frmManageUsers
 
         If txtP.Text <> txtCp.Text Then
             MsgBox("Passwords do not match!", MsgBoxStyle.Critical)
-   
+
         Else
             sql = "Insert into tblUsers (EmployeeID, Username, [Password], LastName, FirstName,Role, AccStatus) Values (@EmployeeID, @Username, [@Password], @LastName, @FirstName,[@Role], @AccStatus)"
             cmd = New OleDbCommand(sql, cn)
@@ -142,14 +139,6 @@ Public Class frmManageUsers
             cboR.Text = dr("Role").ToString
             cboAS.Text = dr("AccStatus").ToString
         End If
-    End Sub
-
-    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox1.Click
-
-    End Sub
-
-    Private Sub cboAS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboAS.SelectedIndexChanged
-
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click

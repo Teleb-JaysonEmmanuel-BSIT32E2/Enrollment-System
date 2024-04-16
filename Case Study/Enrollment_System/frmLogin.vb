@@ -100,4 +100,8 @@ Public Class frmLogin
             End If
         End If
     End Sub
+
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call connection()
+    End Sub
 End Class

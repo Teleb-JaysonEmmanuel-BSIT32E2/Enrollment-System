@@ -6,7 +6,6 @@
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
-        Call connection()
 
     End Sub
 
@@ -68,7 +67,6 @@
     Private Sub panelMainDashboard_Paint(sender As Object, e As PaintEventArgs) Handles panelMainDashboard.Paint
 
     End Sub
-
     Private Sub btnDashaboard_Click(sender As Object, e As EventArgs) Handles btnDashaboard.Click
         frmMonitorDashboard.TopLevel = False
         panelMainDashboard.Controls.Add(frmMonitorDashboard)

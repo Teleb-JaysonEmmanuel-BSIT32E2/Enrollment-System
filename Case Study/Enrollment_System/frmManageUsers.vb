@@ -11,7 +11,6 @@ Public Class frmManageUsers
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         Me.Close()
     End Sub
-
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
@@ -82,7 +81,6 @@ Public Class frmManageUsers
         Loop
 
     End Sub
-
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)

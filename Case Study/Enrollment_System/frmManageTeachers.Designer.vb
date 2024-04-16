@@ -45,6 +45,7 @@ Partial Class frmManageTeachers
         Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
         Me.btnNew = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -61,7 +62,7 @@ Partial Class frmManageTeachers
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox2.Location = New System.Drawing.Point(12, 9)
-        Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(1260, 377)
         Me.Guna2GroupBox2.TabIndex = 24
@@ -80,7 +81,7 @@ Partial Class frmManageTeachers
         Me.btnSearch.ForeColor = System.Drawing.Color.White
         Me.btnSearch.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnSearch.Location = New System.Drawing.Point(1116, 10)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnSearch.PressedDepth = 40
@@ -102,7 +103,7 @@ Partial Class frmManageTeachers
         Me.txtSearchBar.ForeColor = System.Drawing.Color.Black
         Me.txtSearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSearchBar.Location = New System.Drawing.Point(632, 12)
-        Me.txtSearchBar.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchBar.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearchBar.Name = "txtSearchBar"
         Me.txtSearchBar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchBar.PlaceholderText = "Enter Teacher ID or Teacher Name"
@@ -126,12 +127,12 @@ Partial Class frmManageTeachers
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader6, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
         Me.ListView1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(13, 71)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1232, 294)
         Me.ListView1.TabIndex = 23
@@ -181,7 +182,7 @@ Partial Class frmManageTeachers
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(12, 395)
-        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1260, 240)
         Me.Guna2GroupBox1.TabIndex = 25
@@ -206,7 +207,7 @@ Partial Class frmManageTeachers
         Me.cboStatus.FormattingEnabled = True
         Me.cboStatus.Items.AddRange(New Object() {"Available", "Not Available"})
         Me.cboStatus.Location = New System.Drawing.Point(37, 182)
-        Me.cboStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cboStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cboStatus.Name = "cboStatus"
         Me.cboStatus.Size = New System.Drawing.Size(329, 35)
         Me.cboStatus.TabIndex = 29
@@ -225,7 +226,7 @@ Partial Class frmManageTeachers
         Me.txtLastName.ForeColor = System.Drawing.Color.Black
         Me.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtLastName.Location = New System.Drawing.Point(895, 94)
-        Me.txtLastName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtLastName.PlaceholderText = ""
@@ -261,7 +262,7 @@ Partial Class frmManageTeachers
         Me.txtMiddleName.ForeColor = System.Drawing.Color.Black
         Me.txtMiddleName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtMiddleName.Location = New System.Drawing.Point(467, 94)
-        Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtMiddleName.Name = "txtMiddleName"
         Me.txtMiddleName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtMiddleName.PlaceholderText = ""
@@ -297,7 +298,7 @@ Partial Class frmManageTeachers
         Me.txtFirstName.ForeColor = System.Drawing.Color.Black
         Me.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtFirstName.Location = New System.Drawing.Point(37, 94)
-        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(5)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtFirstName.PlaceholderText = ""
@@ -332,7 +333,7 @@ Partial Class frmManageTeachers
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnCancel.Location = New System.Drawing.Point(1117, 655)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnCancel.PressedDepth = 40
@@ -353,7 +354,7 @@ Partial Class frmManageTeachers
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnEdit.Location = New System.Drawing.Point(956, 655)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnEdit.PressedDepth = 40
@@ -374,7 +375,7 @@ Partial Class frmManageTeachers
         Me.btnNew.ForeColor = System.Drawing.Color.White
         Me.btnNew.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnNew.Location = New System.Drawing.Point(195, 655)
-        Me.btnNew.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNew.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnNew.PressedDepth = 40
@@ -395,13 +396,18 @@ Partial Class frmManageTeachers
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnSave.Location = New System.Drawing.Point(31, 655)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnSave.PressedDepth = 40
         Me.btnSave.Size = New System.Drawing.Size(139, 49)
         Me.btnSave.TabIndex = 32
         Me.btnSave.Text = "Save"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Employee No"
+        Me.ColumnHeader6.Width = 130
         '
         'frmManageTeachers
         '
@@ -415,7 +421,7 @@ Partial Class frmManageTeachers
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmManageTeachers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox2.ResumeLayout(False)
@@ -449,4 +455,5 @@ Partial Class frmManageTeachers
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents cboStatus As ComboBox
+    Friend WithEvents ColumnHeader6 As ColumnHeader
 End Class

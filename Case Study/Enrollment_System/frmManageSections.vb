@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing.Text
 Imports System.Linq.Expressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
@@ -149,6 +150,10 @@ Public Class frmManageSections
         btnDelete.Enabled = True
     End Sub
 
+    Private syId As String
+    Private deptId As String
+    Private courseId As String
+
     Private Sub insertSectionYL()
         Dim lastId As String = ""
         sql = "SELECT TOP 1 SectionID FROM tblSections ORDER BY SectionID DESC"
@@ -163,14 +168,17 @@ Public Class frmManageSections
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
         idNumber += 1
 
-        Dim newId As String = "SEC-" & idNumber.ToString("D4")
+        Dim secId As String = "SEC-" & idNumber.ToString("D4")
 
-        sql = "INSERT INTO tblSections ([SectionID],[SectionName],[YearLevel]) VALUES ([@SectionID],[@SectionName],[@YearLevel])"
+        sql = "INSERT INTO tblSections ([SectionID],[SectionName],[YearLevel],[SYID],[DeptID],[CourseID]) VALUES ([@SectionID],[@SectionName],[@YearLevel],[@SYID],[@DeptID],[@CourseID])"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("SectionID", newId)
+            .Parameters.AddWithValue("SectionID", secId)
             .Parameters.AddWithValue("SectionName", cboSection.Text)
             .Parameters.AddWithValue("YearLevel", cboYearLevel.Text)
+            .Parameters.AddWithValue("SYID", syId)
+            .Parameters.AddWithValue("DeptID", deptId)
+            .Parameters.AddWithValue("CourseID", courseId)
             .ExecuteNonQuery()
         End With
     End Sub
@@ -189,13 +197,14 @@ Public Class frmManageSections
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(3))
         idNumber += 1
 
-        Dim newId As String = "SY-" & idNumber.ToString("D4")
+        syId = "SY-" & idNumber.ToString("D4")
 
-        sql = "Insert into tblSY ([SYID],[SchoolYear])values([@SYID],[@SchoolYear])"
+        sql = "Insert into tblSY ([SYID],[SchoolYear],[Semester])values([@SYID],[@SchoolYear],[@Semester])"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("SYID", newId)
+            .Parameters.AddWithValue("SYID", syId)
             .Parameters.AddWithValue("SchoolYear", cboSchoolYear.Text)
+            .Parameters.AddWithValue("Semester", cboSemester.Text)
             .ExecuteNonQuery()
         End With
     End Sub
@@ -214,12 +223,12 @@ Public Class frmManageSections
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
         idNumber += 1
 
-        Dim newId As String = "DEPT-" & idNumber.ToString("D4")
+        deptId = "DEPT-" & idNumber.ToString("D4")
 
         sql = "Insert into tblDept ([DeptID],[Department])values([@DeptID],[@Department])"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("DeptID", newId)
+            .Parameters.AddWithValue("DeptID", deptId)
             .Parameters.AddWithValue("Department", cboDepartment.Text)
             .ExecuteNonQuery()
         End With
@@ -242,13 +251,13 @@ Public Class frmManageSections
         idNumber += 1
 
         ' Create the new CourseID
-        Dim newId As String = "CRS-" & idNumber.ToString("D4")
+        courseId = "CRS-" & idNumber.ToString("D4")
 
         ' Insert the new record
         sql = "INSERT INTO tblCourse (CourseID, Course) VALUES (@CourseID, @Course)"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("@CourseID", newId)
+            .Parameters.AddWithValue("@CourseID", courseId)
             .Parameters.AddWithValue("@Course", cboCourse.Text)
             .ExecuteNonQuery()
         End With
@@ -276,10 +285,10 @@ Public Class frmManageSections
     End Sub
 
     Private Sub insertThings()
-        Call insertSectionYL()
         Call insertSY()
         Call insertDep()
         Call insertCourse()
+        Call insertSectionYL()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

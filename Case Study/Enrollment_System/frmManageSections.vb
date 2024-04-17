@@ -23,7 +23,7 @@ Public Class frmManageSections
             x.SubItems.Add(dr("Semester").ToString)
             x.SubItems.Add(dr("Department").ToString)
             x.SubItems.Add(dr("Course").ToString)
-            x.SubItems.Add(dr("FirstName").ToString & " " & dr("LastName").ToString)
+            'x.SubItems.Add(dr("FirstName").ToString & " " & dr("LastName").ToString)
             ListView1.Items.Add(x)
         Loop
     End Sub

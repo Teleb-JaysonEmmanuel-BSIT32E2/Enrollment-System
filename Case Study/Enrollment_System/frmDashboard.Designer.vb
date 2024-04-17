@@ -132,7 +132,7 @@ Partial Class frmDashboard
         Me.btnEnrollment.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnrollment.Image = CType(resources.GetObject("btnEnrollment.Image"), System.Drawing.Image)
         Me.btnEnrollment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEnrollment.Location = New System.Drawing.Point(0, 582)
+        Me.btnEnrollment.Location = New System.Drawing.Point(0, 691)
         Me.btnEnrollment.Name = "btnEnrollment"
         Me.btnEnrollment.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnEnrollment.Size = New System.Drawing.Size(315, 64)
@@ -150,7 +150,7 @@ Partial Class frmDashboard
         Me.btnSchedule.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSchedule.Image = CType(resources.GetObject("btnSchedule.Image"), System.Drawing.Image)
         Me.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSchedule.Location = New System.Drawing.Point(0, 530)
+        Me.btnSchedule.Location = New System.Drawing.Point(0, 621)
         Me.btnSchedule.Name = "btnSchedule"
         Me.btnSchedule.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnSchedule.Size = New System.Drawing.Size(315, 64)
@@ -168,7 +168,7 @@ Partial Class frmDashboard
         Me.btnSection.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSection.Image = CType(resources.GetObject("btnSection.Image"), System.Drawing.Image)
         Me.btnSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSection.Location = New System.Drawing.Point(0, 478)
+        Me.btnSection.Location = New System.Drawing.Point(0, 551)
         Me.btnSection.Name = "btnSection"
         Me.btnSection.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnSection.Size = New System.Drawing.Size(315, 64)
@@ -186,7 +186,7 @@ Partial Class frmDashboard
         Me.btnTeachers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTeachers.Image = CType(resources.GetObject("btnTeachers.Image"), System.Drawing.Image)
         Me.btnTeachers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeachers.Location = New System.Drawing.Point(0, 426)
+        Me.btnTeachers.Location = New System.Drawing.Point(0, 481)
         Me.btnTeachers.Name = "btnTeachers"
         Me.btnTeachers.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnTeachers.Size = New System.Drawing.Size(315, 64)
@@ -204,7 +204,7 @@ Partial Class frmDashboard
         Me.btnStudents.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudents.Image = CType(resources.GetObject("btnStudents.Image"), System.Drawing.Image)
         Me.btnStudents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStudents.Location = New System.Drawing.Point(0, 374)
+        Me.btnStudents.Location = New System.Drawing.Point(0, 411)
         Me.btnStudents.Name = "btnStudents"
         Me.btnStudents.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnStudents.Size = New System.Drawing.Size(315, 64)
@@ -222,7 +222,7 @@ Partial Class frmDashboard
         Me.btnSubjects.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubjects.Image = CType(resources.GetObject("btnSubjects.Image"), System.Drawing.Image)
         Me.btnSubjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSubjects.Location = New System.Drawing.Point(0, 322)
+        Me.btnSubjects.Location = New System.Drawing.Point(0, 341)
         Me.btnSubjects.Name = "btnSubjects"
         Me.btnSubjects.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnSubjects.Size = New System.Drawing.Size(315, 64)
@@ -240,7 +240,7 @@ Partial Class frmDashboard
         Me.btnUsers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsers.Image = CType(resources.GetObject("btnUsers.Image"), System.Drawing.Image)
         Me.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUsers.Location = New System.Drawing.Point(0, 270)
+        Me.btnUsers.Location = New System.Drawing.Point(0, 271)
         Me.btnUsers.Name = "btnUsers"
         Me.btnUsers.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
         Me.btnUsers.Size = New System.Drawing.Size(315, 64)

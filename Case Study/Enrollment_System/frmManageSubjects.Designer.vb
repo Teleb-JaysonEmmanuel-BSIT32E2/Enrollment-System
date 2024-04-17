@@ -79,9 +79,9 @@ Partial Class frmManageSubjects
         Me.cboSubjectStatus.Enabled = False
         Me.cboSubjectStatus.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSubjectStatus.FormattingEnabled = True
-        Me.cboSubjectStatus.Location = New System.Drawing.Point(727, 75)
+        Me.cboSubjectStatus.Location = New System.Drawing.Point(969, 95)
         Me.cboSubjectStatus.Name = "cboSubjectStatus"
-        Me.cboSubjectStatus.Size = New System.Drawing.Size(195, 29)
+        Me.cboSubjectStatus.Size = New System.Drawing.Size(240, 35)
         Me.cboSubjectStatus.TabIndex = 21
         '
         'cboSubjectType
@@ -89,9 +89,9 @@ Partial Class frmManageSubjects
         Me.cboSubjectType.Enabled = False
         Me.cboSubjectType.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSubjectType.FormattingEnabled = True
-        Me.cboSubjectType.Location = New System.Drawing.Point(15, 135)
+        Me.cboSubjectType.Location = New System.Drawing.Point(20, 173)
         Me.cboSubjectType.Name = "cboSubjectType"
-        Me.cboSubjectType.Size = New System.Drawing.Size(248, 29)
+        Me.cboSubjectType.Size = New System.Drawing.Size(331, 35)
         Me.cboSubjectType.TabIndex = 20
         '
         'Label8
@@ -107,7 +107,7 @@ Partial Class frmManageSubjects
         Me.Label8.Size = New System.Drawing.Size(66, 26)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Status"
-      
+        '
         'txtUnits
         '
         Me.txtUnits.BorderColor = System.Drawing.Color.DarkGray
@@ -128,7 +128,7 @@ Partial Class frmManageSubjects
         Me.txtUnits.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUnits.PlaceholderText = ""
         Me.txtUnits.SelectedText = ""
-        Me.txtUnits.Size = New System.Drawing.Size(97, 37)
+        Me.txtUnits.Size = New System.Drawing.Size(240, 37)
         Me.txtUnits.TabIndex = 8
         '
         'Label7
@@ -363,11 +363,11 @@ Partial Class frmManageSubjects
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(840, 532)
+        Me.btnCancel.Location = New System.Drawing.Point(1133, 646)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnCancel.PressedDepth = 40
-        Me.btnCancel.Size = New System.Drawing.Size(104, 40)
+        Me.btnCancel.Size = New System.Drawing.Size(139, 49)
         Me.btnCancel.TabIndex = 31
         Me.btnCancel.Text = "Cancel"
         '
@@ -384,7 +384,7 @@ Partial Class frmManageSubjects
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(959, 655)
+        Me.btnEdit.Location = New System.Drawing.Point(965, 646)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
@@ -405,11 +405,11 @@ Partial Class frmManageSubjects
         Me.btnNew.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnNew.ForeColor = System.Drawing.Color.White
         Me.btnNew.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnNew.Location = New System.Drawing.Point(148, 532)
+        Me.btnNew.Location = New System.Drawing.Point(221, 646)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnNew.PressedDepth = 40
-        Me.btnNew.Size = New System.Drawing.Size(104, 40)
+        Me.btnNew.Size = New System.Drawing.Size(139, 49)
         Me.btnNew.TabIndex = 29
         Me.btnNew.Text = "New"
         '
@@ -426,11 +426,11 @@ Partial Class frmManageSubjects
         Me.btnSave.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnSave.Location = New System.Drawing.Point(25, 532)
+        Me.btnSave.Location = New System.Drawing.Point(9, 646)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnSave.PressedDepth = 40
-        Me.btnSave.Size = New System.Drawing.Size(104, 40)
+        Me.btnSave.Size = New System.Drawing.Size(139, 49)
         Me.btnSave.TabIndex = 28
         Me.btnSave.Text = "Save"
         '
@@ -447,11 +447,11 @@ Partial Class frmManageSubjects
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnDelete.Location = New System.Drawing.Point(596, 532)
+        Me.btnDelete.Location = New System.Drawing.Point(792, 646)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnDelete.PressedDepth = 40
-        Me.btnDelete.Size = New System.Drawing.Size(104, 40)
+        Me.btnDelete.Size = New System.Drawing.Size(139, 49)
         Me.btnDelete.TabIndex = 32
         Me.btnDelete.Text = "Delete"
         '
@@ -459,13 +459,13 @@ Partial Class frmManageSubjects
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 588)
+        Me.ClientSize = New System.Drawing.Size(1297, 735)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Guna2GroupBox2)
+        Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)

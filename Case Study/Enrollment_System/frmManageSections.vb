@@ -254,10 +254,11 @@ Public Class frmManageSections
         courseId = "CRS-" & idNumber.ToString("D4")
 
         ' Insert the new record
-        sql = "INSERT INTO tblCourse (CourseID, Course) VALUES (@CourseID, @Course)"
+        sql = "INSERT INTO tblCourse (CourseID, DeptID, Course) VALUES (@CourseID, @DeptID, @Course)"
         cmd = New OleDbCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@CourseID", courseId)
+            .Parameters.AddWithValue("@DeptID", deptId)
             .Parameters.AddWithValue("@Course", cboCourse.Text)
             .ExecuteNonQuery()
         End With

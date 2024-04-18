@@ -79,17 +79,6 @@ Public Class frmManageSections
         dr.Close()
     End Sub
 
-    Private Sub getYearLevel()
-        sql = "SELECT DISTINCT YearLevel FROM tblSections"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboYearLevel.Items.Clear()
-        While dr.Read = True
-            cboYearLevel.Items.Add(dr("YearLevel").ToString())
-        End While
-        dr.Close()
-    End Sub
-
     Private Sub getSchoolYear()
         sql = "SELECT DISTINCT SchoolYear FROM tblSY"
         cmd = New OleDbCommand(sql, cn)
@@ -97,17 +86,6 @@ Public Class frmManageSections
         cboSchoolYear.Items.Clear()
         While dr.Read = True
             cboSchoolYear.Items.Add(dr("SchoolYear").ToString())
-        End While
-        dr.Close()
-    End Sub
-
-    Private Sub getSemester()
-        sql = "SELECT DISTINCT Semester FROM tblSY"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboSemester.Items.Clear()
-        While dr.Read = True
-            cboSemester.Items.Add(dr("Semester").ToString())
         End While
         dr.Close()
     End Sub
@@ -268,19 +246,28 @@ Public Class frmManageSections
         If cboSection.Text = "" Or cboYearLevel.Text = "" Or cboSchoolYear.Text = "" Or cboSemester.Text = "" Or cboDepartment.Text = "" Or cboCourse.Text = "" Then
             MsgBox("Please fill all the fields", MsgBoxStyle.Exclamation)
         Else
+            Call checkSectionName()
+        End If
+    End Sub
+
+    Private Sub checkSectionName()
+        sql = "Select SectionName from tblSections where SectionName = '" & cboSection.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            MsgBox("Subject Code Exist", MsgBoxStyle.Exclamation)
+        Else
             Call insertThings()
             Call callThings()
             Call loadAccount()
-            MsgBox("Record Inserted", MsgBoxStyle.Information)
+            MsgBox("Section Record Inserted", MsgBoxStyle.Information)
         End If
     End Sub
 
     Private Sub callThings()
         Call getSection()
         Call getDepartment()
-        Call getYearLevel()
         Call getSchoolYear()
-        Call getSemester()
         Call getCourse()
     End Sub
 

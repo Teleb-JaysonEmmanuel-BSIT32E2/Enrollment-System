@@ -174,10 +174,21 @@ Public Class frmManageSubjects
         If txtSubjectCode.Text = "" Or txtUnits.Text = "" Or txtSubjectDescription.Text = "" Or cboSubjectStatus.Text = "" Or cboSubjectType.Text = "" Then
             MsgBox("Please fill all the fields", MsgBoxStyle.Exclamation)
         Else
+            Call checkSubjectCode()
+        End If
+    End Sub
+
+    Private Sub checkSubjectCode()
+        sql = "Select SubjCode from tblSubjects where SubjCode = '" & txtSubjectCode.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            MsgBox("Subject Code Exist", MsgBoxStyle.Exclamation)
+        Else
             Call insertSubject()
             Call callThings()
             Call loadAccount()
-            MsgBox("Record Inserted", MsgBoxStyle.Information)
+            MsgBox("Enrolled Student Record Inserted", MsgBoxStyle.Information)
         End If
     End Sub
 

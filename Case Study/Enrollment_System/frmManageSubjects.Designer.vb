@@ -34,7 +34,6 @@ Partial Class frmManageSubjects
         Me.txtSubjectCode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -230,7 +229,6 @@ Partial Class frmManageSubjects
         'Guna2GroupBox2
         '
         Me.Guna2GroupBox2.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2GroupBox2.Controls.Add(Me.Guna2Button1)
         Me.Guna2GroupBox2.Controls.Add(Me.txtSearch)
         Me.Guna2GroupBox2.Controls.Add(Me.Label10)
         Me.Guna2GroupBox2.Controls.Add(Me.ListView1)
@@ -242,27 +240,6 @@ Partial Class frmManageSubjects
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(945, 306)
         Me.Guna2GroupBox2.TabIndex = 23
         Me.Guna2GroupBox2.Text = "LIST OF SUBJECTS"
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderRadius = 15
-        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Maroon
-        Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.Guna2Button1.Location = New System.Drawing.Point(482, 47)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.Guna2Button1.PressedDepth = 40
-        Me.Guna2Button1.Size = New System.Drawing.Size(103, 32)
-        Me.Guna2Button1.TabIndex = 26
-        Me.Guna2Button1.Text = "search"
         '
         'txtSearch
         '
@@ -483,7 +460,6 @@ Partial Class frmManageSubjects
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button

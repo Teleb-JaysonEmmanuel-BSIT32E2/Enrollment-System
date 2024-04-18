@@ -166,6 +166,7 @@ Partial Class frmManageSections
         '
         Me.cboSemester.Enabled = False
         Me.cboSemester.FormattingEnabled = True
+        Me.cboSemester.Items.AddRange(New Object() {"First Semester", "Second Semester"})
         Me.cboSemester.Location = New System.Drawing.Point(15, 140)
         Me.cboSemester.Name = "cboSemester"
         Me.cboSemester.Size = New System.Drawing.Size(300, 29)
@@ -184,6 +185,7 @@ Partial Class frmManageSections
         '
         Me.cboYearLevel.Enabled = False
         Me.cboYearLevel.FormattingEnabled = True
+        Me.cboYearLevel.Items.AddRange(New Object() {"First Year", "Second Year", "Third Year", "Fourth Year", "Fifth Year"})
         Me.cboYearLevel.Location = New System.Drawing.Point(330, 75)
         Me.cboYearLevel.Name = "cboYearLevel"
         Me.cboYearLevel.Size = New System.Drawing.Size(300, 29)

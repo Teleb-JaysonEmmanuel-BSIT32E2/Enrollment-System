@@ -25,6 +25,7 @@ Partial Class frmDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnDashaboard = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnEnrollment = New System.Windows.Forms.Button()
         Me.btnSchedule = New System.Windows.Forms.Button()
@@ -65,6 +66,7 @@ Partial Class frmDashboard
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.btnDashaboard)
         Me.Panel2.Controls.Add(Me.btnLogout)
         Me.Panel2.Controls.Add(Me.btnEnrollment)
         Me.Panel2.Controls.Add(Me.btnSchedule)
@@ -76,9 +78,29 @@ Partial Class frmDashboard
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(236, 710)
+        Me.Panel2.Size = New System.Drawing.Size(315, 874)
         Me.Panel2.TabIndex = 1
+        '
+        'btnDashaboard
+        '
+        Me.btnDashaboard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDashaboard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDashaboard.FlatAppearance.BorderSize = 0
+        Me.btnDashaboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDashaboard.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashaboard.Image = CType(resources.GetObject("btnDashaboard.Image"), System.Drawing.Image)
+        Me.btnDashaboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashaboard.Location = New System.Drawing.Point(0, 215)
+        Me.btnDashaboard.Name = "btnDashaboard"
+        Me.btnDashaboard.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
+        Me.btnDashaboard.Size = New System.Drawing.Size(315, 52)
+        Me.btnDashaboard.TabIndex = 9
+        Me.btnDashaboard.Text = "     Dashboard"
+        Me.btnDashaboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDashaboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDashaboard.UseVisualStyleBackColor = True
         '
         'btnLogout
         '
@@ -91,10 +113,11 @@ Partial Class frmDashboard
         Me.btnLogout.ForeColor = System.Drawing.Color.White
         Me.btnLogout.Image = CType(resources.GetObject("btnLogout.Image"), System.Drawing.Image)
         Me.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogout.Location = New System.Drawing.Point(0, 658)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 810)
+        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnLogout.Size = New System.Drawing.Size(236, 52)
+        Me.btnLogout.Padding = New System.Windows.Forms.Padding(27, 0, 0, 0)
+        Me.btnLogout.Size = New System.Drawing.Size(315, 64)
         Me.btnLogout.TabIndex = 8
         Me.btnLogout.Text = "     Logout"
         Me.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -104,16 +127,15 @@ Partial Class frmDashboard
         'btnEnrollment
         '
         Me.btnEnrollment.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnrollment.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnEnrollment.FlatAppearance.BorderSize = 0
         Me.btnEnrollment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEnrollment.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnrollment.Image = CType(resources.GetObject("btnEnrollment.Image"), System.Drawing.Image)
         Me.btnEnrollment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEnrollment.Location = New System.Drawing.Point(0, 487)
+        Me.btnEnrollment.Location = New System.Drawing.Point(0, 691)
         Me.btnEnrollment.Name = "btnEnrollment"
-        Me.btnEnrollment.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnEnrollment.Size = New System.Drawing.Size(236, 52)
+        Me.btnEnrollment.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnEnrollment.Size = New System.Drawing.Size(315, 64)
         Me.btnEnrollment.TabIndex = 7
         Me.btnEnrollment.Text = "     Enrollment"
         Me.btnEnrollment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -123,16 +145,15 @@ Partial Class frmDashboard
         'btnSchedule
         '
         Me.btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSchedule.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSchedule.FlatAppearance.BorderSize = 0
         Me.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSchedule.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSchedule.Image = CType(resources.GetObject("btnSchedule.Image"), System.Drawing.Image)
         Me.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSchedule.Location = New System.Drawing.Point(0, 435)
+        Me.btnSchedule.Location = New System.Drawing.Point(0, 621)
         Me.btnSchedule.Name = "btnSchedule"
-        Me.btnSchedule.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnSchedule.Size = New System.Drawing.Size(236, 52)
+        Me.btnSchedule.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnSchedule.Size = New System.Drawing.Size(315, 64)
         Me.btnSchedule.TabIndex = 6
         Me.btnSchedule.Text = "     Class Schedule"
         Me.btnSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -142,16 +163,15 @@ Partial Class frmDashboard
         'btnSection
         '
         Me.btnSection.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSection.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSection.FlatAppearance.BorderSize = 0
         Me.btnSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSection.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSection.Image = CType(resources.GetObject("btnSection.Image"), System.Drawing.Image)
         Me.btnSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSection.Location = New System.Drawing.Point(0, 383)
+        Me.btnSection.Location = New System.Drawing.Point(0, 551)
         Me.btnSection.Name = "btnSection"
-        Me.btnSection.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnSection.Size = New System.Drawing.Size(236, 52)
+        Me.btnSection.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnSection.Size = New System.Drawing.Size(315, 64)
         Me.btnSection.TabIndex = 5
         Me.btnSection.Text = "     Section"
         Me.btnSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -161,16 +181,15 @@ Partial Class frmDashboard
         'btnTeachers
         '
         Me.btnTeachers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnTeachers.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnTeachers.FlatAppearance.BorderSize = 0
         Me.btnTeachers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTeachers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTeachers.Image = CType(resources.GetObject("btnTeachers.Image"), System.Drawing.Image)
         Me.btnTeachers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTeachers.Location = New System.Drawing.Point(0, 331)
+        Me.btnTeachers.Location = New System.Drawing.Point(0, 481)
         Me.btnTeachers.Name = "btnTeachers"
-        Me.btnTeachers.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnTeachers.Size = New System.Drawing.Size(236, 52)
+        Me.btnTeachers.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnTeachers.Size = New System.Drawing.Size(315, 64)
         Me.btnTeachers.TabIndex = 4
         Me.btnTeachers.Text = "     Teachers"
         Me.btnTeachers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -180,16 +199,15 @@ Partial Class frmDashboard
         'btnStudents
         '
         Me.btnStudents.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnStudents.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnStudents.FlatAppearance.BorderSize = 0
         Me.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStudents.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStudents.Image = CType(resources.GetObject("btnStudents.Image"), System.Drawing.Image)
         Me.btnStudents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnStudents.Location = New System.Drawing.Point(0, 279)
+        Me.btnStudents.Location = New System.Drawing.Point(0, 411)
         Me.btnStudents.Name = "btnStudents"
-        Me.btnStudents.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnStudents.Size = New System.Drawing.Size(236, 52)
+        Me.btnStudents.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnStudents.Size = New System.Drawing.Size(315, 64)
         Me.btnStudents.TabIndex = 3
         Me.btnStudents.Text = "     Students"
         Me.btnStudents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -199,16 +217,15 @@ Partial Class frmDashboard
         'btnSubjects
         '
         Me.btnSubjects.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSubjects.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnSubjects.FlatAppearance.BorderSize = 0
         Me.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubjects.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubjects.Image = CType(resources.GetObject("btnSubjects.Image"), System.Drawing.Image)
         Me.btnSubjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSubjects.Location = New System.Drawing.Point(0, 227)
+        Me.btnSubjects.Location = New System.Drawing.Point(0, 341)
         Me.btnSubjects.Name = "btnSubjects"
-        Me.btnSubjects.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnSubjects.Size = New System.Drawing.Size(236, 52)
+        Me.btnSubjects.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnSubjects.Size = New System.Drawing.Size(315, 64)
         Me.btnSubjects.TabIndex = 2
         Me.btnSubjects.Text = "     Subjects"
         Me.btnSubjects.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -218,16 +235,15 @@ Partial Class frmDashboard
         'btnUsers
         '
         Me.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUsers.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnUsers.FlatAppearance.BorderSize = 0
         Me.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsers.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsers.Image = CType(resources.GetObject("btnUsers.Image"), System.Drawing.Image)
         Me.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUsers.Location = New System.Drawing.Point(0, 175)
+        Me.btnUsers.Location = New System.Drawing.Point(0, 271)
         Me.btnUsers.Name = "btnUsers"
-        Me.btnUsers.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
-        Me.btnUsers.Size = New System.Drawing.Size(236, 52)
+        Me.btnUsers.Padding = New System.Windows.Forms.Padding(27, 12, 13, 12)
+        Me.btnUsers.Size = New System.Drawing.Size(315, 64)
         Me.btnUsers.TabIndex = 1
         Me.btnUsers.Text = "     Users"
         Me.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -242,8 +258,9 @@ Partial Class frmDashboard
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(236, 175)
+        Me.Panel4.Size = New System.Drawing.Size(315, 215)
         Me.Panel4.TabIndex = 0
         '
         'Label3
@@ -253,9 +270,10 @@ Partial Class frmDashboard
         Me.Label3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label3.Font = New System.Drawing.Font("Microsoft New Tai Lue", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(14, 146)
+        Me.Label3.Location = New System.Drawing.Point(19, 180)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(196, 10)
+        Me.Label3.Size = New System.Drawing.Size(239, 14)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Km. 30 National Road Tunasan Muntinlupa City, NCR"
         '
@@ -263,10 +281,10 @@ Partial Class frmDashboard
         '
         Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"), System.Drawing.Image)
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(60, 11)
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(69, 11)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(90, 90)
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(120, 111)
         Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2CirclePictureBox1.TabIndex = 0
         Me.Guna2CirclePictureBox1.TabStop = False
@@ -278,9 +296,10 @@ Partial Class frmDashboard
         Me.Label1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(22, 107)
+        Me.Label1.Location = New System.Drawing.Point(29, 132)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(181, 21)
+        Me.Label1.Size = New System.Drawing.Size(227, 27)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "ENROLLMENT SYSTEM"
         '
@@ -291,9 +310,10 @@ Partial Class frmDashboard
         Me.Label2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label2.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(33, 125)
+        Me.Label2.Location = New System.Drawing.Point(44, 154)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(157, 21)
+        Me.Label2.Size = New System.Drawing.Size(194, 27)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Lyceum of Alabang"
         '
@@ -302,9 +322,10 @@ Partial Class frmDashboard
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.StatusStrip1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(236, 688)
+        Me.Panel3.Location = New System.Drawing.Point(315, 847)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(964, 22)
+        Me.Panel3.Size = New System.Drawing.Size(1285, 27)
         Me.Panel3.TabIndex = 2
         '
         'StatusStrip1
@@ -312,10 +333,11 @@ Partial Class frmDashboard
         Me.StatusStrip1.BackColor = System.Drawing.Color.Transparent
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel5, Me.stsDateTime})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1)
         Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.StatusStrip1.Size = New System.Drawing.Size(964, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1285, 26)
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -323,28 +345,28 @@ Partial Class frmDashboard
         '
         Me.ToolStripStatusLabel3.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(58, 17)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(74, 20)
         Me.ToolStripStatusLabel3.Text = "Position: "
         '
         'ToolStripStatusLabel4
         '
         Me.ToolStripStatusLabel4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!)
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(137, 17)
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(174, 20)
         Me.ToolStripStatusLabel4.Text = "ToolStripStatusLabel4     "
         '
         'ToolStripStatusLabel5
         '
         Me.ToolStripStatusLabel5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripStatusLabel5.Name = "ToolStripStatusLabel5"
-        Me.ToolStripStatusLabel5.Size = New System.Drawing.Size(74, 17)
+        Me.ToolStripStatusLabel5.Size = New System.Drawing.Size(92, 20)
         Me.ToolStripStatusLabel5.Text = "Date/Time: "
         '
         'stsDateTime
         '
         Me.stsDateTime.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!)
         Me.stsDateTime.Name = "stsDateTime"
-        Me.stsDateTime.Size = New System.Drawing.Size(122, 17)
+        Me.stsDateTime.Size = New System.Drawing.Size(154, 20)
         Me.stsDateTime.Text = "ToolStripStatusLabel6"
         '
         'Panel1
@@ -354,17 +376,19 @@ Partial Class frmDashboard
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Panel1.Location = New System.Drawing.Point(236, 0)
+        Me.Panel1.Location = New System.Drawing.Point(315, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(964, 100)
+        Me.Panel1.Size = New System.Drawing.Size(1285, 123)
         Me.Panel1.TabIndex = 3
         '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.lblUsername)
-        Me.Panel6.Location = New System.Drawing.Point(514, 32)
+        Me.Panel6.Location = New System.Drawing.Point(685, 39)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(345, 31)
+        Me.Panel6.Size = New System.Drawing.Size(460, 38)
         Me.Panel6.TabIndex = 9
         '
         'lblUsername
@@ -375,9 +399,10 @@ Partial Class frmDashboard
         Me.lblUsername.Dock = System.Windows.Forms.DockStyle.Right
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft New Tai Lue", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUsername.ForeColor = System.Drawing.Color.White
-        Me.lblUsername.Location = New System.Drawing.Point(217, 0)
+        Me.lblUsername.Location = New System.Drawing.Point(303, 0)
+        Me.lblUsername.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(128, 31)
+        Me.lblUsername.Size = New System.Drawing.Size(157, 40)
         Me.lblUsername.TabIndex = 7
         Me.lblUsername.Text = "Username"
         Me.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -386,19 +411,21 @@ Partial Class frmDashboard
         '
         Me.Panel5.Controls.Add(Me.Guna2CirclePictureBox3)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel5.Location = New System.Drawing.Point(862, 0)
+        Me.Panel5.Location = New System.Drawing.Point(1149, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(102, 100)
+        Me.Panel5.Size = New System.Drawing.Size(136, 123)
         Me.Panel5.TabIndex = 8
         '
         'Guna2CirclePictureBox3
         '
         Me.Guna2CirclePictureBox3.Image = CType(resources.GetObject("Guna2CirclePictureBox3.Image"), System.Drawing.Image)
         Me.Guna2CirclePictureBox3.ImageRotate = 0!
-        Me.Guna2CirclePictureBox3.Location = New System.Drawing.Point(20, 17)
+        Me.Guna2CirclePictureBox3.Location = New System.Drawing.Point(27, 21)
+        Me.Guna2CirclePictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2CirclePictureBox3.Name = "Guna2CirclePictureBox3"
         Me.Guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox3.Size = New System.Drawing.Size(64, 64)
+        Me.Guna2CirclePictureBox3.Size = New System.Drawing.Size(85, 79)
         Me.Guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2CirclePictureBox3.TabIndex = 4
         Me.Guna2CirclePictureBox3.TabStop = False
@@ -406,9 +433,10 @@ Partial Class frmDashboard
         'panelMainDashboard
         '
         Me.panelMainDashboard.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelMainDashboard.Location = New System.Drawing.Point(236, 100)
+        Me.panelMainDashboard.Location = New System.Drawing.Point(315, 123)
+        Me.panelMainDashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.panelMainDashboard.Name = "panelMainDashboard"
-        Me.panelMainDashboard.Size = New System.Drawing.Size(964, 588)
+        Me.panelMainDashboard.Size = New System.Drawing.Size(1285, 724)
         Me.panelMainDashboard.TabIndex = 4
         '
         'Timer1
@@ -417,14 +445,15 @@ Partial Class frmDashboard
         '
         'frmDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 710)
+        Me.ClientSize = New System.Drawing.Size(1600, 874)
         Me.Controls.Add(Me.panelMainDashboard)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
@@ -470,4 +499,5 @@ Partial Class frmDashboard
     Friend WithEvents Panel6 As Panel
     Friend WithEvents panelMainDashboard As Panel
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnDashaboard As Button
 End Class

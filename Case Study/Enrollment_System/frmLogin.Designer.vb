@@ -52,7 +52,7 @@ Partial Class frmLogin
         Me.Panel2.Controls.Add(Me.txtUsername)
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Location = New System.Drawing.Point(16, 274)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(469, 68)
         Me.Panel2.TabIndex = 14
@@ -70,7 +70,7 @@ Partial Class frmLogin
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtUsername.Location = New System.Drawing.Point(76, 11)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(5)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = ""
@@ -83,7 +83,7 @@ Partial Class frmLogin
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(9, 9)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(57, 50)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -96,7 +96,7 @@ Partial Class frmLogin
         Me.Panel3.Controls.Add(Me.txtPassword)
         Me.Panel3.Controls.Add(Me.PictureBox3)
         Me.Panel3.Location = New System.Drawing.Point(16, 343)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(471, 68)
         Me.Panel3.TabIndex = 16
@@ -111,7 +111,7 @@ Partial Class frmLogin
         Me.chcboxShowPassword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chcboxShowPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.chcboxShowPassword.Location = New System.Drawing.Point(417, 25)
-        Me.chcboxShowPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chcboxShowPassword.Margin = New System.Windows.Forms.Padding(4)
         Me.chcboxShowPassword.Name = "chcboxShowPassword"
         Me.chcboxShowPassword.Size = New System.Drawing.Size(18, 17)
         Me.chcboxShowPassword.TabIndex = 3
@@ -134,7 +134,7 @@ Partial Class frmLogin
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPassword.Location = New System.Drawing.Point(77, 11)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(5)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPassword.PlaceholderText = ""
@@ -147,7 +147,7 @@ Partial Class frmLogin
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(9, 9)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(57, 50)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -167,7 +167,7 @@ Partial Class frmLogin
         Me.btnLogin.ForeColor = System.Drawing.Color.White
         Me.btnLogin.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnLogin.Location = New System.Drawing.Point(95, 436)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnLogin.PressedDepth = 40
@@ -207,7 +207,7 @@ Partial Class frmLogin
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(189, 139)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(133, 123)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -237,7 +237,7 @@ Partial Class frmLogin
         Me.btnExit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.Black
         Me.btnExit.Location = New System.Drawing.Point(488, 0)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(45, 34)
         Me.btnExit.TabIndex = 21
@@ -264,7 +264,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)

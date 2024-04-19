@@ -69,7 +69,7 @@ Public Class frmManageTeachers
         Dim input As String = txtEmpNo.Text
             Dim existingEmpNos = GetExistingEmpNos()
 
-        If input.StartsWith("EPLY-") AndAlso IsNumeric(input.Substring(4)) Then
+        If input.StartsWith("EMP-") AndAlso IsNumeric(input.Substring(4)) Then
             Dim filled As Boolean = True
 
             Dim requiredFields As New Dictionary(Of String, Control) From {
@@ -159,7 +159,7 @@ Public Class frmManageTeachers
         txtFirstName.Clear()
         txtLastName.Clear()
         txtMiddleName.Clear()
-        txtEmpNo.Text = "EPLY-"
+        txtEmpNo.Text = "EMP-"
         cboStatus.SelectedIndex = -1
         txtTeachID.Clear()
     End Sub
@@ -178,7 +178,7 @@ Public Class frmManageTeachers
         Else
             txtLastName.Clear()
             txtMiddleName.Clear()
-            txtEmpNo.Text = "EPLY-"
+            txtEmpNo.Text = "EMP-"
             cboStatus.SelectedIndex = -1
             txtTeachID.Text = GetNextTeacherId()
         End If

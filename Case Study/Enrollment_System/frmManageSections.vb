@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Drawing.Text
 Imports System.Linq.Expressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
@@ -78,17 +79,6 @@ Public Class frmManageSections
         dr.Close()
     End Sub
 
-    Private Sub getYearLevel()
-        sql = "SELECT DISTINCT YearLevel FROM tblSections"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboYearLevel.Items.Clear()
-        While dr.Read = True
-            cboYearLevel.Items.Add(dr("YearLevel").ToString())
-        End While
-        dr.Close()
-    End Sub
-
     Private Sub getSchoolYear()
         sql = "SELECT DISTINCT SchoolYear FROM tblSY"
         cmd = New OleDbCommand(sql, cn)
@@ -96,17 +86,6 @@ Public Class frmManageSections
         cboSchoolYear.Items.Clear()
         While dr.Read = True
             cboSchoolYear.Items.Add(dr("SchoolYear").ToString())
-        End While
-        dr.Close()
-    End Sub
-
-    Private Sub getSemester()
-        sql = "SELECT DISTINCT Semester FROM tblSY"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboSemester.Items.Clear()
-        While dr.Read = True
-            cboSemester.Items.Add(dr("Semester").ToString())
         End While
         dr.Close()
     End Sub
@@ -149,6 +128,10 @@ Public Class frmManageSections
         btnDelete.Enabled = True
     End Sub
 
+    Private syId As String
+    Private deptId As String
+    Private courseId As String
+
     Private Sub insertSectionYL()
         Dim lastId As String = ""
         sql = "SELECT TOP 1 SectionID FROM tblSections ORDER BY SectionID DESC"
@@ -163,14 +146,17 @@ Public Class frmManageSections
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
         idNumber += 1
 
-        Dim newId As String = "SEC-" & idNumber.ToString("D4")
+        Dim secId As String = "SEC-" & idNumber.ToString("D4")
 
-        sql = "INSERT INTO tblSections ([SectionID],[SectionName],[YearLevel]) VALUES ([@SectionID],[@SectionName],[@YearLevel])"
+        sql = "INSERT INTO tblSections ([SectionID],[SectionName],[YearLevel],[SYID],[DeptID],[CourseID]) VALUES ([@SectionID],[@SectionName],[@YearLevel],[@SYID],[@DeptID],[@CourseID])"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("SectionID", newId)
+            .Parameters.AddWithValue("SectionID", secId)
             .Parameters.AddWithValue("SectionName", cboSection.Text)
             .Parameters.AddWithValue("YearLevel", cboYearLevel.Text)
+            .Parameters.AddWithValue("SYID", syId)
+            .Parameters.AddWithValue("DeptID", deptId)
+            .Parameters.AddWithValue("CourseID", courseId)
             .ExecuteNonQuery()
         End With
     End Sub
@@ -189,13 +175,14 @@ Public Class frmManageSections
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(3))
         idNumber += 1
 
-        Dim newId As String = "SY-" & idNumber.ToString("D4")
+        syId = "SY-" & idNumber.ToString("D4")
 
-        sql = "Insert into tblSY ([SYID],[SchoolYear])values([@SYID],[@SchoolYear])"
+        sql = "Insert into tblSY ([SYID],[SchoolYear],[Semester])values([@SYID],[@SchoolYear],[@Semester])"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("SYID", newId)
+            .Parameters.AddWithValue("SYID", syId)
             .Parameters.AddWithValue("SchoolYear", cboSchoolYear.Text)
+            .Parameters.AddWithValue("Semester", cboSemester.Text)
             .ExecuteNonQuery()
         End With
     End Sub
@@ -214,12 +201,12 @@ Public Class frmManageSections
         Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
         idNumber += 1
 
-        Dim newId As String = "DEPT-" & idNumber.ToString("D4")
+        deptId = "DEPT-" & idNumber.ToString("D4")
 
         sql = "Insert into tblDept ([DeptID],[Department])values([@DeptID],[@Department])"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("DeptID", newId)
+            .Parameters.AddWithValue("DeptID", deptId)
             .Parameters.AddWithValue("Department", cboDepartment.Text)
             .ExecuteNonQuery()
         End With
@@ -242,13 +229,14 @@ Public Class frmManageSections
         idNumber += 1
 
         ' Create the new CourseID
-        Dim newId As String = "CRS-" & idNumber.ToString("D4")
+        courseId = "CRS-" & idNumber.ToString("D4")
 
         ' Insert the new record
-        sql = "INSERT INTO tblCourse (CourseID, Course) VALUES (@CourseID, @Course)"
+        sql = "INSERT INTO tblCourse (CourseID, DeptID, Course) VALUES (@CourseID, @DeptID, @Course)"
         cmd = New OleDbCommand(sql, cn)
         With cmd
-            .Parameters.AddWithValue("@CourseID", newId)
+            .Parameters.AddWithValue("@CourseID", courseId)
+            .Parameters.AddWithValue("@DeptID", deptId)
             .Parameters.AddWithValue("@Course", cboCourse.Text)
             .ExecuteNonQuery()
         End With
@@ -259,27 +247,36 @@ Public Class frmManageSections
         If cboSection.Text = "" Or cboYearLevel.Text = "" Or cboSchoolYear.Text = "" Or cboSemester.Text = "" Or cboDepartment.Text = "" Or cboCourse.Text = "" Then
             MsgBox("Please fill all the fields", MsgBoxStyle.Exclamation)
         Else
+            Call checkSectionName()
+        End If
+    End Sub
+
+    Private Sub checkSectionName()
+        sql = "Select SectionName from tblSections where SectionName = '" & cboSection.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            MsgBox("Subject Code Exist", MsgBoxStyle.Exclamation)
+        Else
             Call insertThings()
             Call callThings()
             Call loadAccount()
-            MsgBox("Record Inserted", MsgBoxStyle.Information)
+            MsgBox("Section Record Inserted", MsgBoxStyle.Information)
         End If
     End Sub
 
     Private Sub callThings()
         Call getSection()
         Call getDepartment()
-        Call getYearLevel()
         Call getSchoolYear()
-        Call getSemester()
         Call getCourse()
     End Sub
 
     Private Sub insertThings()
-        Call insertSectionYL()
         Call insertSY()
         Call insertDep()
         Call insertCourse()
+        Call insertSectionYL()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

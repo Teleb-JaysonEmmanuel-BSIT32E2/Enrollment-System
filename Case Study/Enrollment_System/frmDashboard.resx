@@ -121,7 +121,7 @@
   <data name="btnDashaboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAdhJREFUSEvtlj9LAzEYxqOTCIKjhbyXRegHKIjiv0EHv4Cjg0sH/QJO6tqitFcE
+        EAAACxABrSO9dQAAAdhJREFUSEvtlj9LAzEYxqOTCIKjhbyXRegHKIjiv0EHv4Cjg0sH/QJO6tqitFcE
         KQ7iR3BwdVOkOoo4uCmKCIqTikp9EtMjzeXqXYstlD7w4738efMkuTQ91lP3qyDEhO95FXDRJirSk+Eh
         C6ptJhvLuOh5N4hniF92W5PEMv4GZfladoQYKRLlfaIPq09Soo2xuvMC5zMw2kNZGdeEuim0P9s5CYgw
         Jjoqp1KD0gTlskQ5Gip53jzq5W4EeZjMom4OtC/EACb6YPYDTuO7XDo9pPMijaVQf6BzFDB4RLRP8SUw
@@ -4802,6 +4802,9 @@
         TkSuQmCC
 </value>
   </data>
+  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

@@ -1,41 +1,38 @@
 ﻿Imports System.Data.OleDb
+Imports System.Diagnostics.Eventing.Reader
 Public Class frmClassScheduling
     Dim classNo As String
-    Dim newSecId As String
     Dim newCourseId As String
     Dim newDeptId As String
     Dim newSYId As String
     Dim newSubId As String
     Dim newTeacherId As String
-
+    Dim classID As String
     Private Sub frmClassScheduling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadSchedule()
-        Call getSY()
-        Call getCourse()
         Call getSectionName()
-        Call getSem()
-        Call getYearLevel()
         Call getCSNo()
         Call getTeacher()
         Call getSubjects()
     End Sub
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            cboSection.Text = ListView1.SelectedItems(0).SubItems(0).Text
-
+            cboSection.Text = ListView1.SelectedItems(0).SubItems(1).Text
+            classID = ListView1.SelectedItems(0).SubItems(0).Text
             Call getCSNo()
         End If
     End Sub
 
     Private Sub loadSchedule()
-        sql = "Select * from qryClassSchedule"
+        sql = "Select * from qryClassSchedule ORDER BY ClassSchedNo ASC"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         Dim x As ListViewItem
         ListView1.Items.Clear()
         Do While dr.Read = True
-            x = New ListViewItem(dr("SectionName").ToString)
+            x = New ListViewItem(dr("ClassSchedNo").ToString)
+            x.SubItems.Add(dr("SectionName").ToString)
             x.SubItems.Add(dr("YearLevel").ToString)
             x.SubItems.Add(dr("SchoolYear").ToString)
             x.SubItems.Add(dr("Semester").ToString)
@@ -65,57 +62,6 @@ Public Class frmClassScheduling
         End While
     End Sub
 
-    Private Sub getSY()
-        sql = "SELECT DISTINCT SchoolYear FROM tblSY"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboSY.Items.Clear()
-        While dr.Read = True
-            cboSY.Items.Add(dr("SchoolYear").ToString())
-        End While
-        dr.Close()
-    End Sub
-    Private Sub getCourse()
-        sql = "SELECT DISTINCT Course FROM tblCourse"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboTrack.Items.Clear()
-        While dr.Read = True
-            cboTrack.Items.Add(dr("Course").ToString())
-        End While
-        dr.Close()
-
-        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-        sql = "SELECT DISTINCT Department FROM tblDept"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboStrand.Items.Clear()
-        While dr.Read = True
-            cboStrand.Items.Add(dr("Department").ToString())
-        End While
-        dr.Close()
-    End Sub
-    Private Sub getSem()
-        sql = "SELECT DISTINCT Semester FROM tblSY"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboSem.Items.Clear()
-        While dr.Read = True
-            cboSem.Items.Add(dr("Semester").ToString())
-        End While
-        dr.Close()
-    End Sub
-    Private Sub getYearLevel()
-        sql = "SELECT DISTINCT YearLevel FROM tblSections"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboGrade.Items.Clear()
-        While dr.Read = True
-            cboGrade.Items.Add(dr("YearLevel").ToString())
-        End While
-        dr.Close()
-    End Sub
     Private Sub getSectionName()
         sql = "SELECT DISTINCT SectionName FROM tblSections"
         cmd = New OleDbCommand(sql, cn)
@@ -139,15 +85,18 @@ Public Class frmClassScheduling
     End Sub
 
     Private Sub getTeacher()
-        sql = "SELECT DISTINCT FirstName, MiddleName, LastName from tblTeachers"
+        sql = "SELECT DISTINCT FirstName & ' ' & MiddleName & ' ' & LastName AS FullName FROM tblTeachers"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         cboTeacher.Items.Clear()
-        If dr.Read = True Then
-            cboTeacher.Items.Add(dr("FirstName").ToString & " " & dr("MiddleName").ToString & " " & dr("LastName").ToString())
-        End If
+
+        While dr.Read = True
+            cboTeacher.Items.Add(dr("FullName").ToString())
+        End While
+
         dr.Close()
     End Sub
+
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
         cboStatus.Enabled = True
@@ -172,10 +121,10 @@ Public Class frmClassScheduling
         cboGrade.SelectedIndex = -1
         cboSection.SelectedIndex = -1
         cboSem.SelectedIndex = -1
-        cboStrand.SelectedIndex = -1
+        cboDept.SelectedIndex = -1
         cboSY.SelectedIndex = -1
         cboTeacher.SelectedIndex = -1 'not working
-        cboTrack.SelectedIndex = -1
+        cboCourse.SelectedIndex = -1
         txtDescription.Clear()
         txtSubjCode.SelectedIndex = -1 'not working
         txtUnits.Clear()
@@ -186,65 +135,58 @@ Public Class frmClassScheduling
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        Dim filled As Boolean = True
+        If MsgBox("Do you want to save?", vbYesNo) = vbYes Then
+            Dim filled As Boolean = True
 
-        Dim requiredFields As New Dictionary(Of String, Control) From {
-            {"cboType", cboType},
-            {"cboStatus", cboStatus},
-            {"cboGrade", cboGrade},
-            {"cboSection", cboSection},
-            {"cboSem", cboSem},
-            {"cboStrand", cboStrand},
-            {"cboSY", cboSY},
-            {"cboTeacher", cboTeacher},
-            {"cboTrack", cboTrack},
-            {"txtDescription", txtDescription},
-            {"txtSubjCode", txtSubjCode},
-            {"txtUnits", txtUnits}
-        }
+            Dim requiredFields As New Dictionary(Of String, Control) From {
+                {"cboType", cboType},
+                {"cboStatus", cboStatus},
+                {"cboGrade", cboGrade},
+                {"cboSection", cboSection},
+                {"cboSem", cboSem},
+                {"cboStrand", cboDept},
+                {"cboSY", cboSY},
+                {"cboTeacher", cboTeacher},
+                {"cboTrack", cboCourse},
+                {"txtDescription", txtDescription},
+                {"txtSubjCode", txtSubjCode},
+                {"txtUnits", txtUnits}
+            }
 
-        For Each fieldName_controlPair In requiredFields
-            Dim control As Control = fieldName_controlPair.Value
+            For Each fieldName_controlPair In requiredFields
+                Dim control As Control = fieldName_controlPair.Value
 
-            If control.Text.Trim = "" Then
-                ErrorProvider1.SetError(control, "This field is required.")
-                filled = False
-                Exit For
-            Else
-                ErrorProvider1.SetError(control, "")
+                If control.Text.Trim = "" Then
+                    ErrorProvider1.SetError(control, "This field is required.")
+                    filled = False
+                    Exit For
+                Else
+                    ErrorProvider1.SetError(control, "")
+                End If
+            Next
+
+
+            If filled Then
+
+                sql = "Insert into tblClassSchedule(ClassSchedNo,YearLevel, SectionName, ClassAdviser, TeacherID, SubjCode, SYID, DeptID, CourseID) Values(@ClassSchedNo, @YearLevel, @SectionName, @ClassAdviser, @TeacherID, @SubjCode, @SYID, @DeptID, @CourseID)"
+                cmd = New OleDbCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@ClassSchedNo", classNo)
+                    .Parameters.AddWithValue("@YearLevel", cboGrade.Text)
+                    .Parameters.AddWithValue("@SectionName", cboSection.Text)
+                    .Parameters.AddWithValue("@ClassAdviser", cboTeacher.Text)
+                    .Parameters.AddWithValue("@TeacherID", newTeacherId)
+                    .Parameters.AddWithValue("@SubjCode", txtSubjCode.Text)
+                    .Parameters.AddWithValue("@SYID", newSYId)
+                    .Parameters.AddWithValue("@DeptID", newDeptId)
+                    .Parameters.AddWithValue("@CourseID", newCourseId)
+                    .ExecuteNonQuery()
+                End With
+
+                MsgBox("Done!")
+                Call loadSchedule()
             End If
-        Next
-
-
-        If filled Then
-            Call insertThings()
-
-            sql = "Insert into tblClassSchedule(ClassSchedNo,YearLevel, SectionName, ClassAdviser, SYID, DeptID, CourseID) Values(@ClassSchedNo, @YearLevel, @SectionName, @ClassAdviser, @SYID, @DeptID, @CourseID)"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@ClassSchedNo", classNo)
-                .Parameters.AddWithValue("@YearLevel", cboGrade.Text)
-                .Parameters.AddWithValue("@SectionName", cboSection.Text)
-                .Parameters.AddWithValue("@ClassAdviser", cboTeacher.Text)
-                .Parameters.AddWithValue("@SYID", newSYId)
-                .Parameters.AddWithValue("@DeptID", newDeptId)
-                .Parameters.AddWithValue("@CourseID", newCourseId)
-                .ExecuteNonQuery()
-            End With
-
-            'sql = "Insert into tblSections(SYID, DeptID, CourseID, TeacherID) Values(@SYID, @DeptID, @CourseID, @TeacherID)"
-
-            Call loadSchedule()
         End If
-
-    End Sub
-
-    Private Sub insertThings()
-        Call insertCourse()
-        Call insertDep()
-        Call insertSectionYL()
-        Call insertSY()
-        Call insertSubjects()
     End Sub
 
     Private Function GetNextClassNo() As String
@@ -264,144 +206,6 @@ Public Class frmClassScheduling
         Return nextID
     End Function
 
-    Private Sub insertSectionYL()
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 SectionID FROM tblSections ORDER BY SectionID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("SectionID").ToString()
-        Else
-            lastId = "SEC-1000"
-        End If
-
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
-        idNumber += 1
-
-        newSecId = "SEC-" & idNumber.ToString("D4")
-
-        sql = "INSERT INTO tblSections ([SectionID],[SectionName],[YearLevel]) VALUES ([@SectionID],[@SectionName],[@YearLevel])"
-        cmd = New OleDbCommand(sql, cn)
-        With cmd
-            .Parameters.AddWithValue("SectionID", newSecId)
-            .Parameters.AddWithValue("SectionName", cboSection.Text)
-            .Parameters.AddWithValue("YearLevel", cboGrade.Text)
-            .ExecuteNonQuery()
-        End With
-    End Sub
-
-    Private Sub insertSY()
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 SYID FROM tblSY ORDER BY SYID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("SYID").ToString()
-        Else
-            lastId = "SY-1000"
-        End If
-
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(3))
-        idNumber += 1
-
-        newSYId = "SY-" & idNumber.ToString("D4")
-
-        sql = "Insert into tblSY ([SYID],[SchoolYear])values([@SYID],[@SchoolYear])"
-        cmd = New OleDbCommand(sql, cn)
-        With cmd
-            .Parameters.AddWithValue("SYID", newSYId)
-            .Parameters.AddWithValue("SchoolYear", cboSY.Text)
-            .ExecuteNonQuery()
-        End With
-    End Sub
-
-    Private Sub insertDep()
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 DeptID FROM tblDept ORDER BY DeptID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("DeptID").ToString()
-        Else
-            lastId = "DEPT-1000"
-        End If
-
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
-        idNumber += 1
-
-        newDeptId = "DEPT-" & idNumber.ToString("D4")
-
-        sql = "Insert into tblDept ([DeptID],[Department])values([@DeptID],[@Department])"
-        cmd = New OleDbCommand(sql, cn)
-        With cmd
-            .Parameters.AddWithValue("DeptID", newDeptId)
-            .Parameters.AddWithValue("Department", cboStrand.Text)
-            .ExecuteNonQuery()
-        End With
-    End Sub
-
-    Private Sub insertCourse()
-        ' Retrieve the last CourseID from the database
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 CourseID FROM tblCourse ORDER BY CourseID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("CourseID").ToString()
-        Else
-            lastId = "CRS-1000"
-        End If
-
-        ' Extract the numeric part of the CourseID and increment it
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
-        idNumber += 1
-
-        ' Create the new CourseID
-        newCourseId = "CRS-" & idNumber.ToString("D4")
-
-        ' Insert the new record
-        sql = "INSERT INTO tblCourse (CourseID, Course) VALUES (@CourseID, @Course)"
-        cmd = New OleDbCommand(sql, cn)
-        With cmd
-            .Parameters.AddWithValue("@CourseID", newCourseId)
-            .Parameters.AddWithValue("@Course", cboTrack.Text)
-            .ExecuteNonQuery()
-        End With
-    End Sub
-
-    Private Sub insertSubjects()
-        ' Retrieve the last CourseID from the database
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 SubjID FROM tblSubjects ORDER BY SubjID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("SubjID").ToString()
-        Else
-            lastId = "SUB-1000"
-        End If
-
-        ' Extract the numeric part of the CourseID and increment it
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
-        idNumber += 1
-
-        ' Create the new CourseID
-        newSubId = "SUB-" & idNumber.ToString("D4")
-
-        ' Insert the new record
-        sql = "Insert into tblSubjects(SubjID, SubjCode, Description, Units, SubjType, Status) Values(@SubjID, @SubjCode, @Description, @Units, @SubjType, @Status)"
-        cmd = New OleDbCommand(sql, cn)
-        With cmd
-            .Parameters.AddWithValue("SubjID", newSubId)
-            .Parameters.AddWithValue("SubjCode", txtSubjCode.Text)
-            .Parameters.AddWithValue("Description", txtDescription.Text)
-            .Parameters.AddWithValue("Units", txtUnits.Text)
-            .Parameters.AddWithValue("SubjType", cboType.Text)
-            .Parameters.AddWithValue("Status", cboStatus.Text)
-            .ExecuteNonQuery()
-        End With
-    End Sub
-
     Private Sub cboSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSection.SelectedIndexChanged
         sql = "SELECT tblSections.YearLevel, tblSY.SchoolYear, tblSY.Semester, tblCourse.Course, tblDept.Department " &
           "FROM ((tblSections " &
@@ -416,9 +220,13 @@ Public Class frmClassScheduling
             cboSY.Text = dr("SchoolYear").ToString
             cboSem.Text = dr("Semester").ToString
             cboGrade.Text = dr("YearLevel").ToString
-            cboTrack.Text = dr("Course").ToString
-            cboStrand.Text = dr("Department").ToString
+            cboCourse.Text = dr("Course").ToString
+            cboDept.Text = dr("Department").ToString
         End If
+
+        Call getCrsID()
+        Call getDeptId()
+        Call getSYID()
     End Sub
 
     Private Sub txtSubjCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtSubjCode.SelectedIndexChanged
@@ -431,6 +239,85 @@ Public Class frmClassScheduling
             cboType.Text = dr("SubjType").ToString
             txtDescription.Text = dr("Description").ToString
             cboStatus.Text = dr("Status").ToString
+        End If
+    End Sub
+
+    Private Sub cboTeacher_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeacher.SelectedIndexChanged
+        Dim nameParts As String() = cboTeacher.Text.Split(" ")
+
+        Dim firstName As String = ""
+        Dim middleName As String = ""
+
+        If UBound(nameParts) = 2 Then 'if name is only three
+            firstName = nameParts(0)
+            middleName = nameParts(1)
+        ElseIf UBound(nameParts) > 2 Then ' if name is more than three
+            firstName = nameParts(0) & " " & nameParts(1)
+            middleName = nameParts(2)
+        End If
+
+        Dim lastName As String = nameParts(UBound(nameParts))
+
+
+        sql = "SELECT TeacherID FROM tblTeachers WHERE FirstName = '" & firstName & "' and MiddleName = '" & middleName & "' and LastName = '" & lastName & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            newTeacherId = dr("TeacherID")
+        End If
+    End Sub
+
+    Private Sub getCrsID()
+        sql = "SELECT CourseID from tblCourse WHERE Course = '" & cboCourse.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            newCourseId = dr("CourseID")
+        End If
+    End Sub
+
+    Private Sub getDeptId()
+        sql = "SELECT DeptID from tblDept WHERE Department = '" & cboDept.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            newDeptId = dr("DeptID")
+        End If
+    End Sub
+
+    Private Sub getSYID()
+        sql = "SELECT SYID from tblSY WHERE SchoolYear = '" & cboSY.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            newSYId = dr("SYID")
+        End If
+    End Sub
+
+    'Private Sub getClassNo()
+    '    sql = "SELECT ClassSchedNo from tblClassSchedule WHERE ClassSchedNo = '" & classID & "'"
+    '    cmd = New OleDbCommand(sql, cn)
+    '    dr = cmd.ExecuteReader
+
+    '    If dr.Read = True Then
+    '        newClassID
+    '    End If
+    'End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
+            sql = "DELETE FROM tblClassSchedule WHERE ClassSchedNo = @item"
+            cmd = New OleDbCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@item", classID)
+                .ExecuteNonQuery()
+            End With
+            MsgBox("Deleted!")
+            Call loadSchedule()
         End If
     End Sub
 End Class

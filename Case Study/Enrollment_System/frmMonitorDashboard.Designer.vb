@@ -45,10 +45,11 @@ Partial Class frmMonitorDashboard
         Me.Panel7.BackColor = System.Drawing.Color.DarkBlue
         Me.Panel7.Controls.Add(Me.Label6)
         Me.Panel7.Controls.Add(Me.Label5)
-        Me.Panel7.Location = New System.Drawing.Point(56, 46)
+        Me.Panel7.Location = New System.Drawing.Point(75, 57)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
-        Me.Panel7.Size = New System.Drawing.Size(300, 120)
+        Me.Panel7.Padding = New System.Windows.Forms.Padding(27, 12, 0, 0)
+        Me.Panel7.Size = New System.Drawing.Size(400, 148)
         Me.Panel7.TabIndex = 31
         '
         'Label6
@@ -59,9 +60,10 @@ Partial Class frmMonitorDashboard
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(20, 10)
+        Me.Label6.Location = New System.Drawing.Point(27, 12)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(121, 25)
+        Me.Label6.Size = New System.Drawing.Size(155, 31)
         Me.Label6.TabIndex = 21
         Me.Label6.Text = "No. of Users"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -73,9 +75,10 @@ Partial Class frmMonitorDashboard
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
         Me.Label5.ForeColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(17, 52)
+        Me.Label5.Location = New System.Drawing.Point(23, 64)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 45)
+        Me.Label5.Size = New System.Drawing.Size(48, 56)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "3"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -85,10 +88,11 @@ Partial Class frmMonitorDashboard
         Me.Panel8.BackColor = System.Drawing.Color.ForestGreen
         Me.Panel8.Controls.Add(Me.Label7)
         Me.Panel8.Controls.Add(Me.Label8)
-        Me.Panel8.Location = New System.Drawing.Point(403, 46)
+        Me.Panel8.Location = New System.Drawing.Point(537, 57)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
-        Me.Panel8.Size = New System.Drawing.Size(300, 120)
+        Me.Panel8.Padding = New System.Windows.Forms.Padding(27, 12, 0, 0)
+        Me.Panel8.Size = New System.Drawing.Size(400, 148)
         Me.Panel8.TabIndex = 32
         '
         'Label7
@@ -99,9 +103,10 @@ Partial Class frmMonitorDashboard
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label7.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(20, 10)
+        Me.Label7.Location = New System.Drawing.Point(27, 12)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(251, 25)
+        Me.Label7.Size = New System.Drawing.Size(322, 31)
         Me.Label7.TabIndex = 21
         Me.Label7.Text = "No. of Registered Students"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -113,9 +118,10 @@ Partial Class frmMonitorDashboard
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(17, 52)
+        Me.Label8.Location = New System.Drawing.Point(23, 64)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(40, 45)
+        Me.Label8.Size = New System.Drawing.Size(48, 56)
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "3"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -125,10 +131,11 @@ Partial Class frmMonitorDashboard
         Me.Panel9.BackColor = System.Drawing.Color.Goldenrod
         Me.Panel9.Controls.Add(Me.Label9)
         Me.Panel9.Controls.Add(Me.Label10)
-        Me.Panel9.Location = New System.Drawing.Point(56, 206)
+        Me.Panel9.Location = New System.Drawing.Point(75, 254)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
-        Me.Panel9.Size = New System.Drawing.Size(300, 120)
+        Me.Panel9.Padding = New System.Windows.Forms.Padding(27, 12, 0, 0)
+        Me.Panel9.Size = New System.Drawing.Size(400, 148)
         Me.Panel9.TabIndex = 33
         '
         'Label9
@@ -139,9 +146,10 @@ Partial Class frmMonitorDashboard
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.Color.Transparent
-        Me.Label9.Location = New System.Drawing.Point(20, 10)
+        Me.Label9.Location = New System.Drawing.Point(27, 12)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(147, 25)
+        Me.Label9.Size = New System.Drawing.Size(188, 31)
         Me.Label9.TabIndex = 21
         Me.Label9.Text = "No. of Subjects"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -153,9 +161,10 @@ Partial Class frmMonitorDashboard
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.Transparent
-        Me.Label10.Location = New System.Drawing.Point(17, 52)
+        Me.Label10.Location = New System.Drawing.Point(23, 64)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(40, 45)
+        Me.Label10.Size = New System.Drawing.Size(48, 56)
         Me.Label10.TabIndex = 20
         Me.Label10.Text = "3"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -165,10 +174,11 @@ Partial Class frmMonitorDashboard
         Me.Panel10.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel10.Controls.Add(Me.Label11)
         Me.Panel10.Controls.Add(Me.Label12)
-        Me.Panel10.Location = New System.Drawing.Point(403, 206)
+        Me.Panel10.Location = New System.Drawing.Point(537, 254)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
-        Me.Panel10.Size = New System.Drawing.Size(300, 120)
+        Me.Panel10.Padding = New System.Windows.Forms.Padding(27, 12, 0, 0)
+        Me.Panel10.Size = New System.Drawing.Size(400, 148)
         Me.Panel10.TabIndex = 34
         '
         'Label11
@@ -179,9 +189,10 @@ Partial Class frmMonitorDashboard
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.Label11.ForeColor = System.Drawing.Color.Transparent
-        Me.Label11.Location = New System.Drawing.Point(20, 10)
+        Me.Label11.Location = New System.Drawing.Point(27, 12)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(207, 25)
+        Me.Label11.Size = New System.Drawing.Size(266, 31)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Academic School Year"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -193,23 +204,25 @@ Partial Class frmMonitorDashboard
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Microsoft New Tai Lue", 16.0!, System.Drawing.FontStyle.Bold)
         Me.Label12.ForeColor = System.Drawing.Color.Transparent
-        Me.Label12.Location = New System.Drawing.Point(20, 56)
+        Me.Label12.Location = New System.Drawing.Point(27, 69)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(274, 29)
+        Me.Label12.Size = New System.Drawing.Size(336, 35)
         Me.Label12.TabIndex = 20
         Me.Label12.Text = "2023-2024 2nd Semester"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmMonitorDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(764, 578)
+        Me.ClientSize = New System.Drawing.Size(1019, 711)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmMonitorDashboard"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmMonitorDashboard"

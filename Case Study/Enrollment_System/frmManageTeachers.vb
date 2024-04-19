@@ -66,14 +66,13 @@ Public Class frmManageTeachers
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
-        If btnNew.Enabled = True And btnEdit.Enabled = False Then
-            Dim input As String = txtEmpNo.Text
+        Dim input As String = txtEmpNo.Text
             Dim existingEmpNos = GetExistingEmpNos()
 
-            If input.StartsWith("EPLY-") AndAlso IsNumeric(input.Substring(4)) Then
-                Dim filled As Boolean = True
+        If input.StartsWith("EMP-") AndAlso IsNumeric(input.Substring(4)) Then
+            Dim filled As Boolean = True
 
-                Dim requiredFields As New Dictionary(Of String, Control) From {
+            Dim requiredFields As New Dictionary(Of String, Control) From {
                     {"txtFirstname", txtFirstName},
                     {"txtLastname", txtLastName},
                     {"txtMiddleName", txtMiddleName},
@@ -81,20 +80,21 @@ Public Class frmManageTeachers
                     {"cboStatus", cboStatus}
                 }
 
-                For Each fieldName_controlPair In requiredFields
-                    Dim control As Control = fieldName_controlPair.Value
+            For Each fieldName_controlPair In requiredFields
+                Dim control As Control = fieldName_controlPair.Value
 
-                    If control.Text.Trim = "" Then
-                        ErrorProvider1.SetError(control, "This field is required.")
-                        filled = False
-                        Exit For
-                    Else
-                        ErrorProvider1.SetError(control, "")
-                    End If
-                Next
+                If control.Text.Trim = "" Then
+                    ErrorProvider1.SetError(control, "This field is required.")
+                    filled = False
+                    Exit For
+                Else
+                    ErrorProvider1.SetError(control, "")
+                End If
+            Next
 
-                If filled Then
-                    If txtEmpNo.Text <> "" Then
+            If filled Then
+                If txtEmpNo.Text <> "" Then
+                    If btnNew.Enabled = True And btnEdit.Enabled = False Then
                         If Not existingEmpNos.Contains(txtEmpNo.Text) Then
                             sql = "INSERT INTO tblTeachers(TeacherID, EmployeeNo, FirstName, LastName, MiddleName, Status) VALUES(@TeacherID, @EmployeeNo, @FirstName, @LastName, @MiddleName, @Status)"
                             cmd = New OleDbCommand(sql, cn)
@@ -115,12 +115,28 @@ Public Class frmManageTeachers
                         Else
                             MsgBox("Employee Number already exists!", MsgBoxStyle.Exclamation)
                         End If
+                    ElseIf btnEdit.Enabled = True And btnNew.Enabled = False Then
+                        sql = "Update tblTeachers set EmployeeNo=@EmployeeNo, FirstName=@FirstName, MiddleName=@MiddleName, LastName=@LastName, Status=@Status where TeacherID = '" & txtTeachID.Text & "'"
+                        cmd = New OleDbCommand(sql, cn)
+                        With cmd
+                            .Parameters.AddWithValue("@EmployeeNo", txtEmpNo.Text)
+                            .Parameters.AddWithValue("@FirstName", txtFirstName.Text)
+                            .Parameters.AddWithValue("@LastName", txtLastName.Text)
+                            .Parameters.AddWithValue("@MiddleName", txtMiddleName.Text)
+                            .Parameters.AddWithValue("@Status", cboStatus.Text)
+                            .ExecuteNonQuery()
+                        End With
+                        MsgBox("Section Record Updated", MsgBoxStyle.Information)
                     Else
-                        MsgBox("Employee Number must not be empty!", MsgBoxStyle.Critical)
+                        MsgBox("Error!", MsgBoxStyle.Critical)
                     End If
+                    Call loadTeacher()
+                    Call clear()
+                    txtTeachID.Text = GetNextTeacherId()
+                Else
+                    MsgBox("Employee Number must not be empty!", MsgBoxStyle.Critical)
                 End If
             End If
-        ElseIf btnEdit.Enabled = True And btnNew.Enabled = False Then
 
         End If
 
@@ -131,6 +147,7 @@ Public Class frmManageTeachers
         txtLastName.Enabled = True
         txtMiddleName.Enabled = True
         cboStatus.Enabled = True
+        txtEmpNo.Enabled = True
 
         btnCancel.Enabled = True
         btnSave.Enabled = True
@@ -142,7 +159,7 @@ Public Class frmManageTeachers
         txtFirstName.Clear()
         txtLastName.Clear()
         txtMiddleName.Clear()
-        txtEmpNo.Text = "EPLY-"
+        txtEmpNo.Text = "EMP-"
         cboStatus.SelectedIndex = -1
         txtTeachID.Clear()
     End Sub
@@ -161,7 +178,7 @@ Public Class frmManageTeachers
         Else
             txtLastName.Clear()
             txtMiddleName.Clear()
-            txtEmpNo.Text = "EPLY-"
+            txtEmpNo.Text = "EMP-"
             cboStatus.SelectedIndex = -1
             txtTeachID.Text = GetNextTeacherId()
         End If
@@ -192,5 +209,19 @@ Public Class frmManageTeachers
         btnDelete.Enabled = False
         btnEdit.Enabled = True
         btnNew.Enabled = True
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If txtTeachID.Text IsNot Nothing Then
+            sql = "DELETE FROM tblTeachers WHERE TeacherID = @item"
+            cmd = New OleDbCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@item", txtTeachID.Text)
+                .ExecuteNonQuery()
+            End With
+        End If
+        Call clear()
+        Call loadTeacher()
+        MsgBox("Account Deleted Successfuly!", MsgBoxStyle.Information)
     End Sub
 End Class

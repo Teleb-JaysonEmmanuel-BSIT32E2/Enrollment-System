@@ -24,6 +24,11 @@ Partial Class frmClassScheduling
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.cboStatus = New System.Windows.Forms.ComboBox()
+        Me.cboTeacher = New System.Windows.Forms.ComboBox()
+        Me.cboType = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.txtDescription = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtUnits = New Guna.UI2.WinForms.Guna2TextBox()
@@ -33,9 +38,9 @@ Partial Class frmClassScheduling
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboSection = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.cboStrand = New System.Windows.Forms.ComboBox()
+        Me.cboDept = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.cboTrack = New System.Windows.Forms.ComboBox()
+        Me.cboCourse = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cboGrade = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -64,11 +69,7 @@ Partial Class frmClassScheduling
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtDescription = New System.Windows.Forms.TextBox()
-        Me.cboTeacher = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.cboType = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.cboStatus = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,8 +78,8 @@ Partial Class frmClassScheduling
         'Guna2GroupBox1
         '
         Me.Guna2GroupBox1.Controls.Add(Me.cboStatus)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboType)
         Me.Guna2GroupBox1.Controls.Add(Me.cboTeacher)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboType)
         Me.Guna2GroupBox1.Controls.Add(Me.txtDescription)
         Me.Guna2GroupBox1.Controls.Add(Me.Label11)
         Me.Guna2GroupBox1.Controls.Add(Me.Label15)
@@ -90,9 +91,9 @@ Partial Class frmClassScheduling
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.cboSection)
         Me.Guna2GroupBox1.Controls.Add(Me.Label10)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboStrand)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboDept)
         Me.Guna2GroupBox1.Controls.Add(Me.Label7)
-        Me.Guna2GroupBox1.Controls.Add(Me.cboTrack)
+        Me.Guna2GroupBox1.Controls.Add(Me.cboCourse)
         Me.Guna2GroupBox1.Controls.Add(Me.Label4)
         Me.Guna2GroupBox1.Controls.Add(Me.cboGrade)
         Me.Guna2GroupBox1.Controls.Add(Me.Label3)
@@ -112,6 +113,74 @@ Partial Class frmClassScheduling
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1189, 305)
         Me.Guna2GroupBox1.TabIndex = 26
         Me.Guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'cboStatus
+        '
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatus.Enabled = False
+        Me.cboStatus.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.cboStatus.FormattingEnabled = True
+        Me.cboStatus.ItemHeight = 26
+        Me.cboStatus.Items.AddRange(New Object() {"Available", "Not Available"})
+        Me.cboStatus.Location = New System.Drawing.Point(846, 252)
+        Me.cboStatus.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(329, 34)
+        Me.cboStatus.TabIndex = 81
+        '
+        'cboTeacher
+        '
+        Me.cboTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTeacher.Enabled = False
+        Me.cboTeacher.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.cboTeacher.FormattingEnabled = True
+        Me.cboTeacher.ItemHeight = 26
+        Me.cboTeacher.Location = New System.Drawing.Point(502, 90)
+        Me.cboTeacher.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboTeacher.Name = "cboTeacher"
+        Me.cboTeacher.Size = New System.Drawing.Size(295, 34)
+        Me.cboTeacher.TabIndex = 80
+        '
+        'cboType
+        '
+        Me.cboType.BackColor = System.Drawing.Color.Transparent
+        Me.cboType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboType.Enabled = False
+        Me.cboType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboType.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cboType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cboType.ItemHeight = 30
+        Me.cboType.Items.AddRange(New Object() {"Major", "Minor"})
+        Me.cboType.Location = New System.Drawing.Point(676, 252)
+        Me.cboType.Name = "cboType"
+        Me.cboType.Size = New System.Drawing.Size(122, 36)
+        Me.cboType.TabIndex = 78
+        '
+        'txtDescription
+        '
+        Me.txtDescription.Enabled = False
+        Me.txtDescription.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.txtDescription.Location = New System.Drawing.Point(846, 90)
+        Me.txtDescription.Multiline = True
+        Me.txtDescription.Name = "txtDescription"
+        Me.txtDescription.Size = New System.Drawing.Size(329, 110)
+        Me.txtDescription.TabIndex = 44
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Label11.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DarkGray
+        Me.Label11.Location = New System.Drawing.Point(671, 224)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(54, 26)
+        Me.Label11.TabIndex = 74
+        Me.Label11.Text = "Type"
         '
         'Label15
         '
@@ -180,6 +249,7 @@ Partial Class frmClassScheduling
         '
         'txtSubjCode
         '
+        Me.txtSubjCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.txtSubjCode.Enabled = False
         Me.txtSubjCode.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtSubjCode.FormattingEnabled = True
@@ -220,6 +290,7 @@ Partial Class frmClassScheduling
         '
         'cboSection
         '
+        Me.cboSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSection.Enabled = False
         Me.cboSection.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.cboSection.FormattingEnabled = True
@@ -244,17 +315,17 @@ Partial Class frmClassScheduling
         Me.Label10.TabIndex = 59
         Me.Label10.Text = "Section"
         '
-        'cboStrand
+        'cboDept
         '
-        Me.cboStrand.Enabled = False
-        Me.cboStrand.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboStrand.FormattingEnabled = True
-        Me.cboStrand.ItemHeight = 26
-        Me.cboStrand.Location = New System.Drawing.Point(237, 166)
-        Me.cboStrand.Margin = New System.Windows.Forms.Padding(4)
-        Me.cboStrand.Name = "cboStrand"
-        Me.cboStrand.Size = New System.Drawing.Size(219, 34)
-        Me.cboStrand.TabIndex = 58
+        Me.cboDept.Enabled = False
+        Me.cboDept.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.cboDept.FormattingEnabled = True
+        Me.cboDept.ItemHeight = 26
+        Me.cboDept.Location = New System.Drawing.Point(237, 166)
+        Me.cboDept.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboDept.Name = "cboDept"
+        Me.cboDept.Size = New System.Drawing.Size(219, 34)
+        Me.cboDept.TabIndex = 58
         '
         'Label7
         '
@@ -270,17 +341,17 @@ Partial Class frmClassScheduling
         Me.Label7.TabIndex = 57
         Me.Label7.Text = "Department"
         '
-        'cboTrack
+        'cboCourse
         '
-        Me.cboTrack.Enabled = False
-        Me.cboTrack.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.cboTrack.FormattingEnabled = True
-        Me.cboTrack.ItemHeight = 26
-        Me.cboTrack.Location = New System.Drawing.Point(237, 90)
-        Me.cboTrack.Margin = New System.Windows.Forms.Padding(4)
-        Me.cboTrack.Name = "cboTrack"
-        Me.cboTrack.Size = New System.Drawing.Size(219, 34)
-        Me.cboTrack.TabIndex = 56
+        Me.cboCourse.Enabled = False
+        Me.cboCourse.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
+        Me.cboCourse.FormattingEnabled = True
+        Me.cboCourse.ItemHeight = 26
+        Me.cboCourse.Location = New System.Drawing.Point(237, 90)
+        Me.cboCourse.Margin = New System.Windows.Forms.Padding(4)
+        Me.cboCourse.Name = "cboCourse"
+        Me.cboCourse.Size = New System.Drawing.Size(219, 34)
+        Me.cboCourse.TabIndex = 56
         '
         'Label4
         '
@@ -431,7 +502,7 @@ Partial Class frmClassScheduling
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader13, Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12})
         Me.ListView1.Enabled = False
         Me.ListView1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.ListView1.GridLines = True
@@ -446,65 +517,77 @@ Partial Class frmClassScheduling
         '
         'ColumnHeader1
         '
+        Me.ColumnHeader1.DisplayIndex = 1
         Me.ColumnHeader1.Text = "Section Name"
         Me.ColumnHeader1.Width = 150
         '
         'ColumnHeader2
         '
+        Me.ColumnHeader2.DisplayIndex = 2
         Me.ColumnHeader2.Text = "Year Level"
         Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader2.Width = 150
         '
         'ColumnHeader3
         '
+        Me.ColumnHeader3.DisplayIndex = 3
         Me.ColumnHeader3.Text = "School Year"
         Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader3.Width = 150
         '
         'ColumnHeader4
         '
+        Me.ColumnHeader4.DisplayIndex = 4
         Me.ColumnHeader4.Text = "Semester"
         Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader4.Width = 150
         '
         'ColumnHeader5
         '
+        Me.ColumnHeader5.DisplayIndex = 5
         Me.ColumnHeader5.Text = "Department"
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader5.Width = 150
         '
         'ColumnHeader6
         '
+        Me.ColumnHeader6.DisplayIndex = 6
         Me.ColumnHeader6.Text = "Course"
         Me.ColumnHeader6.Width = 150
         '
         'ColumnHeader7
         '
+        Me.ColumnHeader7.DisplayIndex = 7
         Me.ColumnHeader7.Text = "Subject Code"
         Me.ColumnHeader7.Width = 150
         '
         'ColumnHeader8
         '
+        Me.ColumnHeader8.DisplayIndex = 8
         Me.ColumnHeader8.Text = "Description"
         Me.ColumnHeader8.Width = 150
         '
         'ColumnHeader9
         '
+        Me.ColumnHeader9.DisplayIndex = 9
         Me.ColumnHeader9.Text = "Units"
         Me.ColumnHeader9.Width = 150
         '
         'ColumnHeader10
         '
+        Me.ColumnHeader10.DisplayIndex = 10
         Me.ColumnHeader10.Text = "Subject Type"
         Me.ColumnHeader10.Width = 150
         '
         'ColumnHeader11
         '
+        Me.ColumnHeader11.DisplayIndex = 11
         Me.ColumnHeader11.Text = "Last Name"
         Me.ColumnHeader11.Width = 150
         '
         'ColumnHeader12
         '
+        Me.ColumnHeader12.DisplayIndex = 12
         Me.ColumnHeader12.Text = "First Name"
         Me.ColumnHeader12.Width = 150
         '
@@ -576,79 +659,11 @@ Partial Class frmClassScheduling
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'Label11
+        'ColumnHeader13
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Label11.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label11.Location = New System.Drawing.Point(671, 224)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(54, 26)
-        Me.Label11.TabIndex = 74
-        Me.Label11.Text = "Type"
-        '
-        'txtDescription
-        '
-        Me.txtDescription.Enabled = False
-        Me.txtDescription.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
-        Me.txtDescription.Location = New System.Drawing.Point(846, 90)
-        Me.txtDescription.Multiline = True
-        Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Size = New System.Drawing.Size(329, 110)
-        Me.txtDescription.TabIndex = 44
-        '
-        'cboTeacher
-        '
-        Me.cboTeacher.BackColor = System.Drawing.Color.Transparent
-        Me.cboTeacher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTeacher.Enabled = False
-        Me.cboTeacher.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboTeacher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboTeacher.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboTeacher.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboTeacher.ItemHeight = 30
-        Me.cboTeacher.Location = New System.Drawing.Point(503, 88)
-        Me.cboTeacher.Name = "cboTeacher"
-        Me.cboTeacher.Size = New System.Drawing.Size(295, 36)
-        Me.cboTeacher.TabIndex = 77
-        '
-        'cboType
-        '
-        Me.cboType.BackColor = System.Drawing.Color.Transparent
-        Me.cboType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboType.Enabled = False
-        Me.cboType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboType.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboType.ItemHeight = 30
-        Me.cboType.Items.AddRange(New Object() {"Major", "Minor"})
-        Me.cboType.Location = New System.Drawing.Point(676, 252)
-        Me.cboType.Name = "cboType"
-        Me.cboType.Size = New System.Drawing.Size(122, 36)
-        Me.cboType.TabIndex = 78
-        '
-        'cboStatus
-        '
-        Me.cboStatus.BackColor = System.Drawing.Color.Transparent
-        Me.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboStatus.Enabled = False
-        Me.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatus.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboStatus.ItemHeight = 30
-        Me.cboStatus.Items.AddRange(New Object() {"Available", "Not Available"})
-        Me.cboStatus.Location = New System.Drawing.Point(846, 252)
-        Me.cboStatus.Name = "cboStatus"
-        Me.cboStatus.Size = New System.Drawing.Size(329, 36)
-        Me.cboStatus.TabIndex = 79
+        Me.ColumnHeader13.DisplayIndex = 0
+        Me.ColumnHeader13.Text = "Class Schedule Number"
+        Me.ColumnHeader13.Width = 150
         '
         'frmClassScheduling
         '
@@ -684,9 +699,9 @@ Partial Class frmClassScheduling
     Friend WithEvents cboSY As ComboBox
     Friend WithEvents cboSection As ComboBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents cboStrand As ComboBox
+    Friend WithEvents cboDept As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents cboTrack As ComboBox
+    Friend WithEvents cboCourse As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtSubjCode As ComboBox
     Friend WithEvents Label12 As Label
@@ -715,7 +730,8 @@ Partial Class frmClassScheduling
     Friend WithEvents ErrorProvider1 As ErrorProvider
     Friend WithEvents Label11 As Label
     Friend WithEvents txtDescription As TextBox
-    Friend WithEvents cboStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents cboType As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents cboTeacher As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cboStatus As ComboBox
+    Friend WithEvents cboTeacher As ComboBox
+    Friend WithEvents ColumnHeader13 As ColumnHeader
 End Class

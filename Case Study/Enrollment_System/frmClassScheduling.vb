@@ -18,10 +18,13 @@ Public Class frmClassScheduling
         Call getYearLevel()
         Call getCSNo()
         Call getTeacher()
+        Call getSubjects()
     End Sub
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            txtSubjCode.Text = ListView1.SelectedItems(0).SubItems(6).Text
+            cboSection.Text = ListView1.SelectedItems(0).SubItems(0).Text
+
+            Call getCSNo()
         End If
     End Sub
 
@@ -52,33 +55,14 @@ Public Class frmClassScheduling
     End Sub
 
 
-
-    Private Sub txtSubjCode_TextChanged(sender As Object, e As EventArgs) Handles txtSubjCode.TextChanged
-        sql = "Select SectionName, YearLevel, SchoolYear, Semester, Department, Course, Description, Units, SubjType, LastName, FirstName from qryClassSchedule where SubjCode = '" & txtSubjCode.Text & "'"
+    Private Sub getSubjects()
+        sql = "SELECT DISTINCT SubjCode FROM tblSubjects"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
-        If dr.Read = True Then
-            cboSection.Text = dr("SectionName").ToString
-            cboTeacher.Text = dr("FirstName").ToString & " " & dr("LastName").ToString
-            cboGrade.Text = dr("YearLevel").ToString
-            cboSem.Text = dr("Semester").ToString
-            cboStrand.Text = dr("Department").ToString
-            cboTrack.Text = dr("Course").ToString
-            cboSY.Text = dr("SchoolYear").ToString
-            cboTeacher.Text = dr("FirstName").ToString & " " & dr("LastName").ToString
-            txtDescription.Text = dr("Description").ToString
-            txtUnits.Text = dr("Units").ToString
-        End If
-
-        sql = "Select SubjType, Status from qrySubjects where SubjCode = '" & txtSubjCode.Text & "'"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        If dr.Read = True Then
-            cboStatus.Text = dr("Status").ToString
-            cboType.Text = dr("SubjType").ToString
-        End If
-
-        Call getCSNo()
+        txtSubjCode.Items.Clear()
+        While dr.Read = True
+            txtSubjCode.Items.Add(dr("SubjCode").ToString())
+        End While
     End Sub
 
     Private Sub getSY()
@@ -140,6 +124,7 @@ Public Class frmClassScheduling
         While dr.Read = True
             cboSection.Items.Add(dr("SectionName").ToString())
         End While
+
         dr.Close()
     End Sub
 
@@ -166,18 +151,21 @@ Public Class frmClassScheduling
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
         cboStatus.Enabled = True
-        cboType.Enabled = True
-        cboGrade.Enabled = True
         cboSection.Enabled = True
-        cboSem.Enabled = True
-        cboStrand.Enabled = True
-        cboSY.Enabled = True
-        cboTeacher.Enabled = True
-        cboTrack.Enabled = True
-        ListView1.Enabled = True
-        txtDescription.Enabled = True
         txtSubjCode.Enabled = True
-        txtUnits.Enabled = True
+
+        'cboSem.Enabled = True
+        'cboStrand.Enabled = True
+        'cboSY.Enabled = True
+        'cboTrack.Enabled = True
+        'cboGrade.Enabled = True
+
+        cboTeacher.Enabled = True
+        ListView1.Enabled = True
+
+        'cboType.Enabled = True
+        'txtDescription.Enabled = True
+        'txtUnits.Enabled = True
 
         cboStatus.SelectedText = -1
         cboType.SelectedIndex = -1
@@ -265,9 +253,9 @@ Public Class frmClassScheduling
         cmd = New OleDbCommand(sql, cn)
         Dim result As Object = cmd.ExecuteScalar()
         If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
-            Dim lastEmployeeID As String = result.ToString()
+            Dim lastCSNo As String = result.ToString()
             Dim lastNumber As Integer
-            If Integer.TryParse(lastEmployeeID.Substring(4), lastNumber) Then
+            If Integer.TryParse(lastCSNo.Substring(4), lastNumber) Then
                 nextID = "CS-" & (lastNumber + 1).ToString("D4")
             End If
         Else
@@ -414,4 +402,35 @@ Public Class frmClassScheduling
         End With
     End Sub
 
+    Private Sub cboSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSection.SelectedIndexChanged
+        sql = "SELECT tblSections.YearLevel, tblSY.SchoolYear, tblSY.Semester, tblCourse.Course, tblDept.Department " &
+          "FROM ((tblSections " &
+          "INNER JOIN tblSY ON tblSections.SYID = tblSY.SYID) " &
+          "INNER JOIN tblDept ON tblSections.DeptID = tblDept.DeptID) " &
+          "INNER JOIN tblCourse ON tblSections.CourseID = tblCourse.CourseID " &
+          "WHERE SectionName = '" & cboSection.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            cboSY.Text = dr("SchoolYear").ToString
+            cboSem.Text = dr("Semester").ToString
+            cboGrade.Text = dr("YearLevel").ToString
+            cboTrack.Text = dr("Course").ToString
+            cboStrand.Text = dr("Department").ToString
+        End If
+    End Sub
+
+    Private Sub txtSubjCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtSubjCode.SelectedIndexChanged
+        sql = "SELECT Description, Units, SubjType, Status FROM tblSubjects WHERE SubjCode = '" & txtSubjCode.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            txtUnits.Text = dr("Units").ToString
+            cboType.Text = dr("SubjType").ToString
+            txtDescription.Text = dr("Description").ToString
+            cboStatus.Text = dr("Status").ToString
+        End If
+    End Sub
 End Class

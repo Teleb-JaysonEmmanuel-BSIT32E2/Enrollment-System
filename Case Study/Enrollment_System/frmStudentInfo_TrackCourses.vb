@@ -44,15 +44,16 @@ Public Class frmStudentInfo_TrackCourses
             txtAddress.Text = "" Or txtFatherContactNo.Text = "" Or txtFatherName.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         Else
-
-            Call edit()
+            Call updateStudent()
         End If
         Me.Close()
     End Sub
-    Private Sub edit()
+    Private Sub updateStudent()
         Dim convertedDate As DateTime = Convert.ToDateTime(datePicker.Text)
-        sql = "UPDATE qryStudents SET AdmissionNo =@AdmissionNo,LastName=@LastName,FirstName=@FirstName,MiddleName=@MiddleName,Address=@Address,Brgy=@Brgy,City=@City,ContactNo=@ContactNo,Bdate=@Bdate,Age=@Age,MotherName=@MotherName,MotherContactNo=@MotherContactNo,FatherName=@FatherName,FatherContactNo=@FatherContactNo where StudentNo =@StudentNo"
-        cmd = New OleDbCommand(sql, cn)
+        sql = "UPDATE tblStudents SET AdmissionNo=@AdmissionNo, LastName=@LastName,FirstName=@FirstName,MiddleName=@MiddleName, " &
+        "Address=@Address,Brgy=@Brgy,City=@City,ContactNo=@ContactNo,Bdate=@Bdate,Age=@Age,MotherName=@MotherName," &
+        "MotherContactNo=@MotherContactNo,FatherName=@FatherName,FatherContactNo=@FatherContactNo where AdmissionNo =@AdmissionNo"
+
         cmd = New OleDbCommand(sql, cn)
 
         With cmd
@@ -76,8 +77,13 @@ Public Class frmStudentInfo_TrackCourses
         Call frmManageStudents.loadAccount()
     End Sub
     Private Sub frmStudentInfo_TrackCourses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call studentNumber()
+        If frmManageStudents.ListView1.SelectedItems.Count > 0 Then
+            txtAdmissionNumber.Text = frmManageStudents.ListView1.SelectedItems(0).SubItems(0).Text
+        Else
+            Call studentNumber()
+        End If
     End Sub
+
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()

@@ -8,6 +8,7 @@ Public Class frmManageStudents
         frmStudentInfo_TrackCourses.Show()
         Me.TopMost = True
         frmStudentInfo_TrackCourses.txtAdmissionNumber.Visible = True
+        btnSave.Enabled = True
         'frmStudentInfo_TrackCourses.TopLevel = False
         'Panel1.Controls.Add(frmStudentInfo_TrackCourses)
         'frmStudentInfo_TrackCourses.BringToFront()
@@ -20,6 +21,7 @@ Public Class frmManageStudents
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = False
+        btnSave.Enabled = False
         'If frmStudentInfo_TrackCourses.txtFirstName.Text = "" Or frmStudentInfo_TrackCourses.txtLastName.Text = "" Or
         ''    frmStudentInfo_TrackCourses.txtMiddleName.Text = "" Or frmStudentInfo_TrackCourses.txtMotherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtMotherName.Text = "" Or
         ''    frmStudentInfo_TrackCourses.txtAge.Text = "" Or frmStudentInfo_TrackCourses.cboBrgy.Text = "" Or frmStudentInfo_TrackCourses.cboCity.Text = "" Or
@@ -165,8 +167,10 @@ Public Class frmManageStudents
 
     End Sub
     Private Sub frmManageStudents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Call connection()
         Call loadAccount()
+        Call frmStudentInfo_TrackCourses.studentNumber()
     End Sub
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
@@ -176,9 +180,10 @@ Public Class frmManageStudents
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        frmStudentInfo_TrackCourses.txtAdmissionNumber.Enabled = False
         frmStudentInfo_TrackCourses.Show()
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = True
-        frmStudentInfo_TrackCourses.txtAdmissionNumber.Visible = False
+
     End Sub
 
     Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged

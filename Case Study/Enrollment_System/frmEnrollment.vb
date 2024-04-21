@@ -42,7 +42,7 @@ Public Class frmEnrollment
 
     Private Sub txtStudentID_TextChanged(sender As Object, e As EventArgs) Handles txtStudentID.TextChanged
         Call searchThings()
-        sql = "Select LastName,FirstName,MiddleName from tblStudents where StudentNo ='" & txtStudentID.Text & "'"
+        sql = "Select LastName,FirstName,MiddleName from tblStudents where AdmissionNo ='" & frmStudentInfo_TrackCourses.txtAdmissionNumber.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         If dr.Read = True Then
@@ -58,7 +58,7 @@ Public Class frmEnrollment
     End Sub
 
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from tblStudents where StudentNo LIKE ?"
+        sql = "Select * from tblStudents where AdmissionNo LIKE ?"
         cmd = New OleDbCommand(sql, cn)
         cmd.Parameters.Add(New OleDbParameter("searchTerm1", "%" & searchTerm & "%"))
 

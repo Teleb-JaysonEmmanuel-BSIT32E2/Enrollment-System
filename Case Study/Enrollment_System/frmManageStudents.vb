@@ -1,10 +1,13 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmManageStudents
+    Dim newDeptID As String
+    Dim newCourseID As String
+    Dim newSYID As String
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         frmStudentInfo_TrackCourses.Show()
         Me.TopMost = True
-        frmStudentInfo_TrackCourses.txtStudentNo.Visible = False
+        frmStudentInfo_TrackCourses.txtAdmissionNumber.Visible = True
         'frmStudentInfo_TrackCourses.TopLevel = False
         'Panel1.Controls.Add(frmStudentInfo_TrackCourses)
         'frmStudentInfo_TrackCourses.BringToFront()
@@ -17,18 +20,50 @@ Public Class frmManageStudents
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = False
-        If frmStudentInfo_TrackCourses.txtFirstName.Text = "" Or frmStudentInfo_TrackCourses.txtLastName.Text = "" Or
-            frmStudentInfo_TrackCourses.txtMiddleName.Text = "" Or frmStudentInfo_TrackCourses.txtMotherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtMotherName.Text = "" Or
-            frmStudentInfo_TrackCourses.txtAge.Text = "" Or frmStudentInfo_TrackCourses.cboSem.Text = "" Or frmStudentInfo_TrackCourses.cboSY.Text = "" Or
-            frmStudentInfo_TrackCourses.cboStatus.Text = "" Or frmStudentInfo_TrackCourses.cboBrgy.Text = "" Or frmStudentInfo_TrackCourses.cboCity.Text = "" Or
-            frmStudentInfo_TrackCourses.cboC.Text = "" Or frmStudentInfo_TrackCourses.cboD.Text = "" Or frmStudentInfo_TrackCourses.cboSY.Text = "" Or frmStudentInfo_TrackCourses.cboC.Text = "" Or
-            frmStudentInfo_TrackCourses.cboY.Text = "" Or frmStudentInfo_TrackCourses.txtAddress.Text = "" Or frmStudentInfo_TrackCourses.txtFatherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtFatherName.Text = "" Or frmStudentInfo_TrackCourses.cboDD.Text = "" Or frmStudentInfo_TrackCourses.cboCD.Text = "" Then
-            MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
-        Else
+        'If frmStudentInfo_TrackCourses.txtFirstName.Text = "" Or frmStudentInfo_TrackCourses.txtLastName.Text = "" Or
+        ''    frmStudentInfo_TrackCourses.txtMiddleName.Text = "" Or frmStudentInfo_TrackCourses.txtMotherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtMotherName.Text = "" Or
+        ''    frmStudentInfo_TrackCourses.txtAge.Text = "" Or frmStudentInfo_TrackCourses.cboBrgy.Text = "" Or frmStudentInfo_TrackCourses.cboCity.Text = "" Or
+        ''    frmStudentInfo_TrackCourses.cboC.Text = "" Or frmStudentInfo_TrackCourses.cboD.Text = "" Or frmStudentInfo_TrackCourses.cboSY.Text = "" Or frmStudentInfo_TrackCourses.cboC.Text = "" Or
+        ''    frmStudentInfo_TrackCourses.cboY.Text = "" Or frmStudentInfo_TrackCourses.txtAddress.Text = "" Or frmStudentInfo_TrackCourses.txtFatherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtFatherName.Text = "" Or frmStudentInfo_TrackCourses.cboDD.Text = "" Or frmStudentInfo_TrackCourses.cboCD.Text = "" Then
+        ''    MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
+        ''Else
+        Dim filled As Boolean = True
+
+        Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtFirstName", frmStudentInfo_TrackCourses.txtFirstName},
+            {"txtLastName", frmStudentInfo_TrackCourses.txtLastName},
+            {"txtMiddleName", frmStudentInfo_TrackCourses.txtMiddleName},
+            {"txtMotherContactNo", frmStudentInfo_TrackCourses.txtMotherContactNo},
+            {"txtMotherName", frmStudentInfo_TrackCourses.txtMotherName},
+            {"txtAge", frmStudentInfo_TrackCourses.txtAge},
+            {"cboBrgy", frmStudentInfo_TrackCourses.cboBrgy},
+            {"cboCity", frmStudentInfo_TrackCourses.cboCity},
+            {"txtAddress", frmStudentInfo_TrackCourses.txtAddress},
+            {"txtFatherContactNo", frmStudentInfo_TrackCourses.txtFatherContactNo},
+            {"txtFatherName", frmStudentInfo_TrackCourses.txtFatherName},
+            {"datePicker", frmStudentInfo_TrackCourses.datePicker},
+            {"txtContactNo", frmStudentInfo_TrackCourses.txtContactNo},
+            {"txtAdmissionNumber", frmStudentInfo_TrackCourses.txtAdmissionNumber}
+           }
+
+        For Each fieldName_controlPair In requiredFields
+            Dim control As Control = fieldName_controlPair.Value
+
+            If control.Text.Trim = "" Then
+                ErrorProvider1.SetError(control, "This field is required.")
+                filled = False
+                Exit For
+            Else
+                ErrorProvider1.SetError(control, "")
+            End If
+        Next
+
+        If filled Then
             Call insertThings()
-            Call frmStudentInfo_TrackCourses.callstudentNumber()
+            Call frmStudentInfo_TrackCourses.studentNumber()
+            'End If
+            frmStudentInfo_TrackCourses.Close()
         End If
-        frmStudentInfo_TrackCourses.Close()
     End Sub
 
 
@@ -38,19 +73,17 @@ Public Class frmManageStudents
     Private studId As String
 
     Private Sub insertThings()
-        Call dept()
-        Call course()
         Call save()
         Call loadAccount()
     End Sub
 
     Private Sub save()
         Dim lastId As String = ""
-        sql = "SELECT TOP 1 StudentID FROM tblStudents ORDER BY StudentID DESC"
+        sql = "SELECT TOP 1 AdmissionID FROM tblStudents ORDER BY AdmissionID DESC"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader()
         If dr.Read() Then
-            lastId = dr("StudentID").ToString()
+            lastId = dr("AdmissionID").ToString()
         Else
             lastId = "STUD-1000"
         End If
@@ -61,14 +94,12 @@ Public Class frmManageStudents
         studId = "STUD-" & idNumber.ToString("D4")
 
         Dim convertedDate As DateTime = Convert.ToDateTime(frmStudentInfo_TrackCourses.datePicker.Text)
-        sql = "Insert into tblStudents (StudentID, CourseID, StudentNo,LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo)Values
-                (@StudentID, @CourseID,@StudentNo,@LastName,@FirstName,@MiddleName,@Address,@Brgy,@City,@ContactNo,@Bdate,@Age,@MotherName,@MotherContactNo,@FatherName,@FatherContactNo)"
+        sql = "Insert into tblStudents (AdmissionID, AdmissionNo,LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo)Values
+                (@AdmissionID,@AdmissionNo,@LastName,@FirstName,@MiddleName,@Address,@Brgy,@City,@ContactNo,@Bdate,@Age,@MotherName,@MotherContactNo,@FatherName,@FatherContactNo)"
         cmd = New OleDbCommand(sql, cn)
-
         With cmd
-            .Parameters.AddWithValue("StudentID", studId)
-            .Parameters.AddWithValue("CourseID", courseId)
-            .Parameters.AddWithValue("@StudentNo", frmStudentInfo_TrackCourses.lblStudentNumber.Text)
+            .Parameters.AddWithValue("@AdmissionID", studId)
+            .Parameters.AddWithValue("@AdmissionNo", frmStudentInfo_TrackCourses.txtAdmissionNumber.Text)
             .Parameters.AddWithValue("@LastName", frmStudentInfo_TrackCourses.txtLastName.Text)
             .Parameters.AddWithValue("@FirstName", frmStudentInfo_TrackCourses.txtFirstName.Text)
             .Parameters.AddWithValue("@MiddleName", frmStudentInfo_TrackCourses.txtMiddleName.Text)
@@ -91,76 +122,30 @@ Public Class frmManageStudents
 
     End Sub
 
-    Private Sub course()
-        ' Retrieve the last CourseID from the database
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 CourseID FROM tblCourse ORDER BY CourseID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("CourseID").ToString()
-        Else
-            lastId = "CRS-1000"
-        End If
-
-        ' Extract the numeric part of the CourseID and increment it
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
-        idNumber += 1
-
-        ' Create the new CourseID
-        courseId = "CRS-" & idNumber.ToString("D4")
-
-        sql = "Insert into tblCourse (CourseID, DeptID, SchoolYear,Semester,CourseDescription,Course,YearLevel,Status)Values(@CourseID, @DeptID, @SchoolYear,@Semester,@CourseDescription,@Course,@YearLevel,@Status)"
-        cmd = New OleDbCommand(sql, cn)
-
-        With cmd
-            .Parameters.AddWithValue("@CourseID", courseId)
-            .Parameters.AddWithValue("@DeptID", deptId)
-            .Parameters.AddWithValue("@SchoolYear", frmStudentInfo_TrackCourses.cboSY.Text)
-            .Parameters.AddWithValue("@Semester", frmStudentInfo_TrackCourses.cboSem.Text)
-            .Parameters.AddWithValue("@CourseDescription", frmStudentInfo_TrackCourses.cboCD.Text)
-            .Parameters.AddWithValue("@Course", frmStudentInfo_TrackCourses.cboC.Text)
-            .Parameters.AddWithValue("@YearLevel", frmStudentInfo_TrackCourses.cboY.Text)
-            .Parameters.AddWithValue("@Status", frmStudentInfo_TrackCourses.cboStatus.Text)
-            cmd.ExecuteNonQuery()
-        End With
-    End Sub
-
-    Private Sub dept()
-        Dim lastId As String = ""
-        sql = "SELECT TOP 1 DeptID FROM tblDept ORDER BY DeptID DESC"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader()
-        If dr.Read() Then
-            lastId = dr("DeptID").ToString()
-        Else
-            lastId = "DEPT-1000"
-        End If
-
-        Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
-        idNumber += 1
-
-        deptId = "DEPT-" & idNumber.ToString("D4")
-
-        sql = "Insert into tblDept (DeptID, Department,DeptDescription)Values(@DeptID, @Department,@DeptDescription)"
-        cmd = New OleDbCommand(sql, cn)
-
-        With cmd
-            .Parameters.AddWithValue("DeptID", deptId)
-            .Parameters.AddWithValue("@Department", frmStudentInfo_TrackCourses.cboD.Text)
-            .Parameters.AddWithValue("@DeptDescription", frmStudentInfo_TrackCourses.cboDD.Text)
-            cmd.ExecuteNonQuery()
-        End With
-
-    End Sub
-    Private Sub loadAccount()
-        sql = "Select * from qryStudCourseDept"
+    'Private Sub dept()
+    '    sql = "INSERT into tblStudentRegistration(FirstName, MiddleName, LastName, SectionName, DeptID, CourseID, SYID) " &
+    '        "VALUES(@FirstName, @MiddleName, @LastName, @SectionName, @DeptID, @CourseID, @SYID)"
+    '    cmd = New OleDbCommand(sql, cn)
+    '    With cmd
+    '        .Parameters.AddWithValue("@FirstName", frmStudentInfo_TrackCourses.txtFirstName.Text)
+    '        .Parameters.AddWithValue("@MiddleName", frmStudentInfo_TrackCourses.txtMiddleName.Text)
+    '        .Parameters.AddWithValue("@LastName", frmStudentInfo_TrackCourses.txtLastName.Text)
+    '        .Parameters.AddWithValue("@SectionName", frmStudentInfo_TrackCourses.cboSection.Text)
+    '        .Parameters.AddWithValue("@DeptID", newDeptID)
+    '        .Parameters.AddWithValue("@CourseID", newCourseID)
+    '        .Parameters.AddWithValue("@SYID", newSYID)
+    '        cmd.ExecuteNonQuery()
+    '    End With
+    '    MsgBox("Student Registration is registered!")
+    'End Sub
+    Public Sub loadAccount()
+        sql = "Select * from qryStudents"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         Dim x As ListViewItem
         ListView1.Items.Clear()
         Do While dr.Read = True
-            x = New ListViewItem(dr("StudentNo").ToString)
+            x = New ListViewItem(dr("AdmissionNo").ToString)
             x.SubItems.Add(dr("LastName").ToString)
             x.SubItems.Add(dr("FirstName").ToString)
             x.SubItems.Add(dr("MiddleName").ToString)
@@ -174,21 +159,10 @@ Public Class frmManageStudents
             x.SubItems.Add(dr("MotherContactNo").ToString)
             x.SubItems.Add(dr("FatherName").ToString)
             x.SubItems.Add(dr("FatherContactNo").ToString)
-            x.SubItems.Add(dr("SchoolYear").ToString)
-            x.SubItems.Add(dr("Semester").ToString)
-            x.SubItems.Add(dr("Course").ToString)
-            x.SubItems.Add(dr("CourseDescription").ToString)
-            x.SubItems.Add(dr("Department").ToString)
-            x.SubItems.Add(dr("DeptDescription").ToString)
-            x.SubItems.Add(dr("YearLevel").ToString)
-            x.SubItems.Add(dr("Status").ToString)
             ListView1.Items.Add(x)
         Loop
 
 
-    End Sub
-    Public Sub callLoadAccount()
-        Call loadAccount()
     End Sub
     Private Sub frmManageStudents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
@@ -197,14 +171,14 @@ Public Class frmManageStudents
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
-            frmStudentInfo_TrackCourses.txtStudentNo.Text = ListView1.SelectedItems(0).SubItems(0).Text
+            frmStudentInfo_TrackCourses.txtAdmissionNumber.Text = ListView1.SelectedItems(0).SubItems(0).Text
         End If
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         frmStudentInfo_TrackCourses.Show()
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = True
-        frmStudentInfo_TrackCourses.lblStudentNumber.Visible = False
+        frmStudentInfo_TrackCourses.txtAdmissionNumber.Visible = False
     End Sub
 
     Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged
@@ -212,7 +186,7 @@ Public Class frmManageStudents
         PopulateListView(dt)
     End Sub
     Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from qryStudCourseDept where StudentNo LIKE ? OR LastName LIKE ? OR FirstName LIKE ?"
+        sql = "Select * from qryStudents where AdmissionNo LIKE ? OR LastName LIKE ? OR FirstName LIKE ?"
         cmd = New OleDbCommand(sql, cn)
         cmd.Parameters.Add(New OleDbParameter("searchTerm1", "%" & searchTerm & "%"))
         cmd.Parameters.Add(New OleDbParameter("searchTerm2", "%" & searchTerm & "%"))

@@ -24,6 +24,8 @@ Partial Class frmStudentInfo_TrackCourses
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Manage = New System.Windows.Forms.TabPage()
+        Me.lblStudentNumber = New System.Windows.Forms.Label()
+        Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
         Me.btnEdit1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtFatherName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -70,9 +72,6 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label16 = New System.Windows.Forms.Label()
         Me.cboSY = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
-        Me.lblStudentNumber = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Manage.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -92,7 +91,6 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'Manage
         '
-        Me.Manage.Controls.Add(Me.Label23)
         Me.Manage.Controls.Add(Me.lblStudentNumber)
         Me.Manage.Controls.Add(Me.btnClose)
         Me.Manage.Controls.Add(Me.btnEdit1)
@@ -131,6 +129,35 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Manage.TabIndex = 0
         Me.Manage.Text = "Student Information"
         Me.Manage.UseVisualStyleBackColor = True
+        '
+        'lblStudentNumber
+        '
+        Me.lblStudentNumber.AutoSize = True
+        Me.lblStudentNumber.Location = New System.Drawing.Point(8, 32)
+        Me.lblStudentNumber.Name = "lblStudentNumber"
+        Me.lblStudentNumber.Size = New System.Drawing.Size(19, 21)
+        Me.lblStudentNumber.TabIndex = 101
+        Me.lblStudentNumber.Text = "1"
+        '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClose.FillColor = System.Drawing.Color.Maroon
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnClose.Location = New System.Drawing.Point(351, 347)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnClose.PressedDepth = 40
+        Me.btnClose.Size = New System.Drawing.Size(104, 40)
+        Me.btnClose.TabIndex = 100
+        Me.btnClose.Text = "Close"
         '
         'btnEdit1
         '
@@ -820,48 +847,6 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label15.TabIndex = 81
         Me.Label15.Text = "School Year"
         '
-        'btnClose
-        '
-        Me.btnClose.BackColor = System.Drawing.Color.Transparent
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnClose.FillColor = System.Drawing.Color.Maroon
-        Me.btnClose.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnClose.Location = New System.Drawing.Point(351, 347)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.btnClose.PressedDepth = 40
-        Me.btnClose.Size = New System.Drawing.Size(104, 40)
-        Me.btnClose.TabIndex = 100
-        Me.btnClose.Text = "Close"
-        '
-        'lblStudentNumber
-        '
-        Me.lblStudentNumber.AutoSize = True
-        Me.lblStudentNumber.Location = New System.Drawing.Point(140, 323)
-        Me.lblStudentNumber.Name = "lblStudentNumber"
-        Me.lblStudentNumber.Size = New System.Drawing.Size(19, 21)
-        Me.lblStudentNumber.TabIndex = 101
-        Me.lblStudentNumber.Text = "1"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.BackColor = System.Drawing.Color.Transparent
-        Me.Label23.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Label23.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label23.Location = New System.Drawing.Point(8, 323)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(126, 21)
-        Me.Label23.TabIndex = 102
-        Me.Label23.Text = "Student Number"
-        '
         'frmStudentInfo_TrackCourses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -930,6 +915,5 @@ Partial Class frmStudentInfo_TrackCourses
     Friend WithEvents cboDD As ComboBox
     Friend WithEvents btnEdit1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label23 As Label
     Friend WithEvents lblStudentNumber As Label
 End Class

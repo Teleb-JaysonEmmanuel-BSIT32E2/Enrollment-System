@@ -4,6 +4,7 @@ Public Class frmManageStudents
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         frmStudentInfo_TrackCourses.Show()
         Me.TopMost = True
+        frmStudentInfo_TrackCourses.txtStudentNo.Visible = False
         'frmStudentInfo_TrackCourses.TopLevel = False
         'Panel1.Controls.Add(frmStudentInfo_TrackCourses)
         'frmStudentInfo_TrackCourses.BringToFront()
@@ -160,7 +161,9 @@ Public Class frmManageStudents
         ListView1.Items.Clear()
         Do While dr.Read = True
             x = New ListViewItem(dr("StudentNo").ToString)
-            x.SubItems.Add(dr("LastName").ToString & " " & dr("FirstName").ToString & " " & dr("MiddleName"))
+            x.SubItems.Add(dr("LastName").ToString)
+            x.SubItems.Add(dr("FirstName").ToString)
+            x.SubItems.Add(dr("MiddleName").ToString)
             x.SubItems.Add(dr("Address").ToString)
             x.SubItems.Add(dr("Brgy").ToString)
             x.SubItems.Add(dr("City").ToString)
@@ -201,6 +204,31 @@ Public Class frmManageStudents
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         frmStudentInfo_TrackCourses.Show()
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = True
+        frmStudentInfo_TrackCourses.lblStudentNumber.Visible = False
     End Sub
 
+    Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged
+        Dim dt As DataTable = SearchDatabase(txtSearchBar.Text)
+        PopulateListView(dt)
+    End Sub
+    Public Function SearchDatabase(searchTerm As String) As DataTable
+        sql = "Select * from qryStudCourseDept where StudentNo LIKE ? OR LastName LIKE ? OR FirstName LIKE ?"
+        cmd = New OleDbCommand(sql, cn)
+        cmd.Parameters.Add(New OleDbParameter("searchTerm1", "%" & searchTerm & "%"))
+        cmd.Parameters.Add(New OleDbParameter("searchTerm2", "%" & searchTerm & "%"))
+        cmd.Parameters.Add(New OleDbParameter("searchTerm3", "%" & searchTerm & "%"))
+
+        Dim dt As New DataTable
+        Dim da As New OleDbDataAdapter(cmd)
+        da.Fill(dt)
+
+        Return dt
+    End Function
+
+    Private Sub PopulateListView(dt As DataTable)
+        ListView1.Items.Clear()
+        For Each row As DataRow In dt.Rows
+            ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
+        Next
+    End Sub
 End Class

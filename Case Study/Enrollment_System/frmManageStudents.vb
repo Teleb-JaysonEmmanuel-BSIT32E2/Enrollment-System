@@ -15,6 +15,7 @@ Public Class frmManageStudents
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        frmStudentInfo_TrackCourses.btnEdit1.Enabled = False
         If frmStudentInfo_TrackCourses.txtStudentNo.Text = "" Or frmStudentInfo_TrackCourses.txtFirstName.Text = "" Or frmStudentInfo_TrackCourses.txtLastName.Text = "" Or
             frmStudentInfo_TrackCourses.txtMiddleName.Text = "" Or frmStudentInfo_TrackCourses.txtMotherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtMotherName.Text = "" Or
             frmStudentInfo_TrackCourses.txtAge.Text = "" Or frmStudentInfo_TrackCourses.cboSem.Text = "" Or frmStudentInfo_TrackCourses.cboSY.Text = "" Or
@@ -25,7 +26,7 @@ Public Class frmManageStudents
         Else
 
             Call save()
-            End If
+        End If
 
     End Sub
     Private Sub save()
@@ -125,4 +126,17 @@ Public Class frmManageStudents
         Call connection()
         Call loadAccount()
     End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If ListView1.SelectedItems.Count > 0 Then
+            frmStudentInfo_TrackCourses.txtStudentNo.Text = ListView1.SelectedItems(0).SubItems(0).Text
+        End If
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        frmStudentInfo_TrackCourses.Show()
+        Me.TopMost = True
+    End Sub
+
+
 End Class

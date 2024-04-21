@@ -37,13 +37,6 @@ Partial Class frmManageStudents
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.btnSearch = New Guna.UI2.WinForms.Guna2Button()
-        Me.txtSearchBar = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnNew = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -52,6 +45,13 @@ Partial Class frmManageStudents
         Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.btnSearch = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtSearchBar = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnNew = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -164,6 +164,54 @@ Partial Class frmManageStudents
         Me.ColumnHeader12.Text = "FatherContactNo"
         Me.ColumnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader12.Width = 150
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "School Year"
+        Me.ColumnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader13.Width = 150
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "Semester"
+        Me.ColumnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader14.Width = 150
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Department"
+        Me.ColumnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader15.Width = 150
+        '
+        'ColumnHeader16
+        '
+        Me.ColumnHeader16.Text = "Department Description"
+        Me.ColumnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader16.Width = 150
+        '
+        'ColumnHeader17
+        '
+        Me.ColumnHeader17.Text = "Course"
+        Me.ColumnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader17.Width = 150
+        '
+        'ColumnHeader18
+        '
+        Me.ColumnHeader18.Text = "Course Description"
+        Me.ColumnHeader18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader18.Width = 150
+        '
+        'ColumnHeader19
+        '
+        Me.ColumnHeader19.Text = "Year Level"
+        Me.ColumnHeader19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader19.Width = 150
+        '
+        'ColumnHeader20
+        '
+        Me.ColumnHeader20.Text = "Status"
+        Me.ColumnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader20.Width = 150
         '
         'Label15
         '
@@ -300,54 +348,6 @@ Partial Class frmManageStudents
         Me.btnSave.Size = New System.Drawing.Size(104, 40)
         Me.btnSave.TabIndex = 32
         Me.btnSave.Text = "Save"
-        '
-        'ColumnHeader13
-        '
-        Me.ColumnHeader13.Text = "School Year"
-        Me.ColumnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader13.Width = 150
-        '
-        'ColumnHeader14
-        '
-        Me.ColumnHeader14.Text = "Semester"
-        Me.ColumnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader14.Width = 150
-        '
-        'ColumnHeader15
-        '
-        Me.ColumnHeader15.Text = "Department"
-        Me.ColumnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader15.Width = 150
-        '
-        'ColumnHeader16
-        '
-        Me.ColumnHeader16.Text = "Department Description"
-        Me.ColumnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader16.Width = 150
-        '
-        'ColumnHeader17
-        '
-        Me.ColumnHeader17.Text = "Course"
-        Me.ColumnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader17.Width = 150
-        '
-        'ColumnHeader18
-        '
-        Me.ColumnHeader18.Text = "Course Description"
-        Me.ColumnHeader18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader18.Width = 150
-        '
-        'ColumnHeader19
-        '
-        Me.ColumnHeader19.Text = "Year Level"
-        Me.ColumnHeader19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader19.Width = 150
-        '
-        'ColumnHeader20
-        '
-        Me.ColumnHeader20.Text = "Status"
-        Me.ColumnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader20.Width = 150
         '
         'frmManageStudents
         '

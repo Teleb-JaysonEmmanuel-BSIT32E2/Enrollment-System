@@ -32,10 +32,25 @@ Public Class frmStudentInfo_TrackCourses
         End If
     End Sub
 
+    Private Sub studentNumber()
+        sql = "SELECT StudentNo FROM tblStudents ORDER BY StudentNo DESC"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            lblStudentNumber.Text = Val(dr(0)) + 1 & " - " & DateTime.Now.Year Mod 100
+        Else
+            lblStudentNumber.Text = 1000 & " - " & DateTime.Now.Year Mod 100
+        End If
+    End Sub
+
+    Public Sub callstudentNumber()
+        Call studentNumber()
+    End Sub
+
     Private Sub btnEdit1_Click(sender As Object, e As EventArgs) Handles btnEdit1.Click
         btnEdit1.Enabled = True
 
-        If txtStudentNo.Text = "" Or txtFirstName.Text = "" Or txtLastName.Text = "" Or
+        If txtFirstName.Text = "" Or txtLastName.Text = "" Or
             txtMiddleName.Text = "" Or txtMotherContactNo.Text = "" Or txtMotherName.Text = "" Or
             txtAge.Text = "" Or cboSem.Text = "" Or cboSY.Text = "" Or
             cboStatus.Text = "" Or cboBrgy.Text = "" Or cboCity.Text = "" Or
@@ -46,6 +61,7 @@ Public Class frmStudentInfo_TrackCourses
 
             Call edit()
         End If
+        Me.Close()
     End Sub
     Private Sub edit()
         Dim convertedDate As DateTime = Convert.ToDateTime(datePicker.Text)
@@ -82,7 +98,8 @@ Public Class frmStudentInfo_TrackCourses
         Call frmManageStudents.callLoadAccount()
     End Sub
     Private Sub frmStudentInfo_TrackCourses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.TopMost = True
+        Call studentNumber()
+        'Me.TopMost = True
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click

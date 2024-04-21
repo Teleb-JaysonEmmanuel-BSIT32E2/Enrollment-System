@@ -16,7 +16,7 @@ Public Class frmManageStudents
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = False
-        If frmStudentInfo_TrackCourses.txtStudentNo.Text = "" Or frmStudentInfo_TrackCourses.txtFirstName.Text = "" Or frmStudentInfo_TrackCourses.txtLastName.Text = "" Or
+        If frmStudentInfo_TrackCourses.txtFirstName.Text = "" Or frmStudentInfo_TrackCourses.txtLastName.Text = "" Or
             frmStudentInfo_TrackCourses.txtMiddleName.Text = "" Or frmStudentInfo_TrackCourses.txtMotherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtMotherName.Text = "" Or
             frmStudentInfo_TrackCourses.txtAge.Text = "" Or frmStudentInfo_TrackCourses.cboSem.Text = "" Or frmStudentInfo_TrackCourses.cboSY.Text = "" Or
             frmStudentInfo_TrackCourses.cboStatus.Text = "" Or frmStudentInfo_TrackCourses.cboBrgy.Text = "" Or frmStudentInfo_TrackCourses.cboCity.Text = "" Or
@@ -24,13 +24,17 @@ Public Class frmManageStudents
             frmStudentInfo_TrackCourses.cboY.Text = "" Or frmStudentInfo_TrackCourses.txtAddress.Text = "" Or frmStudentInfo_TrackCourses.txtFatherContactNo.Text = "" Or frmStudentInfo_TrackCourses.txtFatherName.Text = "" Or frmStudentInfo_TrackCourses.cboDD.Text = "" Or frmStudentInfo_TrackCourses.cboCD.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         Else
-
             Call insertThings()
+            Call frmStudentInfo_TrackCourses.callstudentNumber()
         End If
-
+        frmStudentInfo_TrackCourses.Close()
     End Sub
+
+
+
     Private courseId As String
     Private deptId As String
+    Private studId As String
 
     Private Sub insertThings()
         Call dept()
@@ -40,14 +44,30 @@ Public Class frmManageStudents
     End Sub
 
     Private Sub save()
+        Dim lastId As String = ""
+        sql = "SELECT TOP 1 StudentID FROM tblStudents ORDER BY StudentID DESC"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            lastId = dr("StudentID").ToString()
+        Else
+            lastId = "STUD-1000"
+        End If
+
+        Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
+        idNumber += 1
+
+        studId = "STUD-" & idNumber.ToString("D4")
+
         Dim convertedDate As DateTime = Convert.ToDateTime(frmStudentInfo_TrackCourses.datePicker.Text)
-        sql = "Insert into tblStudents (CourseID, StudentNo,LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo)Values
-                (@CourseID,@StudentNo,@LastName,@FirstName,@MiddleName,@Address,@Brgy,@City,@ContactNo,@Bdate,@Age,@MotherName,@MotherContactNo,@FatherName,@FatherContactNo)"
+        sql = "Insert into tblStudents (StudentID, CourseID, StudentNo,LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo)Values
+                (@StudentID, @CourseID,@StudentNo,@LastName,@FirstName,@MiddleName,@Address,@Brgy,@City,@ContactNo,@Bdate,@Age,@MotherName,@MotherContactNo,@FatherName,@FatherContactNo)"
         cmd = New OleDbCommand(sql, cn)
 
         With cmd
+            .Parameters.AddWithValue("StudentID", studId)
             .Parameters.AddWithValue("CourseID", courseId)
-            .Parameters.AddWithValue("@StudentNo", frmStudentInfo_TrackCourses.txtStudentNo.Text)
+            .Parameters.AddWithValue("@StudentNo", frmStudentInfo_TrackCourses.lblStudentNumber.Text)
             .Parameters.AddWithValue("@LastName", frmStudentInfo_TrackCourses.txtLastName.Text)
             .Parameters.AddWithValue("@FirstName", frmStudentInfo_TrackCourses.txtFirstName.Text)
             .Parameters.AddWithValue("@MiddleName", frmStudentInfo_TrackCourses.txtMiddleName.Text)
@@ -180,6 +200,7 @@ Public Class frmManageStudents
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         frmStudentInfo_TrackCourses.Show()
+        frmStudentInfo_TrackCourses.btnEdit1.Enabled = True
     End Sub
 
 End Class

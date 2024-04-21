@@ -71,6 +71,8 @@ Partial Class frmStudentInfo_TrackCourses
         Me.cboSY = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
+        Me.lblStudentNumber = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Manage.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -90,6 +92,8 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'Manage
         '
+        Me.Manage.Controls.Add(Me.Label23)
+        Me.Manage.Controls.Add(Me.lblStudentNumber)
         Me.Manage.Controls.Add(Me.btnClose)
         Me.Manage.Controls.Add(Me.btnEdit1)
         Me.Manage.Controls.Add(Me.txtFatherName)
@@ -136,6 +140,7 @@ Partial Class frmStudentInfo_TrackCourses
         Me.btnEdit1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEdit1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnEdit1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit1.Enabled = False
         Me.btnEdit1.FillColor = System.Drawing.Color.Maroon
         Me.btnEdit1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit1.ForeColor = System.Drawing.Color.White
@@ -578,6 +583,7 @@ Partial Class frmStudentInfo_TrackCourses
         Me.txtStudentNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtStudentNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudentNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStudentNo.Enabled = False
         Me.txtStudentNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtStudentNo.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtStudentNo.ForeColor = System.Drawing.Color.Black
@@ -834,6 +840,28 @@ Partial Class frmStudentInfo_TrackCourses
         Me.btnClose.TabIndex = 100
         Me.btnClose.Text = "Close"
         '
+        'lblStudentNumber
+        '
+        Me.lblStudentNumber.AutoSize = True
+        Me.lblStudentNumber.Location = New System.Drawing.Point(140, 323)
+        Me.lblStudentNumber.Name = "lblStudentNumber"
+        Me.lblStudentNumber.Size = New System.Drawing.Size(19, 21)
+        Me.lblStudentNumber.TabIndex = 101
+        Me.lblStudentNumber.Text = "1"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Transparent
+        Me.Label23.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Label23.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.DarkGray
+        Me.Label23.Location = New System.Drawing.Point(8, 323)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(126, 21)
+        Me.Label23.TabIndex = 102
+        Me.Label23.Text = "Student Number"
+        '
         'frmStudentInfo_TrackCourses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -902,4 +930,6 @@ Partial Class frmStudentInfo_TrackCourses
     Friend WithEvents cboDD As ComboBox
     Friend WithEvents btnEdit1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label23 As Label
+    Friend WithEvents lblStudentNumber As Label
 End Class

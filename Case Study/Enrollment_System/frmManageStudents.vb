@@ -178,7 +178,7 @@ Public Class frmManageStudents
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         frmStudentInfo_TrackCourses.Show()
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = True
-        frmStudentInfo_TrackCourses.txtAdmissionNumber.Visible = False
+        frmStudentInfo_TrackCourses.txtAdmissionNumber.Visible = True
     End Sub
 
     Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged

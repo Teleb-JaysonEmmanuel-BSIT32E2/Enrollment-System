@@ -13,14 +13,6 @@
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
         Call connection()
-
-        frmManageUsers.Close()
-        frmManageSections.Close()
-        frmManageStudents.Close()
-        frmManageSubjects.Close()
-        frmManageTeachers.Close()
-        frmEnrollment.Close()
-        frmClassScheduling.Close()
     End Sub
     Private Sub btnUsers_Click(sender As Object, e As EventArgs) Handles btnUsers.Click
         'get the frmManageUsers in to front

@@ -10,7 +10,6 @@ Public Class frmClassScheduling
     Dim classID As String
     Private Sub frmClassScheduling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
-        Call loadSchedule()
         Call getSectionName()
         Call getCSNo()
         Call getTeacher()
@@ -25,29 +24,21 @@ Public Class frmClassScheduling
     End Sub
 
     Private Sub loadSchedule()
-        sql = "Select * from qryClassSchedule ORDER BY ClassSchedNo ASC"
+        sql = "Select * from qryClassSchedule WHERE SectionName = '" & cboSection.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
+
         Dim x As ListViewItem
         ListView1.Items.Clear()
+
         Do While dr.Read = True
-            x = New ListViewItem(dr("ClassSchedNo").ToString)
-            x.SubItems.Add(dr("SectionName").ToString)
-            x.SubItems.Add(dr("YearLevel").ToString)
-            x.SubItems.Add(dr("SchoolYear").ToString)
-            x.SubItems.Add(dr("Semester").ToString)
-            x.SubItems.Add(dr("Department").ToString)
+            x = New ListViewItem(dr("SubjCode").ToString)
             x.SubItems.Add(dr("Course").ToString)
-            x.SubItems.Add(dr("SubjCode").ToString)
-            x.SubItems.Add(dr("Description").ToString)
             x.SubItems.Add(dr("Units").ToString)
-            x.SubItems.Add(dr("SubjType").ToString)
-            x.SubItems.Add(dr("LastName").ToString)
-            x.SubItems.Add(dr("FirstName").ToString)
-
+            x.SubItems.Add(dr("FirstName") & " " & dr("LastName").ToString)
             ListView1.Items.Add(x)
-
         Loop
+
 
     End Sub
 
@@ -75,7 +66,7 @@ Public Class frmClassScheduling
     End Sub
 
     Private Sub getCSNo()
-        sql = "SELECT DISTINCT ClassSchedNo from tblClassSchedule"
+        sql = "SELECT ClassSchedNo from tblClassSchedule WHERE SectionName = '" & cboSection.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         If dr.Read = True Then
@@ -98,23 +89,13 @@ Public Class frmClassScheduling
     End Sub
 
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         cboStatus.Enabled = True
         cboSection.Enabled = True
         txtSubjCode.Enabled = True
 
-        'cboSem.Enabled = True
-        'cboStrand.Enabled = True
-        'cboSY.Enabled = True
-        'cboTrack.Enabled = True
-        'cboGrade.Enabled = True
-
         cboTeacher.Enabled = True
         ListView1.Enabled = True
-
-        'cboType.Enabled = True
-        'txtDescription.Enabled = True
-        'txtUnits.Enabled = True
 
         cboStatus.SelectedText = -1
         cboType.SelectedIndex = -1
@@ -134,7 +115,7 @@ Public Class frmClassScheduling
         lblClassNo.Text = classNo
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If MsgBox("Do you want to save?", vbYesNo) = vbYes Then
             Dim filled As Boolean = True
 
@@ -167,24 +148,31 @@ Public Class frmClassScheduling
 
 
             If filled Then
-
-                sql = "Insert into tblClassSchedule(ClassSchedNo,YearLevel, SectionName, ClassAdviser, TeacherID, SubjCode, SYID, DeptID, CourseID) Values(@ClassSchedNo, @YearLevel, @SectionName, @ClassAdviser, @TeacherID, @SubjCode, @SYID, @DeptID, @CourseID)"
+                sql = "SELECT SubjCode from tblClassSchedule WHERE SectionName = '" & cboSection.Text & "' and SUbjCode = '" & txtSubjCode.Text & "'"
                 cmd = New OleDbCommand(sql, cn)
-                With cmd
-                    .Parameters.AddWithValue("@ClassSchedNo", classNo)
-                    .Parameters.AddWithValue("@YearLevel", cboGrade.Text)
-                    .Parameters.AddWithValue("@SectionName", cboSection.Text)
-                    .Parameters.AddWithValue("@ClassAdviser", cboTeacher.Text)
-                    .Parameters.AddWithValue("@TeacherID", newTeacherId)
-                    .Parameters.AddWithValue("@SubjCode", txtSubjCode.Text)
-                    .Parameters.AddWithValue("@SYID", newSYId)
-                    .Parameters.AddWithValue("@DeptID", newDeptId)
-                    .Parameters.AddWithValue("@CourseID", newCourseId)
-                    .ExecuteNonQuery()
-                End With
+                dr = cmd.ExecuteReader
 
-                MsgBox("Done!")
-                Call loadSchedule()
+                If dr.Read = True Then
+                    MsgBox("Subject is already in Section!", MsgBoxStyle.Critical)
+                Else
+                    sql = "Insert into tblClassSchedule(ClassSchedNo,YearLevel, SectionName, ClassAdviser, TeacherID, SubjCode, SYID, DeptID, CourseID) Values(@ClassSchedNo, @YearLevel, @SectionName, @ClassAdviser, @TeacherID, @SubjCode, @SYID, @DeptID, @CourseID)"
+                    cmd = New OleDbCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@ClassSchedNo", lblClassNo.Text)
+                        .Parameters.AddWithValue("@YearLevel", cboGrade.Text)
+                        .Parameters.AddWithValue("@SectionName", cboSection.Text)
+                        .Parameters.AddWithValue("@ClassAdviser", cboTeacher.Text)
+                        .Parameters.AddWithValue("@TeacherID", newTeacherId)
+                        .Parameters.AddWithValue("@SubjCode", txtSubjCode.Text)
+                        .Parameters.AddWithValue("@SYID", newSYId)
+                        .Parameters.AddWithValue("@DeptID", newDeptId)
+                        .Parameters.AddWithValue("@CourseID", newCourseId)
+                        .ExecuteNonQuery()
+                    End With
+
+                    MsgBox("Done!")
+                    Call loadSchedule()
+                End If
             End If
         End If
     End Sub
@@ -207,6 +195,9 @@ Public Class frmClassScheduling
     End Function
 
     Private Sub cboSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSection.SelectedIndexChanged
+        Call clear()
+        btnDelete.Enabled = True
+        btnSave.Enabled = True
         sql = "SELECT tblSections.YearLevel, tblSY.SchoolYear, tblSY.Semester, tblCourse.Course, tblDept.Department " &
           "FROM ((tblSections " &
           "INNER JOIN tblSY ON tblSections.SYID = tblSY.SYID) " &
@@ -224,6 +215,8 @@ Public Class frmClassScheduling
             cboDept.Text = dr("Department").ToString
         End If
 
+        Call loadSchedule()
+        Call getCSNo()
         Call getCrsID()
         Call getDeptId()
         Call getSYID()
@@ -298,26 +291,31 @@ Public Class frmClassScheduling
         End If
     End Sub
 
-    'Private Sub getClassNo()
-    '    sql = "SELECT ClassSchedNo from tblClassSchedule WHERE ClassSchedNo = '" & classID & "'"
-    '    cmd = New OleDbCommand(sql, cn)
-    '    dr = cmd.ExecuteReader
-
-    '    If dr.Read = True Then
-    '        newClassID
-    '    End If
-    'End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
-            sql = "DELETE FROM tblClassSchedule WHERE ClassSchedNo = @item"
-            cmd = New OleDbCommand(sql, cn)
-            With cmd
-                .Parameters.AddWithValue("@item", classID)
-                .ExecuteNonQuery()
-            End With
-            MsgBox("Deleted!")
-            Call loadSchedule()
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If ListView1.SelectedItems.Count > 0 Then
+            If MsgBox("Do you want to delete?", vbYesNo) = vbYes Then
+                sql = "DELETE FROM tblClassSchedule WHERE SubjCode = @item and SectionName = '" & cboSection.Text & "'"
+                cmd = New OleDbCommand(sql, cn)
+                With cmd
+                    .Parameters.AddWithValue("@item", classID)
+                    .ExecuteNonQuery()
+                End With
+                MsgBox("Deleted!")
+                Call loadSchedule()
+            End If
+        Else
+            MsgBox("Please select an item to delete!", vbExclamation)
         End If
+
+    End Sub
+
+    Private Sub clear()
+        cboTeacher.SelectedIndex = -1
+        txtSubjCode.SelectedIndex = -1
+        cboStatus.SelectedIndex = -1
+        cboType.SelectedIndex = -1
+
+        txtUnits.Clear()
+        txtDescription.Clear()
     End Sub
 End Class

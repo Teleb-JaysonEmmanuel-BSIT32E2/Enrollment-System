@@ -24,6 +24,9 @@ Partial Class frmStudentInfo_TrackCourses
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Manage = New System.Windows.Forms.TabPage()
+        Me.lblStudentNumber = New System.Windows.Forms.Label()
+        Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEdit1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtFatherName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtFatherContactNo = New Guna.UI2.WinForms.Guna2TextBox()
@@ -53,17 +56,21 @@ Partial Class frmStudentInfo_TrackCourses
         Me.txtStudentNo = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.cboCD = New System.Windows.Forms.ComboBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.cboDD = New System.Windows.Forms.ComboBox()
+        Me.cboStatus = New System.Windows.Forms.ComboBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.cboY = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.cboC = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.cboD = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cboSem = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboSY = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Manage.SuspendLayout()
@@ -84,6 +91,9 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'Manage
         '
+        Me.Manage.Controls.Add(Me.lblStudentNumber)
+        Me.Manage.Controls.Add(Me.btnClose)
+        Me.Manage.Controls.Add(Me.btnEdit1)
         Me.Manage.Controls.Add(Me.txtFatherName)
         Me.Manage.Controls.Add(Me.Label14)
         Me.Manage.Controls.Add(Me.txtFatherContactNo)
@@ -119,6 +129,56 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Manage.TabIndex = 0
         Me.Manage.Text = "Student Information"
         Me.Manage.UseVisualStyleBackColor = True
+        '
+        'lblStudentNumber
+        '
+        Me.lblStudentNumber.AutoSize = True
+        Me.lblStudentNumber.Location = New System.Drawing.Point(8, 32)
+        Me.lblStudentNumber.Name = "lblStudentNumber"
+        Me.lblStudentNumber.Size = New System.Drawing.Size(19, 21)
+        Me.lblStudentNumber.TabIndex = 101
+        Me.lblStudentNumber.Text = "1"
+        '
+        'btnClose
+        '
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClose.FillColor = System.Drawing.Color.Maroon
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnClose.Location = New System.Drawing.Point(351, 347)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnClose.PressedDepth = 40
+        Me.btnClose.Size = New System.Drawing.Size(104, 40)
+        Me.btnClose.TabIndex = 100
+        Me.btnClose.Text = "Close"
+        '
+        'btnEdit1
+        '
+        Me.btnEdit1.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdit1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEdit1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEdit1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit1.Enabled = False
+        Me.btnEdit1.FillColor = System.Drawing.Color.Maroon
+        Me.btnEdit1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnEdit1.ForeColor = System.Drawing.Color.White
+        Me.btnEdit1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnEdit1.Location = New System.Drawing.Point(473, 347)
+        Me.btnEdit1.Name = "btnEdit1"
+        Me.btnEdit1.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnEdit1.PressedDepth = 40
+        Me.btnEdit1.Size = New System.Drawing.Size(104, 40)
+        Me.btnEdit1.TabIndex = 99
+        Me.btnEdit1.Text = "Edit"
         '
         'txtFatherName
         '
@@ -357,8 +417,8 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'cboBrgy
         '
-        Me.cboBrgy.Enabled = False
         Me.cboBrgy.FormattingEnabled = True
+        Me.cboBrgy.Items.AddRange(New Object() {"Tunasan"})
         Me.cboBrgy.Location = New System.Drawing.Point(247, 187)
         Me.cboBrgy.Margin = New System.Windows.Forms.Padding(2)
         Me.cboBrgy.Name = "cboBrgy"
@@ -380,8 +440,8 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'cboCity
         '
-        Me.cboCity.Enabled = False
         Me.cboCity.FormattingEnabled = True
+        Me.cboCity.Items.AddRange(New Object() {"Muntinlupa"})
         Me.cboCity.Location = New System.Drawing.Point(247, 109)
         Me.cboCity.Margin = New System.Windows.Forms.Padding(2)
         Me.cboCity.Name = "cboCity"
@@ -550,6 +610,7 @@ Partial Class frmStudentInfo_TrackCourses
         Me.txtStudentNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtStudentNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtStudentNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtStudentNo.Enabled = False
         Me.txtStudentNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtStudentNo.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtStudentNo.ForeColor = System.Drawing.Color.Black
@@ -578,17 +639,21 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.ComboBox6)
+        Me.TabPage2.Controls.Add(Me.Label22)
+        Me.TabPage2.Controls.Add(Me.cboCD)
+        Me.TabPage2.Controls.Add(Me.Label21)
+        Me.TabPage2.Controls.Add(Me.cboDD)
+        Me.TabPage2.Controls.Add(Me.cboStatus)
         Me.TabPage2.Controls.Add(Me.Label20)
-        Me.TabPage2.Controls.Add(Me.ComboBox5)
+        Me.TabPage2.Controls.Add(Me.cboY)
         Me.TabPage2.Controls.Add(Me.Label19)
-        Me.TabPage2.Controls.Add(Me.ComboBox4)
+        Me.TabPage2.Controls.Add(Me.cboC)
         Me.TabPage2.Controls.Add(Me.Label18)
-        Me.TabPage2.Controls.Add(Me.ComboBox3)
+        Me.TabPage2.Controls.Add(Me.cboD)
         Me.TabPage2.Controls.Add(Me.Label17)
-        Me.TabPage2.Controls.Add(Me.ComboBox2)
+        Me.TabPage2.Controls.Add(Me.cboSem)
         Me.TabPage2.Controls.Add(Me.Label16)
-        Me.TabPage2.Controls.Add(Me.ComboBox1)
+        Me.TabPage2.Controls.Add(Me.cboSY)
         Me.TabPage2.Controls.Add(Me.Label15)
         Me.TabPage2.Location = New System.Drawing.Point(4, 30)
         Me.TabPage2.Name = "TabPage2"
@@ -598,15 +663,61 @@ Partial Class frmStudentInfo_TrackCourses
         Me.TabPage2.Text = "Department/Courses"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'ComboBox6
+        'Label22
         '
-        Me.ComboBox6.Enabled = False
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(433, 124)
-        Me.ComboBox6.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(340, 29)
-        Me.ComboBox6.TabIndex = 92
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Label22.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.DarkGray
+        Me.Label22.Location = New System.Drawing.Point(429, 287)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(142, 21)
+        Me.Label22.TabIndex = 96
+        Me.Label22.Text = "Course Description"
+        '
+        'cboCD
+        '
+        Me.cboCD.FormattingEnabled = True
+        Me.cboCD.Items.AddRange(New Object() {"College of Computer Studies", "College of Criminal Justice"})
+        Me.cboCD.Location = New System.Drawing.Point(433, 310)
+        Me.cboCD.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboCD.Name = "cboCD"
+        Me.cboCD.Size = New System.Drawing.Size(340, 29)
+        Me.cboCD.TabIndex = 95
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.BackColor = System.Drawing.Color.Transparent
+        Me.Label21.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Label21.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.DarkGray
+        Me.Label21.Location = New System.Drawing.Point(429, 180)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(176, 21)
+        Me.Label21.TabIndex = 94
+        Me.Label21.Text = "Department Description"
+        '
+        'cboDD
+        '
+        Me.cboDD.FormattingEnabled = True
+        Me.cboDD.Items.AddRange(New Object() {"Bachelor of Science in Information Technology", "Bachelor of Science in Gunning"})
+        Me.cboDD.Location = New System.Drawing.Point(433, 216)
+        Me.cboDD.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboDD.Name = "cboDD"
+        Me.cboDD.Size = New System.Drawing.Size(340, 29)
+        Me.cboDD.TabIndex = 93
+        '
+        'cboStatus
+        '
+        Me.cboStatus.FormattingEnabled = True
+        Me.cboStatus.Items.AddRange(New Object() {"Available"})
+        Me.cboStatus.Location = New System.Drawing.Point(433, 124)
+        Me.cboStatus.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboStatus.Name = "cboStatus"
+        Me.cboStatus.Size = New System.Drawing.Size(340, 29)
+        Me.cboStatus.TabIndex = 92
         '
         'Label20
         '
@@ -621,15 +732,15 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label20.TabIndex = 91
         Me.Label20.Text = "Status"
         '
-        'ComboBox5
+        'cboY
         '
-        Me.ComboBox5.Enabled = False
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(433, 37)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(340, 29)
-        Me.ComboBox5.TabIndex = 90
+        Me.cboY.FormattingEnabled = True
+        Me.cboY.Items.AddRange(New Object() {"1st Year", "2nd Year", "3rd Year", "4th Year"})
+        Me.cboY.Location = New System.Drawing.Point(433, 37)
+        Me.cboY.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboY.Name = "cboY"
+        Me.cboY.Size = New System.Drawing.Size(340, 29)
+        Me.cboY.TabIndex = 90
         '
         'Label19
         '
@@ -644,15 +755,15 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label19.TabIndex = 89
         Me.Label19.Text = "Year Level"
         '
-        'ComboBox4
+        'cboC
         '
-        Me.ComboBox4.Enabled = False
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(10, 310)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(340, 29)
-        Me.ComboBox4.TabIndex = 88
+        Me.cboC.FormattingEnabled = True
+        Me.cboC.Items.AddRange(New Object() {"BSIT", "BSG"})
+        Me.cboC.Location = New System.Drawing.Point(10, 310)
+        Me.cboC.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboC.Name = "cboC"
+        Me.cboC.Size = New System.Drawing.Size(340, 29)
+        Me.cboC.TabIndex = 88
         '
         'Label18
         '
@@ -667,15 +778,15 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label18.TabIndex = 87
         Me.Label18.Text = "Course"
         '
-        'ComboBox3
+        'cboD
         '
-        Me.ComboBox3.Enabled = False
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(10, 216)
-        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(340, 29)
-        Me.ComboBox3.TabIndex = 86
+        Me.cboD.FormattingEnabled = True
+        Me.cboD.Items.AddRange(New Object() {"CCJ", "CCS"})
+        Me.cboD.Location = New System.Drawing.Point(10, 216)
+        Me.cboD.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboD.Name = "cboD"
+        Me.cboD.Size = New System.Drawing.Size(340, 29)
+        Me.cboD.TabIndex = 86
         '
         'Label17
         '
@@ -690,15 +801,15 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label17.TabIndex = 85
         Me.Label17.Text = "Department"
         '
-        'ComboBox2
+        'cboSem
         '
-        Me.ComboBox2.Enabled = False
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(10, 124)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(340, 29)
-        Me.ComboBox2.TabIndex = 84
+        Me.cboSem.FormattingEnabled = True
+        Me.cboSem.Items.AddRange(New Object() {"1st Semester", "2nd Semester"})
+        Me.cboSem.Location = New System.Drawing.Point(10, 124)
+        Me.cboSem.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboSem.Name = "cboSem"
+        Me.cboSem.Size = New System.Drawing.Size(340, 29)
+        Me.cboSem.TabIndex = 84
         '
         'Label16
         '
@@ -713,15 +824,15 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label16.TabIndex = 83
         Me.Label16.Text = "Semester"
         '
-        'ComboBox1
+        'cboSY
         '
-        Me.ComboBox1.Enabled = False
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(10, 37)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(340, 29)
-        Me.ComboBox1.TabIndex = 82
+        Me.cboSY.FormattingEnabled = True
+        Me.cboSY.Items.AddRange(New Object() {"2022-2023", "2023-2024"})
+        Me.cboSY.Location = New System.Drawing.Point(10, 37)
+        Me.cboSY.Margin = New System.Windows.Forms.Padding(2)
+        Me.cboSY.Name = "cboSY"
+        Me.cboSY.Size = New System.Drawing.Size(340, 29)
+        Me.cboSY.TabIndex = 82
         '
         'Label15
         '
@@ -786,16 +897,23 @@ Partial Class frmStudentInfo_TrackCourses
     Friend WithEvents txtStudentNo As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboSY As ComboBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents ComboBox6 As ComboBox
+    Friend WithEvents cboStatus As ComboBox
     Friend WithEvents Label20 As Label
-    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents cboY As ComboBox
     Friend WithEvents Label19 As Label
-    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents cboC As ComboBox
     Friend WithEvents Label18 As Label
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents cboD As ComboBox
     Friend WithEvents Label17 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cboSem As ComboBox
     Friend WithEvents Label16 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents cboCD As ComboBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents cboDD As ComboBox
+    Friend WithEvents btnEdit1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents lblStudentNumber As Label
 End Class

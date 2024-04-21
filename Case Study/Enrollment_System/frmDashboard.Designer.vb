@@ -42,7 +42,7 @@ Partial Class frmDashboard
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.lblPos = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.stsDateTime = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -332,7 +332,7 @@ Partial Class frmDashboard
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.Transparent
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel5, Me.stsDateTime})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel3, Me.lblPos, Me.ToolStripStatusLabel5, Me.stsDateTime})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 1)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
@@ -348,12 +348,11 @@ Partial Class frmDashboard
         Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(74, 20)
         Me.ToolStripStatusLabel3.Text = "Position: "
         '
-        'ToolStripStatusLabel4
+        'lblPos
         '
-        Me.ToolStripStatusLabel4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!)
-        Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(174, 20)
-        Me.ToolStripStatusLabel4.Text = "ToolStripStatusLabel4     "
+        Me.lblPos.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!)
+        Me.lblPos.Name = "lblPos"
+        Me.lblPos.Size = New System.Drawing.Size(0, 20)
         '
         'ToolStripStatusLabel5
         '
@@ -366,8 +365,7 @@ Partial Class frmDashboard
         '
         Me.stsDateTime.Font = New System.Drawing.Font("Microsoft New Tai Lue", 9.0!)
         Me.stsDateTime.Name = "stsDateTime"
-        Me.stsDateTime.Size = New System.Drawing.Size(154, 20)
-        Me.stsDateTime.Text = "ToolStripStatusLabel6"
+        Me.stsDateTime.Size = New System.Drawing.Size(0, 20)
         '
         'Panel1
         '
@@ -441,6 +439,7 @@ Partial Class frmDashboard
         '
         'Timer1
         '
+        Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
         'frmDashboard
@@ -477,7 +476,7 @@ Partial Class frmDashboard
     Friend WithEvents Panel1 As Panel
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
+    Friend WithEvents lblPos As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
     Friend WithEvents stsDateTime As ToolStripStatusLabel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox

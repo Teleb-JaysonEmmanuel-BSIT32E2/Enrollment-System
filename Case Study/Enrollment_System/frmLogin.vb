@@ -85,7 +85,7 @@ Public Class frmLogin
         Next
 
         If filled Then
-            sql = "Select Username, Password from tblUsers where Username = '" & txtUsername.Text & "' and Password = '" & txtPassword.Text & "'"
+            sql = "Select Username, Password, Role from qryUsers where Username = '" & txtUsername.Text & "' and Password = '" & txtPassword.Text & "'"
             cmd = New OleDbCommand(sql, cn)
             dr = cmd.ExecuteReader
 
@@ -93,8 +93,10 @@ Public Class frmLogin
                 MsgBox("Account successfully logged in!", MsgBoxStyle.Information)
 
                 frmDashboard.lblUsername.Text = txtUsername.Text
+                frmDashboard.lblPos.Text = dr("Role").ToString
                 frmDashboard.Show()
                 Me.Hide()
+                frmMainLogin.Hide()
             Else
                 MsgBox("Account does not exist!", MsgBoxStyle.Critical)
             End If

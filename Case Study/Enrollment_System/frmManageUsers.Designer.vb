@@ -518,7 +518,7 @@ Partial Class frmManageUsers
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(713, 531)
+        Me.btnEdit.Location = New System.Drawing.Point(724, 531)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnEdit.PressedDepth = 40

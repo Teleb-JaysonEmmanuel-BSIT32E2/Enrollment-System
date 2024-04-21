@@ -218,6 +218,7 @@ Public Class frmEnrollment
         dr.Close()
     End Sub
 
+
     Private Sub cboSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSection.SelectedIndexChanged
         Call loadAccount()
         sql = "Select Department, Course, YearLevel, Semester, SchoolYear from qrySections WHERE SectionName = '" & cboSection.Text & "'"
@@ -231,4 +232,5 @@ Public Class frmEnrollment
             cboSchooYear.Text = dr("SchoolYear").ToString
         End If
     End Sub
+
 End Class

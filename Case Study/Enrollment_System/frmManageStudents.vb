@@ -25,17 +25,28 @@ Public Class frmManageStudents
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         Else
 
-            Call save()
+            Call insertThings()
         End If
 
     End Sub
+    Private courseId As String
+    Private deptId As String
+
+    Private Sub insertThings()
+        Call dept()
+        Call course()
+        Call save()
+        Call loadAccount()
+    End Sub
+
     Private Sub save()
         Dim convertedDate As DateTime = Convert.ToDateTime(frmStudentInfo_TrackCourses.datePicker.Text)
-        sql = "Insert into tblStudents (StudentNo,LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo)Values
-                (@StudentNo,@LastName,@FirstName,@MiddleName,@Address,@Brgy,@City,@ContactNo,@Bdate,@Age,@MotherName,@MotherContactNo,@FatherName,@FatherContactNo)"
+        sql = "Insert into tblStudents (CourseID, StudentNo,LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo)Values
+                (@CourseID,@StudentNo,@LastName,@FirstName,@MiddleName,@Address,@Brgy,@City,@ContactNo,@Bdate,@Age,@MotherName,@MotherContactNo,@FatherName,@FatherContactNo)"
         cmd = New OleDbCommand(sql, cn)
 
         With cmd
+            .Parameters.AddWithValue("CourseID", courseId)
             .Parameters.AddWithValue("@StudentNo", frmStudentInfo_TrackCourses.txtStudentNo.Text)
             .Parameters.AddWithValue("@LastName", frmStudentInfo_TrackCourses.txtLastName.Text)
             .Parameters.AddWithValue("@FirstName", frmStudentInfo_TrackCourses.txtFirstName.Text)
@@ -54,40 +65,72 @@ Public Class frmManageStudents
             cmd.ExecuteNonQuery()
 
         End With
-
-        Call course()
+        MsgBox("Successfully Saved", MsgBoxStyle.Information)
 
 
     End Sub
+
     Private Sub course()
-        sql = "Insert into tblCourse (SchoolYear,Semester,CourseDescription,Course,YearLevel,Status)Values(@SchoolYear,@Semester,@CourseDescription,@Course,@YearLevel,@Status)"
+        ' Retrieve the last CourseID from the database
+        Dim lastId As String = ""
+        sql = "SELECT TOP 1 CourseID FROM tblCourse ORDER BY CourseID DESC"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            lastId = dr("CourseID").ToString()
+        Else
+            lastId = "CRS-1000"
+        End If
+
+        ' Extract the numeric part of the CourseID and increment it
+        Dim idNumber As Integer = Integer.Parse(lastId.Substring(4))
+        idNumber += 1
+
+        ' Create the new CourseID
+        courseId = "CRS-" & idNumber.ToString("D4")
+
+        sql = "Insert into tblCourse (CourseID, DeptID, SchoolYear,Semester,CourseDescription,Course,YearLevel,Status)Values(@CourseID, @DeptID, @SchoolYear,@Semester,@CourseDescription,@Course,@YearLevel,@Status)"
         cmd = New OleDbCommand(sql, cn)
 
         With cmd
+            .Parameters.AddWithValue("@CourseID", courseId)
+            .Parameters.AddWithValue("@DeptID", deptId)
             .Parameters.AddWithValue("@SchoolYear", frmStudentInfo_TrackCourses.cboSY.Text)
-            .Parameters.AddWithValue("@SchoolYear", frmStudentInfo_TrackCourses.cboSem.Text)
+            .Parameters.AddWithValue("@Semester", frmStudentInfo_TrackCourses.cboSem.Text)
             .Parameters.AddWithValue("@CourseDescription", frmStudentInfo_TrackCourses.cboCD.Text)
             .Parameters.AddWithValue("@Course", frmStudentInfo_TrackCourses.cboC.Text)
             .Parameters.AddWithValue("@YearLevel", frmStudentInfo_TrackCourses.cboY.Text)
             .Parameters.AddWithValue("@Status", frmStudentInfo_TrackCourses.cboStatus.Text)
             cmd.ExecuteNonQuery()
         End With
-
-        Call dept()
     End Sub
 
     Private Sub dept()
-        sql = "Insert into tblDept (Department,DeptDescription)Values(@Department,@DeptDescription)"
+        Dim lastId As String = ""
+        sql = "SELECT TOP 1 DeptID FROM tblDept ORDER BY DeptID DESC"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader()
+        If dr.Read() Then
+            lastId = dr("DeptID").ToString()
+        Else
+            lastId = "DEPT-1000"
+        End If
+
+        Dim idNumber As Integer = Integer.Parse(lastId.Substring(5))
+        idNumber += 1
+
+        deptId = "DEPT-" & idNumber.ToString("D4")
+
+        sql = "Insert into tblDept (DeptID, Department,DeptDescription)Values(@DeptID, @Department,@DeptDescription)"
         cmd = New OleDbCommand(sql, cn)
 
         With cmd
-
+            .Parameters.AddWithValue("DeptID", deptId)
             .Parameters.AddWithValue("@Department", frmStudentInfo_TrackCourses.cboD.Text)
             .Parameters.AddWithValue("@DeptDescription", frmStudentInfo_TrackCourses.cboDD.Text)
             cmd.ExecuteNonQuery()
         End With
-        MsgBox("Successfully Saved", MsgBoxStyle.Information)
-        Call loadAccount()
+
     End Sub
     Private Sub loadAccount()
         sql = "Select * from qryStudCourseDept"
@@ -121,7 +164,9 @@ Public Class frmManageStudents
 
 
     End Sub
-
+    Public Sub callLoadAccount()
+        Call loadAccount()
+    End Sub
     Private Sub frmManageStudents_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call loadAccount()
@@ -135,8 +180,6 @@ Public Class frmManageStudents
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         frmStudentInfo_TrackCourses.Show()
-        Me.TopMost = True
     End Sub
-
 
 End Class

@@ -6,6 +6,7 @@
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
+        Call connection()
 
     End Sub
 

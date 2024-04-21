@@ -24,6 +24,7 @@ Partial Class frmStudentInfo_TrackCourses
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Manage = New System.Windows.Forms.TabPage()
+        Me.btnEdit1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtFatherName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtFatherContactNo = New Guna.UI2.WinForms.Guna2TextBox()
@@ -69,7 +70,7 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label16 = New System.Windows.Forms.Label()
         Me.cboSY = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.btnEdit1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnClose = New Guna.UI2.WinForms.Guna2Button()
         Me.TabControl1.SuspendLayout()
         Me.Manage.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -89,6 +90,7 @@ Partial Class frmStudentInfo_TrackCourses
         '
         'Manage
         '
+        Me.Manage.Controls.Add(Me.btnClose)
         Me.Manage.Controls.Add(Me.btnEdit1)
         Me.Manage.Controls.Add(Me.txtFatherName)
         Me.Manage.Controls.Add(Me.Label14)
@@ -125,6 +127,26 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Manage.TabIndex = 0
         Me.Manage.Text = "Student Information"
         Me.Manage.UseVisualStyleBackColor = True
+        '
+        'btnEdit1
+        '
+        Me.btnEdit1.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdit1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnEdit1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEdit1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit1.FillColor = System.Drawing.Color.Maroon
+        Me.btnEdit1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnEdit1.ForeColor = System.Drawing.Color.White
+        Me.btnEdit1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnEdit1.Location = New System.Drawing.Point(473, 347)
+        Me.btnEdit1.Name = "btnEdit1"
+        Me.btnEdit1.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnEdit1.PressedDepth = 40
+        Me.btnEdit1.Size = New System.Drawing.Size(104, 40)
+        Me.btnEdit1.TabIndex = 99
+        Me.btnEdit1.Text = "Edit"
         '
         'txtFatherName
         '
@@ -792,25 +814,25 @@ Partial Class frmStudentInfo_TrackCourses
         Me.Label15.TabIndex = 81
         Me.Label15.Text = "School Year"
         '
-        'btnEdit1
+        'btnClose
         '
-        Me.btnEdit1.BackColor = System.Drawing.Color.Transparent
-        Me.btnEdit1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEdit1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEdit1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEdit1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEdit1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEdit1.FillColor = System.Drawing.Color.Maroon
-        Me.btnEdit1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.btnEdit1.ForeColor = System.Drawing.Color.White
-        Me.btnEdit1.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit1.Location = New System.Drawing.Point(473, 347)
-        Me.btnEdit1.Name = "btnEdit1"
-        Me.btnEdit1.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
-        Me.btnEdit1.PressedDepth = 40
-        Me.btnEdit1.Size = New System.Drawing.Size(104, 40)
-        Me.btnEdit1.TabIndex = 99
-        Me.btnEdit1.Text = "Edit"
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClose.FillColor = System.Drawing.Color.Maroon
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
+        Me.btnClose.Location = New System.Drawing.Point(351, 347)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
+        Me.btnClose.PressedDepth = 40
+        Me.btnClose.Size = New System.Drawing.Size(104, 40)
+        Me.btnClose.TabIndex = 100
+        Me.btnClose.Text = "Close"
         '
         'frmStudentInfo_TrackCourses
         '
@@ -879,4 +901,5 @@ Partial Class frmStudentInfo_TrackCourses
     Friend WithEvents Label21 As Label
     Friend WithEvents cboDD As ComboBox
     Friend WithEvents btnEdit1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnClose As Guna.UI2.WinForms.Guna2Button
 End Class

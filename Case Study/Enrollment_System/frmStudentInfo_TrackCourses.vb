@@ -1,7 +1,6 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmStudentInfo_TrackCourses
-
     Private Sub txtStudentNo_TextChanged(sender As Object, e As EventArgs) Handles txtStudentNo.TextChanged
         sql = "Select StudentNo, LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo,SchoolYear,Semester,Course,CourseDescription,Department,DeptDescription,YearLevel,Status from qryStudCourseDept where StudentNo ='" & txtStudentNo.Text & "'"
         cmd = New OleDbCommand(sql, cn)
@@ -50,7 +49,7 @@ Public Class frmStudentInfo_TrackCourses
     End Sub
     Private Sub edit()
         Dim convertedDate As DateTime = Convert.ToDateTime(datePicker.Text)
-        sql = "UPDATE qryStudCourseDept SET StudentNo =@StudentNo,LastName=@LastName,FirstName=@FirstName,MiddleName=@MiddleName,Address=@Address,Brgy=@Brgy,City=@City,ContactNo=@ContactNo,Bdate=@Bdate,Age=@Age,MotherName=@MotherName,MotherContactNo=@MotherContactNo,FatherName=@FatherName,FatherContactNo=@FatherContactNo,SchoolYear=@SchoolYear,Semester=@Semester,Course=@Course,CourseDescription=@CourseDescription,Department=@Department,DeptDescription=@DeptDescription,YearLevel=@YearLevel,Status=@Status"
+        sql = "UPDATE qryStudCourseDept SET StudentNo =@StudentNo,LastName=@LastName,FirstName=@FirstName,MiddleName=@MiddleName,Address=@Address,Brgy=@Brgy,City=@City,ContactNo=@ContactNo,Bdate=@Bdate,Age=@Age,MotherName=@MotherName,MotherContactNo=@MotherContactNo,FatherName=@FatherName,FatherContactNo=@FatherContactNo,SchoolYear=@SchoolYear,Semester=@Semester,Course=@Course,CourseDescription=@CourseDescription,Department=@Department,DeptDescription=@DeptDescription,YearLevel=@YearLevel,Status=@Status where StudentNo =@StudentNo"
         cmd = New OleDbCommand(sql, cn)
         cmd = New OleDbCommand(sql, cn)
 
@@ -78,11 +77,15 @@ Public Class frmStudentInfo_TrackCourses
             .Parameters.AddWithValue("@Department", cboD.Text)
             .Parameters.AddWithValue("@DeptDescription", cboDD.Text)
             cmd.ExecuteNonQuery()
-
-
         End With
         MsgBox("Record Successfully Updated", MsgBoxStyle.Information)
-
+        Call frmManageStudents.callLoadAccount()
+    End Sub
+    Private Sub frmStudentInfo_TrackCourses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.TopMost = True
     End Sub
 
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
 End Class

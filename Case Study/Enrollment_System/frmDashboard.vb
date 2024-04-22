@@ -5,6 +5,7 @@
         panelMainDashboard.Controls.Add(frmMonitorDashboard)
         frmMonitorDashboard.BringToFront()
         frmMonitorDashboard.Show()
+        Call connection()
     End Sub
     Private Sub btnDashaboard_Click(sender As Object, e As EventArgs) Handles btnDashaboard.Click
 

@@ -24,16 +24,17 @@ Partial Class frmMonitorDashboard
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblNumberUser = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblNumberStudent = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblNumberSubject = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblAcademicYear = New System.Windows.Forms.Label()
+        Me.lblSemester = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -146,7 +147,6 @@ Partial Class frmMonitorDashboard
         Me.Label9.Text = "No. of Subjects"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Goldenrod
@@ -163,6 +163,7 @@ Partial Class frmMonitorDashboard
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Panel10.Controls.Add(Me.lblSemester)
         Me.Panel10.Controls.Add(Me.Label11)
         Me.Panel10.Controls.Add(Me.Label12)
         Me.Panel10.Location = New System.Drawing.Point(403, 206)
@@ -227,14 +228,15 @@ Partial Class frmMonitorDashboard
 
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblNumberUser As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblNumberStudent As Label
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblNumberSubject As Label
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lblAcademicYear As Label
+    Friend WithEvents lblSemester As Label
 End Class

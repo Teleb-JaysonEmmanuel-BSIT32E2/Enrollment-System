@@ -42,7 +42,7 @@ Public Class frmEnrollment
 
     Private Sub txtStudentID_TextChanged(sender As Object, e As EventArgs) Handles txtStudentID.TextChanged
         Call searchThings()
-        sql = "Select LastName,FirstName,MiddleName from tblStudents where AdmissionNo ='" & frmStudentInfo_TrackCourses.txtAdmissionNumber.Text & "'"
+        sql = "Select LastName,FirstName,MiddleName from tblStudents where AdmissionNo ='" & txtStudentID.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         If dr.Read = True Then
@@ -150,6 +150,7 @@ Public Class frmEnrollment
             MsgBox("Please fill all the required fields.", MsgBoxStyle.Exclamation)
         Else
             Call checkStudentID()
+            Call Print()
         End If
     End Sub
 
@@ -231,6 +232,18 @@ Public Class frmEnrollment
             cboSemester.Text = dr("Semester").ToString
             cboSchooYear.Text = dr("SchoolYear").ToString
         End If
+    End Sub
+
+    Private Sub Print()
+        frmPrinting.lblStudentID.Text = txtStudentID.Text
+        frmPrinting.lblStudentName.Text = txtFirstName.Text & " " & txtMiddleName.Text & " " & txtLastName.Text
+        frmPrinting.lblProgram.Text = cboCourse.Text
+        frmPrinting.lblYear.Text = cboSchooYear.Text
+        frmPrinting.lblSem.Text = cboSemester.Text
+        frmPrinting.lblSection.Text = cboSection.Text
+
+        frmPrinting.Show()
+        Me.Hide()
     End Sub
 
 End Class

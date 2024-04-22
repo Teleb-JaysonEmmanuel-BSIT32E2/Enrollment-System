@@ -183,7 +183,6 @@ Public Class frmManageStudents
         frmStudentInfo_TrackCourses.txtAdmissionNumber.Enabled = False
         frmStudentInfo_TrackCourses.Show()
         frmStudentInfo_TrackCourses.btnEdit1.Enabled = True
-
     End Sub
 
     Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged

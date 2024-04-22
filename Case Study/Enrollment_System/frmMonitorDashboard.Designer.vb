@@ -32,8 +32,13 @@ Partial Class frmMonitorDashboard
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.lblSemester = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+<<<<<<< Updated upstream
         Me.Label12 = New System.Windows.Forms.Label()
+=======
+        Me.lblAcademicYear = New System.Windows.Forms.Label()
+>>>>>>> Stashed changes
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -181,6 +186,20 @@ Partial Class frmMonitorDashboard
         Me.Panel10.Size = New System.Drawing.Size(400, 148)
         Me.Panel10.TabIndex = 34
         '
+        'lblSemester
+        '
+        Me.lblSemester.AutoSize = True
+        Me.lblSemester.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.lblSemester.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblSemester.Font = New System.Drawing.Font("Microsoft New Tai Lue", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblSemester.ForeColor = System.Drawing.Color.Transparent
+        Me.lblSemester.Location = New System.Drawing.Point(142, 56)
+        Me.lblSemester.Name = "lblSemester"
+        Me.lblSemester.Size = New System.Drawing.Size(26, 29)
+        Me.lblSemester.TabIndex = 22
+        Me.lblSemester.Text = "0"
+        Me.lblSemester.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -199,6 +218,7 @@ Partial Class frmMonitorDashboard
         '
         'Label12
         '
+<<<<<<< Updated upstream
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -211,6 +231,19 @@ Partial Class frmMonitorDashboard
         Me.Label12.TabIndex = 20
         Me.Label12.Text = "2023-2024 2nd Semester"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+=======
+        Me.lblAcademicYear.AutoSize = True
+        Me.lblAcademicYear.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.lblAcademicYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblAcademicYear.Font = New System.Drawing.Font("Microsoft New Tai Lue", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.lblAcademicYear.ForeColor = System.Drawing.Color.Transparent
+        Me.lblAcademicYear.Location = New System.Drawing.Point(20, 56)
+        Me.lblAcademicYear.Name = "lblAcademicYear"
+        Me.lblAcademicYear.Size = New System.Drawing.Size(26, 29)
+        Me.lblAcademicYear.TabIndex = 20
+        Me.lblAcademicYear.Text = "0"
+        Me.lblAcademicYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+>>>>>>> Stashed changes
         '
         'frmMonitorDashboard
         '

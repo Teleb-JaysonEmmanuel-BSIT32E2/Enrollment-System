@@ -127,6 +127,7 @@ Partial Class frmEnrollment
         '
         'cboSchooYear
         '
+        Me.cboSchooYear.Enabled = False
         Me.cboSchooYear.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.cboSchooYear.FormattingEnabled = True
         Me.cboSchooYear.ItemHeight = 21

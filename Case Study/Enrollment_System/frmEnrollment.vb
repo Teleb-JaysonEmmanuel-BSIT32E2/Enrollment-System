@@ -106,6 +106,7 @@ Public Class frmEnrollment
         cboDepartment.Enabled = True
         cboCourse.Enabled = True
         btnSave.Enabled = True
+        cboSchooYear.Enabled = True
     End Sub
 
 

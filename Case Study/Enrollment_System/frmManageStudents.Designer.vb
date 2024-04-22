@@ -40,14 +40,6 @@ Partial Class frmManageStudents
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader17 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader18 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader19 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader20 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader21 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader22 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtSearchBar = New Guna.UI2.WinForms.Guna2TextBox()
         Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
@@ -69,10 +61,9 @@ Partial Class frmManageStudents
         Me.Guna2GroupBox1.CustomBorderThickness = New System.Windows.Forms.Padding(0, 50, 0, 0)
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(9, 4)
-        Me.Guna2GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(7, 3)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1268, 612)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(951, 497)
         Me.Guna2GroupBox1.TabIndex = 25
         '
         'Panel1
@@ -81,28 +72,26 @@ Partial Class frmManageStudents
         Me.Panel1.Controls.Add(Me.ListView1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 50)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1268, 562)
+        Me.Panel1.Size = New System.Drawing.Size(951, 447)
         Me.Panel1.TabIndex = 100
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.ColumnHeader17, Me.ColumnHeader18, Me.ColumnHeader19, Me.ColumnHeader20, Me.ColumnHeader21, Me.ColumnHeader22})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14})
         Me.ListView1.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(7, 4)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListView1.Location = New System.Drawing.Point(5, 3)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1245, 528)
+        Me.ListView1.Size = New System.Drawing.Size(935, 430)
         Me.ListView1.TabIndex = 102
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "StudentNo"
+        Me.ColumnHeader1.Text = "Admission No"
         Me.ColumnHeader1.Width = 130
         '
         'ColumnHeader2
@@ -183,54 +172,6 @@ Partial Class frmManageStudents
         Me.ColumnHeader14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ColumnHeader14.Width = 150
         '
-        'ColumnHeader15
-        '
-        Me.ColumnHeader15.Text = "School Year"
-        Me.ColumnHeader15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader15.Width = 150
-        '
-        'ColumnHeader16
-        '
-        Me.ColumnHeader16.Text = "Semester"
-        Me.ColumnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader16.Width = 150
-        '
-        'ColumnHeader17
-        '
-        Me.ColumnHeader17.Text = "Course"
-        Me.ColumnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader17.Width = 150
-        '
-        'ColumnHeader18
-        '
-        Me.ColumnHeader18.Text = "Course Description"
-        Me.ColumnHeader18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader18.Width = 150
-        '
-        'ColumnHeader19
-        '
-        Me.ColumnHeader19.Text = "Department"
-        Me.ColumnHeader19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader19.Width = 150
-        '
-        'ColumnHeader20
-        '
-        Me.ColumnHeader20.Text = "Department Description"
-        Me.ColumnHeader20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader20.Width = 171
-        '
-        'ColumnHeader21
-        '
-        Me.ColumnHeader21.Text = "Year Level"
-        Me.ColumnHeader21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader21.Width = 150
-        '
-        'ColumnHeader22
-        '
-        Me.ColumnHeader22.Text = "Status"
-        Me.ColumnHeader22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader22.Width = 150
-        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -238,10 +179,9 @@ Partial Class frmManageStudents
         Me.Label15.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label15.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(9, 17)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Location = New System.Drawing.Point(7, 14)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(208, 27)
+        Me.Label15.Size = New System.Drawing.Size(166, 21)
         Me.Label15.TabIndex = 99
         Me.Label15.Text = "MANAGE STUDENTS"
         '
@@ -258,13 +198,13 @@ Partial Class frmManageStudents
         Me.txtSearchBar.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtSearchBar.ForeColor = System.Drawing.Color.Black
         Me.txtSearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearchBar.Location = New System.Drawing.Point(639, 11)
-        Me.txtSearchBar.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearchBar.Location = New System.Drawing.Point(479, 9)
+        Me.txtSearchBar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearchBar.Name = "txtSearchBar"
         Me.txtSearchBar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtSearchBar.PlaceholderText = "Enter Student Number or Student Name"
         Me.txtSearchBar.SelectedText = ""
-        Me.txtSearchBar.Size = New System.Drawing.Size(475, 37)
+        Me.txtSearchBar.Size = New System.Drawing.Size(356, 30)
         Me.txtSearchBar.TabIndex = 27
         '
         'btnCancel
@@ -279,12 +219,11 @@ Partial Class frmManageStudents
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(1116, 647)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancel.Location = New System.Drawing.Point(837, 526)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnCancel.PressedDepth = 40
-        Me.btnCancel.Size = New System.Drawing.Size(139, 49)
+        Me.btnCancel.Size = New System.Drawing.Size(104, 40)
         Me.btnCancel.TabIndex = 35
         Me.btnCancel.Text = "Cancel"
         '
@@ -300,12 +239,11 @@ Partial Class frmManageStudents
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(955, 647)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEdit.Location = New System.Drawing.Point(716, 526)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnEdit.PressedDepth = 40
-        Me.btnEdit.Size = New System.Drawing.Size(139, 49)
+        Me.btnEdit.Size = New System.Drawing.Size(104, 40)
         Me.btnEdit.TabIndex = 34
         Me.btnEdit.Text = "Edit"
         '
@@ -321,12 +259,11 @@ Partial Class frmManageStudents
         Me.btnNew.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnNew.ForeColor = System.Drawing.Color.White
         Me.btnNew.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnNew.Location = New System.Drawing.Point(193, 647)
-        Me.btnNew.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNew.Location = New System.Drawing.Point(145, 526)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnNew.PressedDepth = 40
-        Me.btnNew.Size = New System.Drawing.Size(139, 49)
+        Me.btnNew.Size = New System.Drawing.Size(104, 40)
         Me.btnNew.TabIndex = 33
         Me.btnNew.Text = "New"
         '
@@ -342,12 +279,11 @@ Partial Class frmManageStudents
         Me.btnSave.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnSave.Location = New System.Drawing.Point(29, 647)
-        Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSave.Location = New System.Drawing.Point(22, 526)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnSave.PressedDepth = 40
-        Me.btnSave.Size = New System.Drawing.Size(139, 49)
+        Me.btnSave.Size = New System.Drawing.Size(104, 40)
         Me.btnSave.TabIndex = 32
         Me.btnSave.Text = "Save"
         '
@@ -358,16 +294,15 @@ Partial Class frmManageStudents
         '
         'frmManageStudents
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1285, 724)
+        Me.ClientSize = New System.Drawing.Size(964, 588)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmManageStudents"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2GroupBox1.ResumeLayout(False)
@@ -400,13 +335,5 @@ Partial Class frmManageStudents
     Friend WithEvents ColumnHeader12 As ColumnHeader
     Friend WithEvents ColumnHeader13 As ColumnHeader
     Friend WithEvents ColumnHeader14 As ColumnHeader
-    Friend WithEvents ColumnHeader15 As ColumnHeader
-    Friend WithEvents ColumnHeader16 As ColumnHeader
-    Friend WithEvents ColumnHeader17 As ColumnHeader
-    Friend WithEvents ColumnHeader18 As ColumnHeader
-    Friend WithEvents ColumnHeader19 As ColumnHeader
-    Friend WithEvents ColumnHeader20 As ColumnHeader
-    Friend WithEvents ColumnHeader21 As ColumnHeader
-    Friend WithEvents ColumnHeader22 As ColumnHeader
     Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

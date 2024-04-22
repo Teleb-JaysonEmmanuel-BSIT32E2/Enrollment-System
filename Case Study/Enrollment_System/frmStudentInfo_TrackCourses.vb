@@ -44,12 +44,11 @@ Public Class frmStudentInfo_TrackCourses
             txtAddress.Text = "" Or txtFatherContactNo.Text = "" Or txtFatherName.Text = "" Then
             MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
         Else
-
-            Call edit()
+            Call updateStudent()
         End If
         Me.Close()
     End Sub
-    Private Sub edit()
+    Private Sub updateStudent()
         Dim convertedDate As DateTime = Convert.ToDateTime(datePicker.Text)
         sql = "UPDATE tblStudents SET AdmissionNo=@AdmissionNo, LastName=@LastName,FirstName=@FirstName,MiddleName=@MiddleName, " &
         "Address=@Address,Brgy=@Brgy,City=@City,ContactNo=@ContactNo,Bdate=@Bdate,Age=@Age,MotherName=@MotherName," &
@@ -84,6 +83,7 @@ Public Class frmStudentInfo_TrackCourses
             Call studentNumber()
         End If
     End Sub
+
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()

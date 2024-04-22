@@ -45,7 +45,7 @@ Partial Class frmMonitorDashboard
         '
         Me.Panel7.BackColor = System.Drawing.Color.DarkBlue
         Me.Panel7.Controls.Add(Me.Label6)
-        Me.Panel7.Controls.Add(Me.lblNumberUser)
+        Me.Panel7.Controls.Add(Me.Label5)
         Me.Panel7.Location = New System.Drawing.Point(56, 46)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
@@ -67,25 +67,25 @@ Partial Class frmMonitorDashboard
         Me.Label6.Text = "No. of Users"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblNumberUser
+        'Label5
         '
-        Me.lblNumberUser.AutoSize = True
-        Me.lblNumberUser.BackColor = System.Drawing.Color.DarkBlue
-        Me.lblNumberUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblNumberUser.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.lblNumberUser.ForeColor = System.Drawing.Color.Transparent
-        Me.lblNumberUser.Location = New System.Drawing.Point(17, 52)
-        Me.lblNumberUser.Name = "lblNumberUser"
-        Me.lblNumberUser.Size = New System.Drawing.Size(40, 45)
-        Me.lblNumberUser.TabIndex = 20
-        Me.lblNumberUser.Text = "0"
-        Me.lblNumberUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.DarkBlue
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label5.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.Transparent
+        Me.Label5.Location = New System.Drawing.Point(17, 52)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(40, 45)
+        Me.Label5.TabIndex = 20
+        Me.Label5.Text = "3"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.ForestGreen
         Me.Panel8.Controls.Add(Me.Label7)
-        Me.Panel8.Controls.Add(Me.lblNumberStudent)
+        Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Location = New System.Drawing.Point(403, 46)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
@@ -107,25 +107,25 @@ Partial Class frmMonitorDashboard
         Me.Label7.Text = "No. of Registered Students"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblNumberStudent
+        'Label8
         '
-        Me.lblNumberStudent.AutoSize = True
-        Me.lblNumberStudent.BackColor = System.Drawing.Color.ForestGreen
-        Me.lblNumberStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblNumberStudent.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.lblNumberStudent.ForeColor = System.Drawing.Color.Transparent
-        Me.lblNumberStudent.Location = New System.Drawing.Point(17, 52)
-        Me.lblNumberStudent.Name = "lblNumberStudent"
-        Me.lblNumberStudent.Size = New System.Drawing.Size(40, 45)
-        Me.lblNumberStudent.TabIndex = 20
-        Me.lblNumberStudent.Text = "0"
-        Me.lblNumberStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.ForestGreen
+        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label8.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.ForeColor = System.Drawing.Color.Transparent
+        Me.Label8.Location = New System.Drawing.Point(17, 52)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(40, 45)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "3"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.Goldenrod
         Me.Panel9.Controls.Add(Me.Label9)
-        Me.Panel9.Controls.Add(Me.lblNumberSubject)
+        Me.Panel9.Controls.Add(Me.Label10)
         Me.Panel9.Location = New System.Drawing.Point(56, 206)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
@@ -147,26 +147,25 @@ Partial Class frmMonitorDashboard
         Me.Label9.Text = "No. of Subjects"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblNumberSubject
         '
-        Me.lblNumberSubject.AutoSize = True
-        Me.lblNumberSubject.BackColor = System.Drawing.Color.Goldenrod
-        Me.lblNumberSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblNumberSubject.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
-        Me.lblNumberSubject.ForeColor = System.Drawing.Color.Transparent
-        Me.lblNumberSubject.Location = New System.Drawing.Point(17, 52)
-        Me.lblNumberSubject.Name = "lblNumberSubject"
-        Me.lblNumberSubject.Size = New System.Drawing.Size(40, 45)
-        Me.lblNumberSubject.TabIndex = 20
-        Me.lblNumberSubject.Text = "0"
-        Me.lblNumberSubject.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Goldenrod
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.Color.Transparent
+        Me.Label10.Location = New System.Drawing.Point(17, 52)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 45)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "3"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Panel10.Controls.Add(Me.lblSemester)
         Me.Panel10.Controls.Add(Me.Label11)
-        Me.Panel10.Controls.Add(Me.lblAcademicYear)
+        Me.Panel10.Controls.Add(Me.Label12)
         Me.Panel10.Location = New System.Drawing.Point(403, 206)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
@@ -188,39 +187,25 @@ Partial Class frmMonitorDashboard
         Me.Label11.Text = "Academic School Year"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblAcademicYear
+        'Label12
         '
-        Me.lblAcademicYear.AutoSize = True
-        Me.lblAcademicYear.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.lblAcademicYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblAcademicYear.Font = New System.Drawing.Font("Microsoft New Tai Lue", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.lblAcademicYear.ForeColor = System.Drawing.Color.Transparent
-        Me.lblAcademicYear.Location = New System.Drawing.Point(20, 56)
-        Me.lblAcademicYear.Name = "lblAcademicYear"
-        Me.lblAcademicYear.Size = New System.Drawing.Size(26, 29)
-        Me.lblAcademicYear.TabIndex = 20
-        Me.lblAcademicYear.Text = "0"
-        Me.lblAcademicYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblSemester
-        '
-        Me.lblSemester.AutoSize = True
-        Me.lblSemester.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.lblSemester.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblSemester.Font = New System.Drawing.Font("Microsoft New Tai Lue", 16.0!, System.Drawing.FontStyle.Bold)
-        Me.lblSemester.ForeColor = System.Drawing.Color.Transparent
-        Me.lblSemester.Location = New System.Drawing.Point(142, 56)
-        Me.lblSemester.Name = "lblSemester"
-        Me.lblSemester.Size = New System.Drawing.Size(26, 29)
-        Me.lblSemester.TabIndex = 22
-        Me.lblSemester.Text = "0"
-        Me.lblSemester.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label12.Font = New System.Drawing.Font("Microsoft New Tai Lue", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.Label12.ForeColor = System.Drawing.Color.Transparent
+        Me.Label12.Location = New System.Drawing.Point(20, 56)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(274, 29)
+        Me.Label12.TabIndex = 20
+        Me.Label12.Text = "2023-2024 2nd Semester"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frmMonitorDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(908, 588)
+        Me.ClientSize = New System.Drawing.Size(764, 578)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel8)

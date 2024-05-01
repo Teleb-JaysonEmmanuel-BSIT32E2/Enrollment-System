@@ -34,14 +34,7 @@ Public Class frmEnrollment
         Loop
     End Sub
 
-    'Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-    '    If ListView1.SelectedItems.Count > 0 Then
-    '        txtStudentID.Text = ListView1.SelectedItems(0).SubItems(0).Text
-    '    End If
-    'End Sub
-
     Private Sub txtStudentID_TextChanged(sender As Object, e As EventArgs) Handles txtStudentID.TextChanged
-        Call searchThings()
         sql = "Select LastName,FirstName,MiddleName from tblStudents where AdmissionNo ='" & txtStudentID.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
@@ -50,30 +43,6 @@ Public Class frmEnrollment
             txtFirstName.Text = dr("FirstName").ToString
             txtMiddleName.Text = dr("MiddleName").ToString
         End If
-    End Sub
-
-    Private Sub searchThings()
-        Dim dt As DataTable = SearchDatabase(txtStudentID.Text)
-        PopulateListView(dt)
-    End Sub
-
-    Public Function SearchDatabase(searchTerm As String) As DataTable
-        sql = "Select * from tblStudents where AdmissionNo LIKE ?"
-        cmd = New OleDbCommand(sql, cn)
-        cmd.Parameters.Add(New OleDbParameter("searchTerm1", "%" & searchTerm & "%"))
-
-        Dim dt As New DataTable
-        Dim da As New OleDbDataAdapter(cmd)
-        da.Fill(dt)
-
-        Return dt
-    End Function
-
-    Private Sub PopulateListView(dt As DataTable)
-        ListView1.Items.Clear()
-        For Each row As DataRow In dt.Rows
-            ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
-        Next
     End Sub
 
     Private Sub clear()

@@ -25,6 +25,7 @@ Partial Class frmDashboard
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDashboard))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnCashier = New System.Windows.Forms.Button()
         Me.btnDashaboard = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.btnEnrollment = New System.Windows.Forms.Button()
@@ -66,6 +67,7 @@ Partial Class frmDashboard
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.btnCashier)
         Me.Panel2.Controls.Add(Me.btnDashaboard)
         Me.Panel2.Controls.Add(Me.btnLogout)
         Me.Panel2.Controls.Add(Me.btnEnrollment)
@@ -82,6 +84,25 @@ Partial Class frmDashboard
         Me.Panel2.Size = New System.Drawing.Size(236, 710)
         Me.Panel2.TabIndex = 1
         '
+        'btnCashier
+        '
+        Me.btnCashier.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCashier.FlatAppearance.BorderSize = 0
+        Me.btnCashier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCashier.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCashier.Image = CType(resources.GetObject("btnCashier.Image"), System.Drawing.Image)
+        Me.btnCashier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCashier.Location = New System.Drawing.Point(0, 609)
+        Me.btnCashier.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCashier.Name = "btnCashier"
+        Me.btnCashier.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
+        Me.btnCashier.Size = New System.Drawing.Size(236, 52)
+        Me.btnCashier.TabIndex = 10
+        Me.btnCashier.Text = "     Cashier"
+        Me.btnCashier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCashier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCashier.UseVisualStyleBackColor = True
+        '
         'btnDashaboard
         '
         Me.btnDashaboard.Cursor = System.Windows.Forms.Cursors.Hand
@@ -92,7 +113,7 @@ Partial Class frmDashboard
         Me.btnDashaboard.Image = CType(resources.GetObject("btnDashaboard.Image"), System.Drawing.Image)
         Me.btnDashaboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashaboard.Location = New System.Drawing.Point(0, 175)
-        Me.btnDashaboard.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDashaboard.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDashaboard.Name = "btnDashaboard"
         Me.btnDashaboard.Padding = New System.Windows.Forms.Padding(15, 8, 8, 8)
         Me.btnDashaboard.Size = New System.Drawing.Size(236, 42)
@@ -132,7 +153,7 @@ Partial Class frmDashboard
         Me.btnEnrollment.Image = CType(resources.GetObject("btnEnrollment.Image"), System.Drawing.Image)
         Me.btnEnrollment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnEnrollment.Location = New System.Drawing.Point(0, 561)
-        Me.btnEnrollment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEnrollment.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEnrollment.Name = "btnEnrollment"
         Me.btnEnrollment.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnEnrollment.Size = New System.Drawing.Size(236, 52)
@@ -151,7 +172,7 @@ Partial Class frmDashboard
         Me.btnSchedule.Image = CType(resources.GetObject("btnSchedule.Image"), System.Drawing.Image)
         Me.btnSchedule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSchedule.Location = New System.Drawing.Point(0, 505)
-        Me.btnSchedule.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSchedule.Name = "btnSchedule"
         Me.btnSchedule.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnSchedule.Size = New System.Drawing.Size(236, 52)
@@ -170,7 +191,7 @@ Partial Class frmDashboard
         Me.btnSection.Image = CType(resources.GetObject("btnSection.Image"), System.Drawing.Image)
         Me.btnSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSection.Location = New System.Drawing.Point(0, 448)
-        Me.btnSection.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSection.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSection.Name = "btnSection"
         Me.btnSection.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnSection.Size = New System.Drawing.Size(236, 52)
@@ -189,7 +210,7 @@ Partial Class frmDashboard
         Me.btnTeachers.Image = CType(resources.GetObject("btnTeachers.Image"), System.Drawing.Image)
         Me.btnTeachers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTeachers.Location = New System.Drawing.Point(0, 391)
-        Me.btnTeachers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnTeachers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnTeachers.Name = "btnTeachers"
         Me.btnTeachers.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnTeachers.Size = New System.Drawing.Size(236, 52)
@@ -208,7 +229,7 @@ Partial Class frmDashboard
         Me.btnStudents.Image = CType(resources.GetObject("btnStudents.Image"), System.Drawing.Image)
         Me.btnStudents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStudents.Location = New System.Drawing.Point(0, 334)
-        Me.btnStudents.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnStudents.Margin = New System.Windows.Forms.Padding(2)
         Me.btnStudents.Name = "btnStudents"
         Me.btnStudents.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnStudents.Size = New System.Drawing.Size(236, 52)
@@ -227,7 +248,7 @@ Partial Class frmDashboard
         Me.btnSubjects.Image = CType(resources.GetObject("btnSubjects.Image"), System.Drawing.Image)
         Me.btnSubjects.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSubjects.Location = New System.Drawing.Point(0, 277)
-        Me.btnSubjects.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSubjects.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSubjects.Name = "btnSubjects"
         Me.btnSubjects.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnSubjects.Size = New System.Drawing.Size(236, 52)
@@ -246,7 +267,7 @@ Partial Class frmDashboard
         Me.btnUsers.Image = CType(resources.GetObject("btnUsers.Image"), System.Drawing.Image)
         Me.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnUsers.Location = New System.Drawing.Point(0, 220)
-        Me.btnUsers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUsers.Margin = New System.Windows.Forms.Padding(2)
         Me.btnUsers.Name = "btnUsers"
         Me.btnUsers.Padding = New System.Windows.Forms.Padding(20, 10, 10, 10)
         Me.btnUsers.Size = New System.Drawing.Size(236, 52)
@@ -286,7 +307,7 @@ Partial Class frmDashboard
         Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"), System.Drawing.Image)
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
         Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(52, 9)
-        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(90, 90)
@@ -493,4 +514,5 @@ Partial Class frmDashboard
     Friend WithEvents panelMainDashboard As Panel
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnDashaboard As Button
+    Friend WithEvents btnCashier As Button
 End Class

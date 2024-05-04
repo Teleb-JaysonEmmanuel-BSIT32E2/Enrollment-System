@@ -131,4 +131,19 @@
         frmMainLogin.Show()
         frmLogin.Show()
     End Sub
+
+    Private Sub btnCashier_Click(sender As Object, e As EventArgs) Handles btnCashier.Click
+        frmCashier.TopLevel = False
+        panelMainDashboard.Controls.Add(frmCashier)
+        frmCashier.BringToFront()
+        frmCashier.Show()
+
+        frmMonitorDashboard.Close()
+        frmManageSections.Close()
+        frmManageUsers.Close()
+        frmManageTeachers.Close()
+        frmEnrollment.Close()
+        frmManageSubjects.Close()
+        frmClassScheduling.Close()
+    End Sub
 End Class

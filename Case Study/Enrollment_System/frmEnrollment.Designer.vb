@@ -382,11 +382,11 @@ Partial Class frmEnrollment
         Me.Label10.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Label10.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(583, 10)
+        Me.Label10.Location = New System.Drawing.Point(555, 9)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(156, 21)
+        Me.Label10.Size = New System.Drawing.Size(176, 21)
         Me.Label10.TabIndex = 5
-        Me.Label10.Text = "Search Student No:"
+        Me.Label10.Text = "Search Admission No:"
         '
         'Label7
         '

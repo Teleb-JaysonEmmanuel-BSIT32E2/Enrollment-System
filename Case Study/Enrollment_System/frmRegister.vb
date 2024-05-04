@@ -56,7 +56,7 @@ Public Class frmRegister
         If filled Then
             Dim nextEmployeeID As String = GetNextEmployeeID()
             If nextEmployeeID IsNot Nothing Then
-                sql = "INSERT INTO tblUsers(EmployeeID, FirstName, LastName, Username, [Password], Birthdate, AccStatus) VALUES(@EmployeeID, @FirstName, @LastName, @Username, [@Password], @Birthdate, @AccStatus)"
+                sql = "INSERT INTO tblUsers(EmployeeID, FirstName, LastName, Username, [Password], AccStatus) VALUES(@EmployeeID, @FirstName, @LastName, @Username, [@Password], @AccStatus)"
                 cmd = New OleDbCommand(sql, cn)
                 With cmd
                     .Parameters.AddWithValue("@EmployeeID", nextEmployeeID)
@@ -65,7 +65,6 @@ Public Class frmRegister
                     .Parameters.AddWithValue("@Username", txtUsername.Text)
                     .Parameters.AddWithValue("[@Password]", txtPassword.Text)
                     .Parameters.AddWithValue("@AccessLevel", cboRole.Text)
-                    .Parameters.AddWithValue("@Birthdate", datePicker.Text)
                     .Parameters.AddWithValue("@AccStatus", "Active")
                     .ExecuteNonQuery()
                 End With

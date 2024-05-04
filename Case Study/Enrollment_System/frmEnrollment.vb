@@ -95,7 +95,7 @@ Public Class frmEnrollment
 
         studId = "ESTUD-" & idNumber.ToString("D4")
 
-        sql = "INSERT INTO tblEnrolledStudent (EStudentID, StudentNo, LastName, FirstName, MiddleName, Department, Course, YearLevel, Semester, SectionName, SchoolYear) VALUES (@EStudentID, @StudentNo, @LastName, @FirstName, @MiddleName, @Department, @Course, @YearLevel, @Semester, @SectionName, @SchoolYear)"
+        sql = "INSERT INTO tblEnrolledStudent (EStudentID, StudentNo, FirstName, LastName, MiddleName, Department, Course, YearLevel, Semester, SectionName, SchoolYear) VALUES (@EStudentID, @StudentNo, @LastName, @FirstName, @MiddleName, @Department, @Course, @YearLevel, @Semester, @SectionName, @SchoolYear)"
         cmd = New OleDbCommand(sql, cn)
         With cmd
             .Parameters.AddWithValue("@EStudentID", studId)
@@ -111,6 +111,7 @@ Public Class frmEnrollment
             .Parameters.AddWithValue("@SchoolYear", cboSchooYear.Text)
             .ExecuteNonQuery()
         End With
+        Call connectStudentSubject()
     End Sub
 
 
@@ -119,8 +120,20 @@ Public Class frmEnrollment
             MsgBox("Please fill all the required fields.", MsgBoxStyle.Exclamation)
         Else
             Call checkStudentID()
-            Call Print()
+            'Call Print()
         End If
+    End Sub
+
+    Private Sub connectStudentSubject()
+        For Each i As ListViewItem In ListView1.Items
+            sql = "Insert into tblStudentSubject (EStudentID, SubjCode) values (@EStudentID, @SubjCode)"
+            cmd = New OleDbCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@EStudentID", studId)
+                .Parameters.AddWithValue("@SubjCode", i.Text)
+                .ExecuteNonQuery()
+            End With
+        Next
     End Sub
 
     Private Sub checkStudentID()
@@ -214,5 +227,6 @@ Public Class frmEnrollment
         frmPrinting.Show()
         Me.Hide()
     End Sub
+
 
 End Class

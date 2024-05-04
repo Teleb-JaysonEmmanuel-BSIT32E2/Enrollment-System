@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.vb" />
+    <Compile Include="frmCashier.Designer.vb">
+      <DependentUpon>frmCashier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmClassScheduling.Designer.vb">
       <DependentUpon>frmClassScheduling.vb</DependentUpon>
     </Compile>
@@ -231,6 +237,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmCashier.resx">
+      <DependentUpon>frmCashier.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClassScheduling.resx">
       <DependentUpon>frmClassScheduling.vb</DependentUpon>
     </EmbeddedResource>

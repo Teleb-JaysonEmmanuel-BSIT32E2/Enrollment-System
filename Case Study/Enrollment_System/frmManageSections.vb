@@ -314,8 +314,4 @@ Public Class frmManageSections
             End With
         End If
     End Sub
-
-    Private Sub cboSection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSection.SelectedIndexChanged
-
-    End Sub
 End Class

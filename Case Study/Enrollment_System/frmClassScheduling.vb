@@ -318,4 +318,8 @@ Public Class frmClassScheduling
         txtUnits.Clear()
         txtDescription.Clear()
     End Sub
+
+    Private Sub cboSY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSY.SelectedIndexChanged
+
+    End Sub
 End Class

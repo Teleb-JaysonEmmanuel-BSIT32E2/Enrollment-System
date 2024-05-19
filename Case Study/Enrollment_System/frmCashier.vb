@@ -111,22 +111,32 @@ Public Class frmCashier
             lblTFee.Text = majUnits + minUnits
 
             lblTotalPay.Text = majUnits + minUnits + miscFee + specialist
+
+            sql = "INSERT INTO tblFees(SY, Major, Minor, Misc, Laboratory, Specialist) VALUES(@SY, @Major, @Minor, @Misc, @Laboratory, @Specialist)"
+            cmd = New OleDbCommand(sql, cn)
+            With cmd
+                .Parameters.AddWithValue("@SY", cboSY.Text)
+                .Parameters.AddWithValue("@Major", txtMajor.Text)
+                .Parameters.AddWithValue("@Minor", txtMinor.Text)
+                .Parameters.AddWithValue("@Misc", txtMisc.Text)
+                .Parameters.AddWithValue("@Laboratory", txtLab.Text)
+                .Parameters.AddWithValue("@Specialist", txtSpecialist.Text)
+                .ExecuteNonQuery()
+            End With
+            MsgBox("Successfully saved!")
         End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Call loadAllAssessment()
-        sql = "INSERT INTO tblFees(SY, Major, Minor, Misc, Laboratory, Specialist) VALUES(@SY, @Major, @Minor, @Misc, @Laboratory, @Specialist) "
+        sql = "SELECT SY FROM tblFees WHERE SY = '" & cboSY.Text & "'"
         cmd = New OleDbCommand(sql, cn)
-        With cmd
-            .Parameters.AddWithValue("@SY", cboSY.Text)
-            .Parameters.AddWithValue("@Major", txtMajor.Text)
-            .Parameters.AddWithValue("@Minor", txtMinor.Text)
-            .Parameters.AddWithValue("@Misc", txtMisc.Text)
-            .Parameters.AddWithValue("@Laboratory", txtLab.Text)
-            .Parameters.AddWithValue("@Specialist", txtSpecialist.Text)
-            .ExecuteNonQuery()
-        End With
-        MsgBox("Successfully saved!")
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            MsgBox("ERRO! ERROR! School Year already has fees..", MsgBoxStyle.Critical)
+            cboSY.SelectedIndex = -1
+        Else
+            Call loadAllAssessment()
+        End If
     End Sub
 End Class

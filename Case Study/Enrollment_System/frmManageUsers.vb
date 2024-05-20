@@ -5,22 +5,63 @@ Imports System.Reflection
 
 Public Class frmManageUsers
 
+    Dim filled As Boolean
+
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         Me.Close()
     End Sub
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Then
-            MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
-        Else
-            sql = "Select EmployeeID from tblUsers where EmployeeID='" & txtEmpNo.Text & "'"
-            cmd = New OleDbCommand(sql, cn)
-            dr = cmd.ExecuteReader
-            If dr.Read = True Then
-                MsgBox("Account is already Exist", MsgBoxStyle.Exclamation)
+
+    Private Sub checkInput()
+        filled = True
+
+        Dim requiredFields As New Dictionary(Of String, Control) From {
+            {"txtEmpNo", txtEmpNo},
+            {"txtFn", txtFn},
+            {"txtLn", txtLn},
+            {"txtP", txtP},
+            {"txtCp", txtCp},
+            {"txtUn", txtUn},
+            {"cboR", cboR},
+            {"cboAS", cboAS}
+        }
+
+        For Each fieldName_controlPair In requiredFields
+            Dim control As Control = fieldName_controlPair.Value
+
+            If control.Text.Trim = "" Then
+                ErrorProvider1.SetError(control, "This field is required.")
+                filled = False
+                Exit For
             Else
-                Call save()
+                ErrorProvider1.SetError(control, "")
             End If
-            Call reset()
+        Next
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Call checkInput()
+
+        If filled Then
+            If btnEdit.Enabled = False And btnNew.Enabled = True Then 'SAVING NEW USER
+                sql = "Select EmployeeID from tblUsers where EmployeeID='" & txtEmpNo.Text & "'"
+                cmd = New OleDbCommand(sql, cn)
+                dr = cmd.ExecuteReader
+                If dr.Read = True Then
+                    MsgBox("Account is already Exist", MsgBoxStyle.Exclamation)
+                Else
+                    Call save()
+                End If
+                Call reset()
+            ElseIf btnEdit.Enabled = True And btnNew.Enabled = False Then 'EDIT USER
+                Call UpdateData()
+            End If
+            Call loadAccount()
+
+            btnNew.Enabled = True
+
+            btnSave.Enabled = False
+            btnEdit.Enabled = False
+
         End If
     End Sub
 
@@ -78,17 +119,20 @@ Public Class frmManageUsers
         Loop
 
     End Sub
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If txtEmpNo.Text = "" Or txtLn.Text = "" Or txtFn.Text = "" Or txtP.Text = "" Or txtCp.Text = "" Or cboAS.Text = "" Or cboR.Text = "" Then
-            MsgBox("Please fill up the fields", MsgBoxStyle.Exclamation)
-        ElseIf txtP.Text <> txtCp.Text Then
-            MsgBox("Password Doesn't Match", MsgBoxStyle.Critical)
-        Else
-            Call UpdateData()
-        End If
-        Call loadAccount()
 
+    'EDIT BTN
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        txtFn.Enabled = True
+        txtLn.Enabled = True
+        txtP.Enabled = True
+        txtCp.Enabled = True
+        txtUn.Enabled = True
+        cboR.Enabled = True
+        btnSave.Enabled = True
+
+        btnNew.Enabled = False
     End Sub
+
     Private Sub UpdateData()
         'Update Specific records from database'
         sql = "UPDATE qryUsers SET EmployeeID=@EmployeeID,LastName=@LastName,FirstName=@FirstName,Username=@Username,[Password]=[@Password],[Role]=[@Role], AccStatus=@AccStatus where EmployeeID=@EmployeeID"
@@ -111,6 +155,7 @@ Public Class frmManageUsers
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
         If ListView1.SelectedItems.Count > 0 Then
             txtEmpNo.Text = ListView1.SelectedItems(0).SubItems(0).Text
+            btnEdit.Enabled = True
         End If
     End Sub
 
@@ -141,7 +186,7 @@ Public Class frmManageUsers
         End If
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         txtFn.Enabled = True
         txtLn.Enabled = True
         txtP.Enabled = True
@@ -149,8 +194,6 @@ Public Class frmManageUsers
         txtUn.Enabled = True
         cboR.Enabled = True
         btnSave.Enabled = True
-        btnEdit.Enabled = True
-        ListView1.Enabled = True
 
         Dim employeeId As String = GetNextEmployeeID()
         txtEmpNo.Text = employeeId
@@ -179,6 +222,7 @@ Public Class frmManageUsers
         ListView1.Items.Clear()
         For Each row As DataRow In dt.Rows
             ListView1.Items.Add(New ListViewItem(row.ItemArray.Select(Function(x) x.ToString()).ToArray()))
+
         Next
     End Sub
     Private Function GetNextEmployeeID() As String

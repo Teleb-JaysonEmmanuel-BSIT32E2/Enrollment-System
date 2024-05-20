@@ -23,18 +23,18 @@ Partial Class frmMonitorDashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.lblNumberUser = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.lblNumberStudent = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.lblNumberSubject = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.lblNumberUser = New System.Windows.Forms.Label()
-        Me.lblNumberSubject = New System.Windows.Forms.Label()
-        Me.lblNumberStudent = New System.Windows.Forms.Label()
-        Me.lblAcademicYear = New System.Windows.Forms.Label()
         Me.lblSemester = New System.Windows.Forms.Label()
+        Me.lblAcademicYear = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
@@ -51,6 +51,17 @@ Partial Class frmMonitorDashboard
         Me.Panel7.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
         Me.Panel7.Size = New System.Drawing.Size(300, 120)
         Me.Panel7.TabIndex = 31
+        '
+        'lblNumberUser
+        '
+        Me.lblNumberUser.AutoSize = True
+        Me.lblNumberUser.Font = New System.Drawing.Font("Microsoft New Tai Lue", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumberUser.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblNumberUser.Location = New System.Drawing.Point(30, 60)
+        Me.lblNumberUser.Name = "lblNumberUser"
+        Me.lblNumberUser.Size = New System.Drawing.Size(31, 35)
+        Me.lblNumberUser.TabIndex = 22
+        Me.lblNumberUser.Text = "0"
         '
         'Label6
         '
@@ -78,6 +89,17 @@ Partial Class frmMonitorDashboard
         Me.Panel8.Size = New System.Drawing.Size(300, 120)
         Me.Panel8.TabIndex = 32
         '
+        'lblNumberStudent
+        '
+        Me.lblNumberStudent.AutoSize = True
+        Me.lblNumberStudent.Font = New System.Drawing.Font("Microsoft New Tai Lue", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumberStudent.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblNumberStudent.Location = New System.Drawing.Point(30, 60)
+        Me.lblNumberStudent.Name = "lblNumberStudent"
+        Me.lblNumberStudent.Size = New System.Drawing.Size(31, 35)
+        Me.lblNumberStudent.TabIndex = 23
+        Me.lblNumberStudent.Text = "0"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -103,6 +125,17 @@ Partial Class frmMonitorDashboard
         Me.Panel9.Padding = New System.Windows.Forms.Padding(20, 10, 0, 0)
         Me.Panel9.Size = New System.Drawing.Size(300, 120)
         Me.Panel9.TabIndex = 33
+        '
+        'lblNumberSubject
+        '
+        Me.lblNumberSubject.AutoSize = True
+        Me.lblNumberSubject.Font = New System.Drawing.Font("Microsoft New Tai Lue", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumberSubject.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblNumberSubject.Location = New System.Drawing.Point(30, 60)
+        Me.lblNumberSubject.Name = "lblNumberSubject"
+        Me.lblNumberSubject.Size = New System.Drawing.Size(31, 35)
+        Me.lblNumberSubject.TabIndex = 22
+        Me.lblNumberSubject.Text = "0"
         '
         'Label9
         '
@@ -131,6 +164,28 @@ Partial Class frmMonitorDashboard
         Me.Panel10.Size = New System.Drawing.Size(300, 120)
         Me.Panel10.TabIndex = 34
         '
+        'lblSemester
+        '
+        Me.lblSemester.AutoSize = True
+        Me.lblSemester.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSemester.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblSemester.Location = New System.Drawing.Point(150, 60)
+        Me.lblSemester.Name = "lblSemester"
+        Me.lblSemester.Size = New System.Drawing.Size(140, 21)
+        Me.lblSemester.TabIndex = 25
+        Me.lblSemester.Text = "Second Semester"
+        '
+        'lblAcademicYear
+        '
+        Me.lblAcademicYear.AutoSize = True
+        Me.lblAcademicYear.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAcademicYear.ForeColor = System.Drawing.SystemColors.Control
+        Me.lblAcademicYear.Location = New System.Drawing.Point(30, 60)
+        Me.lblAcademicYear.Name = "lblAcademicYear"
+        Me.lblAcademicYear.Size = New System.Drawing.Size(88, 21)
+        Me.lblAcademicYear.TabIndex = 24
+        Me.lblAcademicYear.Text = "2023-2024"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -145,61 +200,6 @@ Partial Class frmMonitorDashboard
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Academic School Year"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblNumberUser
-        '
-        Me.lblNumberUser.AutoSize = True
-        Me.lblNumberUser.Font = New System.Drawing.Font("Microsoft New Tai Lue", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumberUser.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblNumberUser.Location = New System.Drawing.Point(30, 60)
-        Me.lblNumberUser.Name = "lblNumberUser"
-        Me.lblNumberUser.Size = New System.Drawing.Size(31, 35)
-        Me.lblNumberUser.TabIndex = 22
-        Me.lblNumberUser.Text = "0"
-        '
-        'lblNumberSubject
-        '
-        Me.lblNumberSubject.AutoSize = True
-        Me.lblNumberSubject.Font = New System.Drawing.Font("Microsoft New Tai Lue", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumberSubject.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblNumberSubject.Location = New System.Drawing.Point(30, 60)
-        Me.lblNumberSubject.Name = "lblNumberSubject"
-        Me.lblNumberSubject.Size = New System.Drawing.Size(31, 35)
-        Me.lblNumberSubject.TabIndex = 22
-        Me.lblNumberSubject.Text = "0"
-        '
-        'lblNumberStudent
-        '
-        Me.lblNumberStudent.AutoSize = True
-        Me.lblNumberStudent.Font = New System.Drawing.Font("Microsoft New Tai Lue", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumberStudent.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblNumberStudent.Location = New System.Drawing.Point(30, 60)
-        Me.lblNumberStudent.Name = "lblNumberStudent"
-        Me.lblNumberStudent.Size = New System.Drawing.Size(31, 35)
-        Me.lblNumberStudent.TabIndex = 23
-        Me.lblNumberStudent.Text = "0"
-        '
-        'lblAcademicYear
-        '
-        Me.lblAcademicYear.AutoSize = True
-        Me.lblAcademicYear.Font = New System.Drawing.Font("Microsoft New Tai Lue", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAcademicYear.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblAcademicYear.Location = New System.Drawing.Point(30, 60)
-        Me.lblAcademicYear.Name = "lblAcademicYear"
-        Me.lblAcademicYear.Size = New System.Drawing.Size(24, 28)
-        Me.lblAcademicYear.TabIndex = 24
-        Me.lblAcademicYear.Text = "0"
-        '
-        'lblSemester
-        '
-        Me.lblSemester.AutoSize = True
-        Me.lblSemester.Font = New System.Drawing.Font("Microsoft New Tai Lue", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSemester.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblSemester.Location = New System.Drawing.Point(150, 60)
-        Me.lblSemester.Name = "lblSemester"
-        Me.lblSemester.Size = New System.Drawing.Size(24, 28)
-        Me.lblSemester.TabIndex = 25
-        Me.lblSemester.Text = "0"
         '
         'frmMonitorDashboard
         '

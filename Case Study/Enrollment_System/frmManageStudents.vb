@@ -68,8 +68,6 @@ Public Class frmManageStudents
         End If
     End Sub
 
-
-
     Private courseId As String
     Private deptId As String
     Private studId As String

@@ -88,30 +88,30 @@ Public Class frmManageSubjects
         Next
     End Sub
 
-    Private Sub getSubjectType()
-        sql = "SELECT DISTINCT SubjType FROM tblSubjects"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboSubjectType.Items.Clear()
-        While dr.Read = True
-            cboSubjectType.Items.Add(dr("SubjType").ToString())
-        End While
-        dr.Close()
-    End Sub
-    Private Sub getSubjectStatus()
-        sql = "SELECT DISTINCT Status FROM tblSubjects"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-        cboSubjectStatus.Items.Clear()
-        While dr.Read = True
-            cboSubjectStatus.Items.Add(dr("Status").ToString())
-        End While
-        dr.Close()
-    End Sub
+    'Private Sub getSubjectType()
+    '    sql = "SELECT DISTINCT SubjType FROM tblSubjects"
+    '    cmd = New OleDbCommand(sql, cn)
+    '    dr = cmd.ExecuteReader
+    '    cboSubjectType.Items.Clear()
+    '    While dr.Read = True
+    '        cboSubjectType.Items.Add(dr("SubjType").ToString())
+    '    End While
+    '    dr.Close()
+    'End Sub
+    'Private Sub getSubjectStatus()
+    '    sql = "SELECT DISTINCT Status FROM tblSubjects"
+    '    cmd = New OleDbCommand(sql, cn)
+    '    dr = cmd.ExecuteReader
+    '    cboSubjectStatus.Items.Clear()
+    '    While dr.Read = True
+    '        cboSubjectStatus.Items.Add(dr("Status").ToString())
+    '    End While
+    '    dr.Close()
+    'End Sub
 
     Private Sub callThings()
-        Call getSubjectStatus()
-        Call getSubjectType()
+        'Call getSubjectStatus()
+        'Call getSubjectType()
     End Sub
 
     Private Sub enableThings()
@@ -188,7 +188,7 @@ Public Class frmManageSubjects
             Call insertSubject()
             Call callThings()
             Call loadAccount()
-            MsgBox("Enrolled Student Record Inserted", MsgBoxStyle.Information)
+            MsgBox("Subject Record Inserted", MsgBoxStyle.Information)
         End If
     End Sub
 

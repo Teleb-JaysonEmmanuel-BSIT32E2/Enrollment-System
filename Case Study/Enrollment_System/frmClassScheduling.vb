@@ -8,6 +8,9 @@ Public Class frmClassScheduling
     Dim newSubId As String
     Dim newTeacherId As String
     Dim classID As String
+
+    Dim teacherName As String = ""
+
     Private Sub frmClassScheduling_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
         Call getSectionName()
@@ -76,13 +79,13 @@ Public Class frmClassScheduling
     End Sub
 
     Private Sub getTeacher()
-        sql = "SELECT DISTINCT FirstName & ' ' & MiddleName & ' ' & LastName AS FullName FROM tblTeachers"
+        sql = "SELECT DISTINCT TeacherName FROM qryTeachers"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
         cboTeacher.Items.Clear()
 
         While dr.Read = True
-            cboTeacher.Items.Add(dr("FullName").ToString())
+            cboTeacher.Items.Add(dr("TeacherName").ToString())
         End While
 
         dr.Close()
@@ -113,68 +116,6 @@ Public Class frmClassScheduling
 
         classNo = GetNextClassNo()
         lblClassNo.Text = classNo
-    End Sub
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If MsgBox("Do you want to save?", vbYesNo) = vbYes Then
-            Dim filled As Boolean = True
-
-            Dim requiredFields As New Dictionary(Of String, Control) From {
-                {"cboType", cboType},
-                {"cboStatus", cboStatus},
-                {"cboGrade", cboGrade},
-                {"cboSection", cboSection},
-                {"cboSem", cboSem},
-                {"cboStrand", cboDept},
-                {"cboSY", cboSY},
-                {"cboTeacher", cboTeacher},
-                {"cboTrack", cboCourse},
-                {"txtDescription", txtDescription},
-                {"txtSubjCode", txtSubjCode},
-                {"txtUnits", txtUnits}
-            }
-
-            For Each fieldName_controlPair In requiredFields
-                Dim control As Control = fieldName_controlPair.Value
-
-                If control.Text.Trim = "" Then
-                    ErrorProvider1.SetError(control, "This field is required.")
-                    filled = False
-                    Exit For
-                Else
-                    ErrorProvider1.SetError(control, "")
-                End If
-            Next
-
-
-            If filled Then
-                sql = "SELECT SubjCode from tblClassSchedule WHERE SectionName = '" & cboSection.Text & "' and SUbjCode = '" & txtSubjCode.Text & "'"
-                cmd = New OleDbCommand(sql, cn)
-                dr = cmd.ExecuteReader
-
-                If dr.Read = True Then
-                    MsgBox("Subject is already in Section!", MsgBoxStyle.Critical)
-                Else
-                    sql = "Insert into tblClassSchedule(ClassSchedNo,YearLevel, SectionName, ClassAdviser, TeacherID, SubjCode, SYID, DeptID, CourseID) Values(@ClassSchedNo, @YearLevel, @SectionName, @ClassAdviser, @TeacherID, @SubjCode, @SYID, @DeptID, @CourseID)"
-                    cmd = New OleDbCommand(sql, cn)
-                    With cmd
-                        .Parameters.AddWithValue("@ClassSchedNo", lblClassNo.Text)
-                        .Parameters.AddWithValue("@YearLevel", cboGrade.Text)
-                        .Parameters.AddWithValue("@SectionName", cboSection.Text)
-                        .Parameters.AddWithValue("@ClassAdviser", cboTeacher.Text)
-                        .Parameters.AddWithValue("@TeacherID", newTeacherId)
-                        .Parameters.AddWithValue("@SubjCode", txtSubjCode.Text)
-                        .Parameters.AddWithValue("@SYID", newSYId)
-                        .Parameters.AddWithValue("@DeptID", newDeptId)
-                        .Parameters.AddWithValue("@CourseID", newCourseId)
-                        .ExecuteNonQuery()
-                    End With
-
-                    MsgBox("Done!")
-                    Call loadSchedule()
-                End If
-            End If
-        End If
     End Sub
 
     Private Function GetNextClassNo() As String
@@ -236,28 +177,12 @@ Public Class frmClassScheduling
     End Sub
 
     Private Sub cboTeacher_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboTeacher.SelectedIndexChanged
-        Dim nameParts As String() = cboTeacher.Text.Split(" ")
-
-        Dim firstName As String = ""
-        Dim middleName As String = ""
-
-        If UBound(nameParts) = 2 Then 'if name is only three
-            firstName = nameParts(0)
-            middleName = nameParts(1)
-        ElseIf UBound(nameParts) > 2 Then ' if name is more than three
-            firstName = nameParts(0) & " " & nameParts(1)
-            middleName = nameParts(2)
-        End If
-
-        Dim lastName As String = nameParts(UBound(nameParts))
-
-
-        sql = "SELECT TeacherID FROM tblTeachers WHERE FirstName = '" & firstName & "' and MiddleName = '" & middleName & "' and LastName = '" & lastName & "'"
+        sql = "SELECT TeacherID FROM qryTeachers WHERE TeacherName = '" & cboTeacher.Text & "'"
         cmd = New OleDbCommand(sql, cn)
         dr = cmd.ExecuteReader
 
         If dr.Read = True Then
-            newTeacherId = dr("TeacherID")
+            lblTeacherID.Text = dr("TeacherID").ToString()
         End If
     End Sub
 
@@ -319,7 +244,65 @@ Public Class frmClassScheduling
         txtDescription.Clear()
     End Sub
 
-    Private Sub cboSY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSY.SelectedIndexChanged
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If MsgBox("Do you want to save?", vbYesNo) = vbYes Then
+            Dim filled As Boolean = True
 
+            Dim requiredFields As New Dictionary(Of String, Control) From {
+                {"cboType", cboType},
+                {"cboStatus", cboStatus},
+                {"cboGrade", cboGrade},
+                {"cboSection", cboSection},
+                {"cboSem", cboSem},
+                {"cboStrand", cboDept},
+                {"cboSY", cboSY},
+                {"cboTeacher", cboTeacher},
+                {"cboTrack", cboCourse},
+                {"txtDescription", txtDescription},
+                {"txtSubjCode", txtSubjCode},
+                {"txtUnits", txtUnits}
+            }
+
+            For Each fieldName_controlPair In requiredFields
+                Dim control As Control = fieldName_controlPair.Value
+
+                If control.Text.Trim = "" Then
+                    ErrorProvider1.SetError(control, "This field is required.")
+                    filled = False
+                    Exit For
+                Else
+                    ErrorProvider1.SetError(control, "")
+                End If
+            Next
+
+
+            If filled Then
+                sql = "SELECT SubjCode from tblClassSchedule WHERE SectionName = '" & cboSection.Text & "' and SUbjCode = '" & txtSubjCode.Text & "'"
+                cmd = New OleDbCommand(sql, cn)
+                dr = cmd.ExecuteReader
+
+                If dr.Read = True Then
+                    MsgBox("Subject is already in Section!", MsgBoxStyle.Critical)
+                Else
+                    sql = "Insert into tblClassSchedule(ClassSchedNo,YearLevel, SectionName, ClassAdviser, TeacherID, SubjCode, SYID, DeptID, CourseID) Values(@ClassSchedNo, @YearLevel, @SectionName, @ClassAdviser, @TeacherID, @SubjCode, @SYID, @DeptID, @CourseID)"
+                    cmd = New OleDbCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@ClassSchedNo", lblClassNo.Text)
+                        .Parameters.AddWithValue("@YearLevel", cboGrade.Text)
+                        .Parameters.AddWithValue("@SectionName", cboSection.Text)
+                        .Parameters.AddWithValue("@ClassAdviser", cboTeacher.Text)
+                        .Parameters.AddWithValue("@TeacherID", lblTeacherID.Text)
+                        .Parameters.AddWithValue("@SubjCode", txtSubjCode.Text)
+                        .Parameters.AddWithValue("@SYID", newSYId)
+                        .Parameters.AddWithValue("@DeptID", newDeptId)
+                        .Parameters.AddWithValue("@CourseID", newCourseId)
+                        .ExecuteNonQuery()
+                    End With
+
+                    MsgBox("Done!")
+                    Call loadSchedule()
+                End If
+            End If
+        End If
     End Sub
 End Class

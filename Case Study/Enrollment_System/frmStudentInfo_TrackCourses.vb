@@ -1,6 +1,21 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmStudentInfo_TrackCourses
+
+    Dim newcityID As String
+
+    Private Sub frmStudentInfo_TrackCourses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call getBrgy()
+        Call getCity()
+
+        If frmManageStudents.ListView1.SelectedItems.Count > 0 Then
+            txtAdmissionNumber.Text = frmManageStudents.ListView1.SelectedItems(0).SubItems(0).Text
+        Else
+            Call studentNumber()
+        End If
+    End Sub
+
+
     Private Sub txtStudentNo_TextChanged(sender As Object, e As EventArgs) Handles txtAdmissionNumber.TextChanged
         sql = "Select AdmissionNo, LastName,FirstName,MiddleName,Address,Brgy,City,ContactNo,Bdate,Age,MotherName,MotherContactNo,FatherName,FatherContactNo from qryStudents where AdmissionNo ='" & txtAdmissionNumber.Text & "'"
         cmd = New OleDbCommand(sql, cn)
@@ -76,16 +91,53 @@ Public Class frmStudentInfo_TrackCourses
         MsgBox("Record Successfully Updated", MsgBoxStyle.Information)
         Call frmManageStudents.loadAccount()
     End Sub
-    Private Sub frmStudentInfo_TrackCourses_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If frmManageStudents.ListView1.SelectedItems.Count > 0 Then
-            txtAdmissionNumber.Text = frmManageStudents.ListView1.SelectedItems(0).SubItems(0).Text
-        Else
-            Call studentNumber()
-        End If
-    End Sub
 
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+    End Sub
+
+
+    Private Sub getBrgy()
+        sql = "SELECT DISTINCT BrgyName FROM tblBrgy"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboBrgy.Items.Clear()
+        While dr.Read = True
+            cboBrgy.Items.Add(dr("BrgyName").ToString())
+        End While
+    End Sub
+
+    Private Sub getCity()
+        sql = "SELECT DISTINCT CityName FROM tblCity"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboCity.Items.Clear()
+        While dr.Read = True
+            cboCity.Items.Add(dr("CityName").ToString())
+        End While
+    End Sub
+
+
+    Private Sub getCityId()
+        sql = "SELECT CityID FROM tblCity WHERE CityName = '" & cboCity.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            newcityID = dr("CityID").ToString
+        End If
+    End Sub
+
+    Private Sub cboCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCity.SelectedIndexChanged
+        Call getCityId()
+        sql = "SELECT DISTINCT BrgyName FROM tblBrgy WHERE CityID = '" & newcityID & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+        cboBrgy.Items.Clear()
+
+        While dr.Read = True
+            cboBrgy.Items.Add(dr("BrgyName").ToString())
+        End While
     End Sub
 End Class

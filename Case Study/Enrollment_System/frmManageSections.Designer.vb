@@ -140,7 +140,7 @@ Partial Class frmManageSections
         Me.cboSection.Enabled = False
         Me.cboSection.FormattingEnabled = True
         Me.cboSection.Location = New System.Drawing.Point(11, 61)
-        Me.cboSection.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboSection.Margin = New System.Windows.Forms.Padding(2)
         Me.cboSection.Name = "cboSection"
         Me.cboSection.Size = New System.Drawing.Size(226, 29)
         Me.cboSection.TabIndex = 52
@@ -150,7 +150,7 @@ Partial Class frmManageSections
         Me.cboCourse.Enabled = False
         Me.cboCourse.FormattingEnabled = True
         Me.cboCourse.Location = New System.Drawing.Point(484, 114)
-        Me.cboCourse.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboCourse.Margin = New System.Windows.Forms.Padding(2)
         Me.cboCourse.Name = "cboCourse"
         Me.cboCourse.Size = New System.Drawing.Size(226, 29)
         Me.cboCourse.TabIndex = 51
@@ -160,18 +160,19 @@ Partial Class frmManageSections
         Me.cboDepartment.Enabled = False
         Me.cboDepartment.FormattingEnabled = True
         Me.cboDepartment.Location = New System.Drawing.Point(248, 114)
-        Me.cboDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboDepartment.Margin = New System.Windows.Forms.Padding(2)
         Me.cboDepartment.Name = "cboDepartment"
         Me.cboDepartment.Size = New System.Drawing.Size(226, 29)
         Me.cboDepartment.TabIndex = 50
         '
         'cboSemester
         '
+        Me.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSemester.Enabled = False
         Me.cboSemester.FormattingEnabled = True
         Me.cboSemester.Items.AddRange(New Object() {"First Semester", "Second Semester"})
         Me.cboSemester.Location = New System.Drawing.Point(11, 114)
-        Me.cboSemester.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboSemester.Margin = New System.Windows.Forms.Padding(2)
         Me.cboSemester.Name = "cboSemester"
         Me.cboSemester.Size = New System.Drawing.Size(226, 29)
         Me.cboSemester.TabIndex = 49
@@ -181,18 +182,19 @@ Partial Class frmManageSections
         Me.cboSchoolYear.Enabled = False
         Me.cboSchoolYear.FormattingEnabled = True
         Me.cboSchoolYear.Location = New System.Drawing.Point(484, 61)
-        Me.cboSchoolYear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboSchoolYear.Margin = New System.Windows.Forms.Padding(2)
         Me.cboSchoolYear.Name = "cboSchoolYear"
         Me.cboSchoolYear.Size = New System.Drawing.Size(226, 29)
         Me.cboSchoolYear.TabIndex = 48
         '
         'cboYearLevel
         '
+        Me.cboYearLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboYearLevel.Enabled = False
         Me.cboYearLevel.FormattingEnabled = True
         Me.cboYearLevel.Items.AddRange(New Object() {"First Year", "Second Year", "Third Year", "Fourth Year", "Fifth Year"})
         Me.cboYearLevel.Location = New System.Drawing.Point(248, 61)
-        Me.cboYearLevel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cboYearLevel.Margin = New System.Windows.Forms.Padding(2)
         Me.cboYearLevel.Name = "cboYearLevel"
         Me.cboYearLevel.Size = New System.Drawing.Size(226, 29)
         Me.cboYearLevel.TabIndex = 47
@@ -294,7 +296,7 @@ Partial Class frmManageSections
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnCancel.Location = New System.Drawing.Point(782, 528)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnCancel.PressedDepth = 40
@@ -378,7 +380,7 @@ Partial Class frmManageSections
         Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
         Me.btnDelete.Location = New System.Drawing.Point(538, 528)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnDelete.PressedDepth = 40

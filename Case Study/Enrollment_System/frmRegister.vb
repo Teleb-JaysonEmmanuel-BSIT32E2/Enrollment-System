@@ -69,6 +69,7 @@ Public Class frmRegister
             Else
                 MsgBox("Failed to generate EmployeeID. Please try again.", MsgBoxStyle.Exclamation)
             End If
+            Me.Close()
         End If
     End Sub
 

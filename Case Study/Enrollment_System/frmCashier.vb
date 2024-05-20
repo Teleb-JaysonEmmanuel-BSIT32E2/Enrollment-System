@@ -36,7 +36,6 @@ Public Class frmCashier
             x.SubItems.Add(dr("FirstName").ToString() & " " & dr("LastName").ToString())
             ListView1.Items.Add(x)
         Loop
-
         btnSave.Enabled = True
     End Sub
 
@@ -47,7 +46,7 @@ Public Class frmCashier
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                majUnits = CInt(dr(0)) * txtMajor.Text
+                majUnits = Convert.ToInt32(dr(0)) * txtMajor.Text
             End If
         End If
     End Sub
@@ -59,7 +58,7 @@ Public Class frmCashier
             dr = cmd.ExecuteReader
 
             If dr.Read = True Then
-                minUnits = CInt(dr(0)) * txtMinor.Text
+                minUnits = Convert.ToInt32(dr(0)) * txtMinor.Text
             End If
         End If
     End Sub
@@ -67,21 +66,21 @@ Public Class frmCashier
     Private Sub txtLab_TextChanged(sender As Object, e As EventArgs) Handles txtLab.TextChanged
         'needs laboratory on sections
         If txtLab.Text <> "" Then
-            labFee = CInt(txtLab.Text)
+            labFee = Convert.ToInt32(txtLab.Text)
             lblLFee.Text = txtLab.Text
         End If
     End Sub
 
     Private Sub txtMisc_TextChanged(sender As Object, e As EventArgs) Handles txtMisc.TextChanged
         If txtMisc.Text <> "" Then
-            miscFee = CInt(txtMisc.Text)
+            miscFee = Convert.ToInt32(txtMisc.Text)
             lblMFee.Text = txtMisc.Text
         End If
     End Sub
 
     Private Sub txtSpecialist_TextChanged(sender As Object, e As EventArgs) Handles txtSpecialist.TextChanged
         If txtSpecialist.Text <> "" Then
-            specialist = CInt(txtSpecialist.Text)
+            specialist = Convert.ToInt32(txtSpecialist.Text)
             lblSpecialist.Text = txtSpecialist.Text
         End If
     End Sub

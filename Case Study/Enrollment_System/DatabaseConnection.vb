@@ -8,7 +8,7 @@ Module DatabaseConnection
 
     Public Sub connection()
         cn.Close()
-        cn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & Application.StartupPath & "\Database\EnrollmentManagementSystem.accdb"
+        cn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\STUDENT\Downloads\EnrollmentManagementSystem.accdb"
         cn.Open()
     End Sub
 End Module

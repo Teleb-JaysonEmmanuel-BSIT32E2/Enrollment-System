@@ -2,36 +2,6 @@
 
 Public Class frmLogin
 
-    Private Sub txtUsername_LostFocus(sender As Object, e As EventArgs) Handles txtUsername.LostFocus
-        If txtUsername.Text = "" Then
-            txtUsername.Text = "Enter your username"
-            txtUsername.ForeColor = Color.DarkGray
-        End If
-    End Sub
-
-    Private Sub txtUsername_GotFocus(sender As Object, e As EventArgs) Handles txtUsername.GotFocus
-        If txtUsername.Text = "Enter your username" Then
-            txtUsername.Text = ""
-            txtUsername.ForeColor = Color.Black
-        End If
-    End Sub
-
-    Private Sub txtPassword_LostFocus(sender As Object, e As EventArgs) Handles txtPassword.LostFocus
-        If txtPassword.Text = "" Then
-            txtPassword.Text = "Enter your password"
-            txtPassword.PasswordChar = ""
-            txtPassword.ForeColor = Color.DarkGray
-        End If
-    End Sub
-
-    Private Sub txtPassword_GotFocus(sender As Object, e As EventArgs) Handles txtPassword.GotFocus
-        If txtPassword.Text = "Enter your password" Then
-            txtPassword.Text = ""
-            txtPassword.PasswordChar = "•"
-            txtPassword.ForeColor = Color.Black
-        End If
-    End Sub
-
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         frmMainLogin.Close()
     End Sub

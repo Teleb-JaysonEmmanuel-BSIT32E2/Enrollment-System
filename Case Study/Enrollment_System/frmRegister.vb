@@ -34,7 +34,6 @@ Public Class frmRegister
             {"txtLastname", txtLastname},
             {"txtUsername", txtUsername},
             {"txtPassword", txtPassword},
-            {"datePicker", datePicker},
             {"cboRole", cboRole}
         }
 

@@ -120,7 +120,7 @@ Public Class frmEnrollment
             MsgBox("Please fill all the required fields.", MsgBoxStyle.Exclamation)
         Else
             Call checkStudentID()
-            'Call Print()
+            Call Print()
         End If
     End Sub
 

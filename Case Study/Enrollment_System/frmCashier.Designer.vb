@@ -412,9 +412,9 @@ Partial Class frmCashier
         Me.Label3.Location = New System.Drawing.Point(17, 237)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(256, 26)
+        Me.Label3.Size = New System.Drawing.Size(213, 26)
         Me.Label3.TabIndex = 112
-        Me.Label3.Text = "Set Units for Minor Subjects"
+        Me.Label3.Text = "Set Fee for Minor Units"
         '
         'txtMajor
         '
@@ -448,9 +448,9 @@ Partial Class frmCashier
         Me.Label2.Location = New System.Drawing.Point(17, 144)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(255, 26)
+        Me.Label2.Size = New System.Drawing.Size(212, 26)
         Me.Label2.TabIndex = 110
-        Me.Label2.Text = "Set Units for Major Subjects"
+        Me.Label2.Text = "Set Fee for Major Units"
         '
         'Label1
         '

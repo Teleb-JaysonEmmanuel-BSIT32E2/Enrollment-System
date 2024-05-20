@@ -1,6 +1,7 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmRegister
+    Dim existing As Boolean = True
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Close()
@@ -51,25 +52,42 @@ Public Class frmRegister
 
         If filled Then
             Dim nextEmployeeID As String = GetNextEmployeeID()
-            If nextEmployeeID IsNot Nothing Then
-                sql = "INSERT INTO tblUsers(EmployeeID, FirstName, LastName, Username, [Password], Role, AccStatus) VALUES(@EmployeeID, @FirstName, @LastName, @Username, [@Password], @Role, @AccStatus)"
-                cmd = New OleDbCommand(sql, cn)
-                With cmd
-                    .Parameters.AddWithValue("@EmployeeID", nextEmployeeID)
-                    .Parameters.AddWithValue("@FirstName", txtFirstname.Text)
-                    .Parameters.AddWithValue("@LastName", txtLastname.Text)
-                    .Parameters.AddWithValue("@Username", txtUsername.Text)
-                    .Parameters.AddWithValue("[@Password]", txtPassword.Text)
-                    .Parameters.AddWithValue("@Role", cboRole.Text)
-                    .Parameters.AddWithValue("@AccStatus", "Active")
-                    .ExecuteNonQuery()
-                End With
+            Call checkUsername()
+            If existing = True Then
+                If nextEmployeeID IsNot Nothing Then
+                    sql = "INSERT INTO tblUsers(EmployeeID, FirstName, LastName, Username, [Password], Role, AccStatus) VALUES(@EmployeeID, @FirstName, @LastName, @Username, [@Password], @Role, @AccStatus)"
+                    cmd = New OleDbCommand(sql, cn)
+                    With cmd
+                        .Parameters.AddWithValue("@EmployeeID", nextEmployeeID)
+                        .Parameters.AddWithValue("@FirstName", txtFirstname.Text)
+                        .Parameters.AddWithValue("@LastName", txtLastname.Text)
+                        .Parameters.AddWithValue("@Username", txtUsername.Text)
+                        .Parameters.AddWithValue("[@Password]", txtPassword.Text)
+                        .Parameters.AddWithValue("@Role", cboRole.Text)
+                        .Parameters.AddWithValue("@AccStatus", "Active")
+                        .ExecuteNonQuery()
+                    End With
 
-                MsgBox("Account successfully created!", MsgBoxStyle.Information)
-            Else
-                MsgBox("Failed to generate EmployeeID. Please try again.", MsgBoxStyle.Exclamation)
+                    MsgBox("Account successfully created!", MsgBoxStyle.Information)
+                Else
+                    MsgBox("Failed to generate EmployeeID. Please try again.", MsgBoxStyle.Exclamation)
+                End If
+                Me.Close()
             End If
-            Me.Close()
+        End If
+    End Sub
+
+    Private Sub checkUsername()
+        sql = "SELECT Username FROM qryUsers"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            If txtUsername.Text = dr("Username").ToString Then
+                MsgBox("Username already exists!", MsgBoxStyle.Critical)
+                existing = False
+                txtUsername.Clear()
+            End If
         End If
     End Sub
 

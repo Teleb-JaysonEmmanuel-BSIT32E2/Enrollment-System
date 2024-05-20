@@ -1,6 +1,9 @@
 ﻿Imports System.Data.OleDb
 
 Public Class frmLogin
+    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call connection()
+    End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         frmMainLogin.Close()
@@ -15,11 +18,13 @@ Public Class frmLogin
     End Sub
 
     Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
+        sql = "SELECT Role FROM qryUsers WHERE Username = '" & txtUsername.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
 
-    End Sub
-
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
+        If dr.Read = True Then
+            lblRole.Text = dr("Role").ToString
+        End If
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblCreateAccount.LinkClicked
@@ -73,7 +78,5 @@ Public Class frmLogin
         End If
     End Sub
 
-    Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call connection()
-    End Sub
+
 End Class

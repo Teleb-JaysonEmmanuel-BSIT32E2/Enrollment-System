@@ -53,10 +53,9 @@ Partial Class frmLogin
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.txtUsername)
         Me.Panel2.Controls.Add(Me.PictureBox2)
-        Me.Panel2.Location = New System.Drawing.Point(16, 274)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(12, 223)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(469, 68)
+        Me.Panel2.Size = New System.Drawing.Size(352, 55)
         Me.Panel2.TabIndex = 14
         '
         'txtUsername
@@ -71,23 +70,22 @@ Partial Class frmLogin
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtUsername.ForeColor = System.Drawing.Color.Black
         Me.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtUsername.Location = New System.Drawing.Point(76, 11)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtUsername.Location = New System.Drawing.Point(57, 9)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtUsername.PlaceholderText = "Enter your username"
         Me.txtUsername.SelectedText = ""
-        Me.txtUsername.Size = New System.Drawing.Size(373, 44)
+        Me.txtUsername.Size = New System.Drawing.Size(280, 36)
         Me.txtUsername.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtUsername.TabIndex = 1
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(9, 9)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Location = New System.Drawing.Point(7, 7)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(57, 50)
+        Me.PictureBox2.Size = New System.Drawing.Size(43, 41)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox2.TabIndex = 14
         Me.PictureBox2.TabStop = False
@@ -97,10 +95,9 @@ Partial Class frmLogin
         Me.Panel3.Controls.Add(Me.chcboxShowPassword)
         Me.Panel3.Controls.Add(Me.txtPassword)
         Me.Panel3.Controls.Add(Me.PictureBox3)
-        Me.Panel3.Location = New System.Drawing.Point(16, 343)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(12, 279)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(471, 68)
+        Me.Panel3.Size = New System.Drawing.Size(353, 55)
         Me.Panel3.TabIndex = 16
         '
         'chcboxShowPassword
@@ -112,10 +109,9 @@ Partial Class frmLogin
         Me.chcboxShowPassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.chcboxShowPassword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.chcboxShowPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.chcboxShowPassword.Location = New System.Drawing.Point(417, 25)
-        Me.chcboxShowPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chcboxShowPassword.Location = New System.Drawing.Point(313, 20)
         Me.chcboxShowPassword.Name = "chcboxShowPassword"
-        Me.chcboxShowPassword.Size = New System.Drawing.Size(18, 17)
+        Me.chcboxShowPassword.Size = New System.Drawing.Size(15, 14)
         Me.chcboxShowPassword.TabIndex = 3
         Me.chcboxShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.chcboxShowPassword.UncheckedState.BorderRadius = 0
@@ -135,23 +131,22 @@ Partial Class frmLogin
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.txtPassword.ForeColor = System.Drawing.Color.Black
         Me.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtPassword.Location = New System.Drawing.Point(77, 11)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtPassword.Location = New System.Drawing.Point(58, 9)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txtPassword.PlaceholderText = "Enter your password"
         Me.txtPassword.SelectedText = ""
-        Me.txtPassword.Size = New System.Drawing.Size(373, 44)
+        Me.txtPassword.Size = New System.Drawing.Size(280, 36)
         Me.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material
         Me.txtPassword.TabIndex = 2
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(9, 9)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Location = New System.Drawing.Point(7, 7)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(57, 50)
+        Me.PictureBox3.Size = New System.Drawing.Size(43, 41)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox3.TabIndex = 14
         Me.PictureBox3.TabStop = False
@@ -168,12 +163,11 @@ Partial Class frmLogin
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnLogin.ForeColor = System.Drawing.Color.White
         Me.btnLogin.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(86, Byte), Integer), CType(CType(154, Byte), Integer))
-        Me.btnLogin.Location = New System.Drawing.Point(93, 479)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogin.Location = New System.Drawing.Point(70, 389)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.PressedColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(205, Byte), Integer))
         Me.btnLogin.PressedDepth = 40
-        Me.btnLogin.Size = New System.Drawing.Size(363, 55)
+        Me.btnLogin.Size = New System.Drawing.Size(272, 45)
         Me.btnLogin.TabIndex = 4
         Me.btnLogin.Text = "Login"
         '
@@ -181,10 +175,9 @@ Partial Class frmLogin
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft New Tai Lue", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(114, 560)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(86, 455)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(167, 22)
+        Me.Label6.Size = New System.Drawing.Size(134, 19)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Don't have account?"
         '
@@ -195,10 +188,9 @@ Partial Class frmLogin
         Me.lblCreateAccount.Font = New System.Drawing.Font("Microsoft New Tai Lue", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreateAccount.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.lblCreateAccount.LinkColor = System.Drawing.Color.DodgerBlue
-        Me.lblCreateAccount.Location = New System.Drawing.Point(287, 560)
-        Me.lblCreateAccount.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCreateAccount.Location = New System.Drawing.Point(215, 455)
         Me.lblCreateAccount.Name = "lblCreateAccount"
-        Me.lblCreateAccount.Size = New System.Drawing.Size(129, 22)
+        Me.lblCreateAccount.Size = New System.Drawing.Size(109, 19)
         Me.lblCreateAccount.TabIndex = 5
         Me.lblCreateAccount.TabStop = True
         Me.lblCreateAccount.Text = "Create account"
@@ -208,10 +200,9 @@ Partial Class frmLogin
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(189, 139)
-        Me.Guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(142, 113)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(133, 123)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(100, 100)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox1.TabIndex = 20
         Me.Guna2PictureBox1.TabStop = False
@@ -222,10 +213,9 @@ Partial Class frmLogin
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft New Tai Lue", 25.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label4.Location = New System.Drawing.Point(140, 44)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(105, 36)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(234, 56)
+        Me.Label4.Size = New System.Drawing.Size(191, 45)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "User Login"
         '
@@ -238,10 +228,9 @@ Partial Class frmLogin
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.Black
-        Me.btnExit.Location = New System.Drawing.Point(488, 0)
-        Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExit.Location = New System.Drawing.Point(366, 0)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(45, 34)
+        Me.btnExit.Size = New System.Drawing.Size(34, 28)
         Me.btnExit.TabIndex = 21
         Me.btnExit.Text = "X"
         Me.btnExit.UseVisualStyleBackColor = False
@@ -254,27 +243,29 @@ Partial Class frmLogin
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 433)
+        Me.Label1.Location = New System.Drawing.Point(19, 352)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 16)
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Role:"
         '
         'lblRole
         '
         Me.lblRole.AutoSize = True
-        Me.lblRole.Location = New System.Drawing.Point(100, 433)
+        Me.lblRole.Location = New System.Drawing.Point(75, 352)
+        Me.lblRole.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblRole.Name = "lblRole"
-        Me.lblRole.Size = New System.Drawing.Size(39, 16)
+        Me.lblRole.Size = New System.Drawing.Size(10, 13)
         Me.lblRole.TabIndex = 23
-        Me.lblRole.Text = "Role:"
+        Me.lblRole.Text = "-"
         '
         'frmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(533, 615)
+        Me.ClientSize = New System.Drawing.Size(400, 500)
         Me.Controls.Add(Me.lblRole)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnExit)
@@ -286,7 +277,6 @@ Partial Class frmLogin
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)

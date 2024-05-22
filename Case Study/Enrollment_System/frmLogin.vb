@@ -3,6 +3,7 @@
 Public Class frmLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
+
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -69,14 +70,56 @@ Public Class frmLogin
 
                 frmDashboard.lblUsername.Text = txtUsername.Text
                 frmDashboard.lblPos.Text = dr("Role").ToString
+                Call byrole()
                 frmDashboard.Show()
                 Me.Hide()
                 frmMainLogin.Hide()
             Else
                 MsgBox("Account does not exist!", MsgBoxStyle.Critical)
             End If
+
         End If
     End Sub
 
+    Private Sub byrole()
+        If lblRole.Text = "Cashier" Then
+            frmCashier.Enabled = True
+            frmEnrollment.Enabled = False
+            frmManageSections.Enabled = False
+            frmManageStudents.Enabled = False
+            frmClassScheduling.Enabled = False
+            frmManageSubjects.Enabled = False
+            frmManageTeachers.Enabled = False
+            frmManageUsers.Enabled = False
+        ElseIf lblRole.Text = "ITM" Then
+            frmClassScheduling.Enabled = True
+            frmCashier.Enabled = False
+            frmManageSections.Enabled = False
+            frmManageStudents.Enabled = False
+            frmManageSubjects.Enabled = False
+            frmManageTeachers.Enabled = False
+            frmManageUsers.Enabled = False
+            frmEnrollment.Enabled = False
+        ElseIf lblRole.Text = "Registrar" Then
+            frmClassScheduling.Enabled = False
+            frmCashier.Enabled = False
+            frmManageSections.Enabled = False
+            frmManageStudents.Enabled = True
+            frmManageSubjects.Enabled = False
+            frmManageTeachers.Enabled = False
+            frmManageUsers.Enabled = False
+            frmEnrollment.Enabled = False
+        ElseIf lblRole.Text = "Administrator" Then
+            frmClassScheduling.Enabled = True
+            frmCashier.Enabled = True
+            frmManageSections.Enabled = True
+            frmManageStudents.Enabled = True
+            frmManageSubjects.Enabled = True
+            frmManageTeachers.Enabled = True
+            frmManageUsers.Enabled = True
+            frmEnrollment.Enabled = True
+        End If
+
+    End Sub
 
 End Class

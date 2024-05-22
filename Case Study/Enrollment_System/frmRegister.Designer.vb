@@ -309,7 +309,7 @@ Partial Class frmRegister
         Me.cboRole.Font = New System.Drawing.Font("Microsoft New Tai Lue", 12.0!)
         Me.cboRole.ForeColor = System.Drawing.Color.Black
         Me.cboRole.ItemHeight = 30
-        Me.cboRole.Items.AddRange(New Object() {"Administrator", "Staff"})
+        Me.cboRole.Items.AddRange(New Object() {"Administrator", "ITM", "Registrar", "Cashier"})
         Me.cboRole.Location = New System.Drawing.Point(13, 355)
         Me.cboRole.Name = "cboRole"
         Me.cboRole.Size = New System.Drawing.Size(371, 36)

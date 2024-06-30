@@ -84,6 +84,19 @@ Public Class frmCashier
             lblSpecialist.Text = txtSpecialist.Text
         End If
     End Sub
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        sql = "SELECT SY FROM tblFees WHERE SY = '" & cboSY.Text & "'"
+        cmd = New OleDbCommand(sql, cn)
+        dr = cmd.ExecuteReader
+
+        If dr.Read = True Then
+            MsgBox("ERRO! ERROR! School Year already has fees..", MsgBoxStyle.Critical)
+            cboSY.SelectedIndex = -1
+        Else
+            Call loadAllAssessment()
+        End If
+    End Sub
+
     Private Sub loadAllAssessment()
         Dim filled As Boolean = True
 
@@ -123,19 +136,6 @@ Public Class frmCashier
                 .ExecuteNonQuery()
             End With
             MsgBox("Successfully saved!")
-        End If
-    End Sub
-
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        sql = "SELECT SY FROM tblFees WHERE SY = '" & cboSY.Text & "'"
-        cmd = New OleDbCommand(sql, cn)
-        dr = cmd.ExecuteReader
-
-        If dr.Read = True Then
-            MsgBox("ERRO! ERROR! School Year already has fees..", MsgBoxStyle.Critical)
-            cboSY.SelectedIndex = -1
-        Else
-            Call loadAllAssessment()
         End If
     End Sub
 End Class

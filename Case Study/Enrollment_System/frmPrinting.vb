@@ -76,7 +76,7 @@ Public Class frmPrinting
         dr = cmd.ExecuteReader
 
         If dr.Read = True Then
-            majunits = Convert.ToInt32(dr(0).ToString) * minunits
+            minunits = Convert.ToInt32(dr(0).ToString) * minunits
         End If
     End Sub
     Private Sub calculateAssessment()
